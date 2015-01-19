@@ -92,14 +92,14 @@ phone | text | Company phone number
 email | email | Company email address. This is the main email address where notifications from Paymo are send. It is also the email address that was used at sign-up and is the email address of the first user.
 url | url | Company website 
 fiscal_information | text | Fiscal information (used in invoice headers)
-country | text | Company country code ([ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2))
+country | text | Company country code in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format
 image | url | Company logo image URL
 image_thumb_large | url | Company logo large size thumnail URL
 image_thumb_medium | url | Company logo medium size thumnail URL
 image_thumb_small | url | Company logo small size thumnail URL
 created_on | [datetime](datetime.md) | Date and time when the project was created
 updated_on | [datetime](datetime.md) | Date and time when the project was last updated
-timezone | text | Default company timezone. This timezone value will be used by default when viewing invoices, reports, estimates in permalinks. [List available options](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+timezone | text | Default company timezone. This timezone value will be used by default when viewing invoices, reports, estimates in permalinks. [List of available options](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 default_currency | text | Default currency for the company. [List of available currencies](currencies.md)
 default_price_per_hour | text | Default price per hour. It is used as the default value for user price per hour, when adding new users. 
 apply_tax_to_expenses | text | If equal to `1` will apply tax to expenses when creating new invoices.
@@ -107,11 +107,15 @@ tax_on_tax | text | Default value for invoice `tax_on_tax` when creating new inv
 currency_position | text | Position of currency relative to displayed amounts. Available options: `left`, `right`.
 next_invoice_number | text | Autoincrement number value when creating new invoice
 next_estimate_number | text | Autoincrement number value when creating new estimate
+online_payments | text | If equal to `1`, online payment for invoices will be enabled.
 date_format | text | Format for displaying dates in the application. Available options: `Y-m-d`, `d/m/Y`, `m/d/Y`, `d.m.Y`.
 time_format | text | Format for displaying time values. Available options: `H:i` for 24-hour format, `h:i a` for 12-hour format. 
 decimal_sep | text | Decimal separator for displaying numeric values
 thousands_sep | text | Thousands separator for displaying numeric values
 week_start | text | Numeric value in the range 0-6 representing the day the week starts, 0 being Sunday, 6 being Saturday.
+workday_start | text | Workday start hour in HH:SS 24-hour format
+workday_end | text | Workday end hour in HH:SS 24-hour format
+working_days | text | Comma separated list of working days of the week. Days are represented by numbers in the range 0-6, 0 being Sunday, 6 being Saturday.
 account_type | text | Type of Paymo account: free or commercial
 max_users | integer | Maximal number of active users for the company, as set up in the Paymo subscription
 current_users | integer | Number of active users in the company
