@@ -63,6 +63,8 @@ Example response for listing requests:
 }
 ```
 
+You can also [include related content](includes.md) when getting the list of projects.
+
 ## Getting a project
 
 To get the project's info if you know the project id, make a GET request to:
@@ -96,6 +98,8 @@ Example of response:
    ]
 }
 ```
+
+You can also [include related content](includes.md) when getting a project.
 
 ## Creating a project
 
@@ -138,7 +142,7 @@ Example request body if you want to change the name of the project and assign ne
 }
 ```
 
-**Note**: for the `users` and `managers` arrays, you will have to send the new list of assigned users, not only the newly assigned ones.
+**Note**: for the `users` and `managers` arrays, you will have to send the new list of assigned users, not only the ids of the newly assigned users.
  
 The response will return `200 OK` and will contain the updated project info as in the **Getting a project** section.
 
@@ -167,3 +171,38 @@ If successful, the response will contain a `200 OK`.
 ### Warning
 
 **Deleting a project will also delete all info contained by the project: task lists and tasks, discussions, files and time entries!**
+
+## The project object
+ 
+A project object has the following attributes:
+
+Attribute|Type|Notes
+---------|----|-----
+id | integer | Unique project identifier
+name | text | Project name 
+description | Project description
+client_id | integer | Id of the client for whom the project was created
+active | boolean | If true the project is being active (you can add time to its tasks), otherwise it is archived (you cannot add time to its tasks)
+budget_hours | decimal number | Project budget in hours
+price_per_hour | decimal number | Price per hour for the time worked in the project (Note: if a user has a price per hour set, that price per hour will take precedence for the time worked by that user in this project)
+billable | boolean | Used in reporting. If true the project is taken into account for unbilled time for a client or project.
+color | text | An RGB value representing a color for the project when used in charts.
+users | array | A list of ids of users assigned to the project. This list contains also the ids of the managers for this project.
+managers | array | A list of ids of users that are managers for the project. It is a subset of the `users` list.
+created_on | [datetime](datetime.md) | Date and time when the project was created. 
+updated_on | [datetime](datetime.md) | Date and time when the project was last updated.
+
+## Dependent objects
+
+The following object type can be used in [includes](includes.md):
+
+Object type|Include key
+-----------|-----------
+[Client](clients.md) | client
+[Task list](tasklists.md) | tasklists
+[Task](tasks.md) | tasks
+[Milestone](milestones.md) | milestones
+[File](files.md) | files
+[Time entry](entries.md) | entries
+[Discussion](discussions.md) | discussions
+
