@@ -2,7 +2,7 @@
 
 ##Request content type
 
-All POST and PUT requests should send the `Content-Type` header with the appropriate value.
+**All POST and PUT requests should send the `Content-Type` header** with the appropriate value.
 
 Supported types:
 
