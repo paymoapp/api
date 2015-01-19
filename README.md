@@ -46,7 +46,7 @@ You may want to consult a reference for [HTTP Status codes](http://en.wikipedia.
 
 This is the list of object types that exist in the Paymo 3 API:
 
-* [Companies](sections/companies.md)
+* [Company](sections/company.md)
 * [Users](sections/users.md)
 * [Sessions](sections/sessions.md)
 * [Clients](sections/clients.md)

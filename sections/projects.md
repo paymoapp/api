@@ -133,7 +133,7 @@ To update an existing project, make a POST or PUT request to:
 
 with the request body containing the updated info. You can send only the changed fields. 
 
-Example request body if you want to change the name of the project and assign new users:
+Example of request body if you want to change the name of the project and assign new users:
 
 ```json
 {
@@ -176,15 +176,15 @@ If successful, the response will contain a `200 OK`.
  
 A project object has the following attributes:
 
-Attribute|Type|Notes
+Attribute|Type|Description
 ---------|----|-----
 id | integer | Unique project identifier
 name | text | Project name 
 description | text | Project description
 client_id | integer | Id of the client for whom the project was created
 active | boolean | If true the project is being active (you can add time to its tasks), otherwise it is archived (you cannot add time to its tasks)
-budget_hours | decimal number | Project budget in hours
-price_per_hour | decimal number | Price per hour for the time worked in the project (Note: if a user has a price per hour set, that price per hour will take precedence for the time worked by that user in this project).
+budget_hours | decimal | Project budget in hours
+price_per_hour | decimal | Price per hour for the time worked in the project (Note: if a user has a price per hour set, that price per hour will take precedence for the time worked by that user in this project).
 billable | boolean | Used in reporting. If true the project is taken into account for unbilled time for a client or project.
 color | text | An RGB value representing a color for the project when used in charts.
 users | array | A list of ids of users assigned to the project. This list contains also the ids of the managers for this project.
@@ -201,8 +201,9 @@ Object type|Include key
 [Client](clients.md) | client
 [Task list](tasklists.md) | tasklists
 [Task](tasks.md) | tasks
-[Milestone](milestones.md) | milestones
-[File](files.md) | files
 [Time entry](entries.md) | entries
+[Milestone](milestones.md) | milestones
 [Discussion](discussions.md) | discussions
+[File](files.md) | files
+
 
