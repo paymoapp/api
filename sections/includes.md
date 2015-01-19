@@ -12,7 +12,7 @@ In Paymo 3 API you can get all that data in a single API request by using `inclu
 
 Example:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   https://app.paymoapp.com/api/tasks/241147?include=project.name,project.client.name
@@ -54,7 +54,7 @@ And the response looks like:
 
 You can include the entire related object info:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   https://app.paymoapp.com/api/tasks/241147?include=project
@@ -111,7 +111,7 @@ The response looks like:
 Say you have the project ID and you want to list all task lists from that project and all tasks from those task lists. 
 You can do it with the following request:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   https://app.paymoapp.com/api/tasks/241147?include=tasklists,tasklists.tasks

@@ -26,7 +26,7 @@ Session tokens are creating by making a POST request to `https://app.paymoapp.co
 
 Sample request:
 
-```curl
+```shell
 curl -u email:password -H 'Accept: application/json' https://app.paymoapp.com/api/sessions
 ```
 

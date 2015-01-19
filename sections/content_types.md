@@ -10,7 +10,7 @@ Supported types:
 
 Example:
 
-```curl
+```shell
 curl -u email:password 
   -H 'Content-Type: application/json' 
   -d '{"name": "new name"}'
@@ -21,7 +21,7 @@ curl -u email:password
 
 Example:
 
-```curl
+```shell
 curl -u email:password 
   -H 'Content-Type: text/xml' 
   -d '<request><name>new name</name></request>'
@@ -32,7 +32,7 @@ curl -u email:password
  
 Example:
 
-```curl
+```shell
 curl -u email:password 
   -H 'Content-Type: application/x-www-form-urlencoded' 
   -d 'name=new%20name'

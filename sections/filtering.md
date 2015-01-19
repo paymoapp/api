@@ -6,7 +6,7 @@ Let's say want to get a list of tasks that are not yet marked as complete.
 
 The request would be:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   https://app.paymoapp.com/api/tasks?where=complete=false
@@ -61,7 +61,7 @@ And the response looks like:
 
 You can add multiple conditions in the `where` param by using the `and` operator. As in the example below:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   https://app.paymoapp.com/api/tasks?where=complete=false and billable=true
