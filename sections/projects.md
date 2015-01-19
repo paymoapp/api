@@ -136,6 +136,7 @@ Example request body if you want to change the name of the project and assign ne
    "name": "This is the new name",
    "users": [ 123, 129, 130 ]
 }
+```
 
 **Note**: for the `users` and `managers` arrays, you will have to send the new list of assigned users, not only the newly assigned ones.
  
