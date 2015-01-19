@@ -180,21 +180,21 @@ Attribute|Type|Notes
 ---------|----|-----
 id | integer | Unique project identifier
 name | text | Project name 
-description | Project description
+description | text | Project description
 client_id | integer | Id of the client for whom the project was created
 active | boolean | If true the project is being active (you can add time to its tasks), otherwise it is archived (you cannot add time to its tasks)
 budget_hours | decimal number | Project budget in hours
-price_per_hour | decimal number | Price per hour for the time worked in the project (Note: if a user has a price per hour set, that price per hour will take precedence for the time worked by that user in this project)
+price_per_hour | decimal number | Price per hour for the time worked in the project (Note: if a user has a price per hour set, that price per hour will take precedence for the time worked by that user in this project).
 billable | boolean | Used in reporting. If true the project is taken into account for unbilled time for a client or project.
 color | text | An RGB value representing a color for the project when used in charts.
 users | array | A list of ids of users assigned to the project. This list contains also the ids of the managers for this project.
 managers | array | A list of ids of users that are managers for the project. It is a subset of the `users` list.
-created_on | [datetime](datetime.md) | Date and time when the project was created. 
-updated_on | [datetime](datetime.md) | Date and time when the project was last updated.
+created_on | [datetime](datetime.md) | Date and time when the project was created
+updated_on | [datetime](datetime.md) | Date and time when the project was last updated
 
 ## Dependent objects
 
-The following object type can be used in [includes](includes.md):
+The following object types can be used in [includes](includes.md):
 
 Object type|Include key
 -----------|-----------
