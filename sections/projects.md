@@ -163,6 +163,23 @@ To archive a project, make an update request with the following request body:
 
 To activate, send a `true` value.
 
+<a name="update-tasklists-order"></a>
+## Changing the order of task lists 
+
+To reorder the task list from a project, make an update request to:
+
+* `/api/projects/[PROJECT_ID]`
+
+with a body similar to:
+
+```json
+{
+   "tasklists_order": [ 3, 4, 2, 1 ]
+}
+```
+
+where `tasklists_order` is a list of task list ids in the new order.
+
 ## Deleting a project
 
 To delete a project, make a DELETE request to:

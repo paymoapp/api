@@ -73,6 +73,10 @@ This is the list of object types that exist in the Paymo 3 API:
 * [Invoice Templates](sections/invoice_templates.md)
 * [Estimate Templates](sections/estimate_templates.md)
 
+### Other data formats
+
+* [Date and time values](sections/datetime.md)
+
 ##Filtering
 
 If you want to filter the response of listings, you can do so by supplying the `where` parameter in the request URL. 
