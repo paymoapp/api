@@ -184,9 +184,9 @@ image_thumb_small | url | _(read-only)_ Client logo image small size thumbnail U
 
 The following object types can be used in [includes](includes.md):
 
-Object type|Include key
------------|-----------
-[Client contact](client_contacts.md) | clientcontacts
-[Project](projects.md) | projects
-[Invoice](invoices.md) | invoices
-[Recurring invoice profile](recurring_profiles.md) | recurringprofiles
+Object type|Include key|Relationship
+-----------|-----------|----
+[Client contact](client_contacts.md) | clientcontacts | child
+[Project](projects.md) | projects | child
+[Invoice](invoices.md) | invoices | child
+[Recurring invoice profile](recurring_profiles.md) | recurringprofiles | child

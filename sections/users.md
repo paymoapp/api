@@ -210,7 +210,7 @@ type | text | Account type. Available options: `Admin`, `Employee`.
 active | boolean | If `true` the user is active and can use Paymo, otherwise it is retired (archived).
 timezone | text | User timezone. [List of available options](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 phone | text | Phone number
-skype | text | Skype account
+skype | text | Skype account name
 position | text | Job position description
 workday_hours | decimal | Number of working hours in a day. It is used to compute user performance.
 price_per_hour | decimal | Price per hour. It is used in invoicing to compute the cost of worked time.

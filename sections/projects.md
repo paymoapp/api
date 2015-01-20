@@ -199,12 +199,12 @@ updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the proj
 
 The following object types can be used in [includes](includes.md):
 
-Object type|Include key
------------|-----------
-[Client](clients.md) | client
-[Task list](tasklists.md) | tasklists
-[Task](tasks.md) | tasks
-[Time entry](entries.md) | entries
-[Milestone](milestones.md) | milestones
-[Discussion](discussions.md) | discussions
-[File](files.md) | files
+Object type|Include key|Relationship
+-----------|-----------|----
+[Client](clients.md) | client | parent
+[Task list](tasklists.md) | tasklists | child
+[Task](tasks.md) | tasks | child
+[Time entry](entries.md) | entries | child
+[Milestone](milestones.md) | milestones | child
+[Discussion](discussions.md) | discussions | child
+[File](files.md) | files | child
