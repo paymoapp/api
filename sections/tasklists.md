@@ -4,7 +4,9 @@
 
 You can list task lists by making a GET request to:
 
-* `/api/tasklists` 
+* `/api/tasklists` for a list of all task lists from all projects
+* `/api/tasklists?where=project_id=[PROJECT_ID]` for a list of task lists from a project
+* `/api/tasklists?where=milestone_id=[MILESTONE_ID]` for a list of task lists linked with a milestone
  
 Example of response:
 
@@ -100,9 +102,9 @@ Example of request body if you want to change the tasklist name:
 
 The response will return `200 OK` and will contain the updated task list info as in the **Getting a task list** section.
 
-## Changing the order of task lists 
+## Changing the order of task lists
 
-To reorder the task lists from a project you need to make an **[update project](projects.md#update-tasklists-order)** request with a body similar to:
+To reorder the task lists in a project you need to make an **[update project](projects.md#update-tasklists-order)** request with a body similar to:
 
 ```json
 {
@@ -112,9 +114,10 @@ To reorder the task lists from a project you need to make an **[update project](
 
 where `tasklists_order` is a list of task list ids in the new order.
 
-## Changing the order of tasks
+<a name="update-tasks-order"></a>
+## Changing the order of tasks 
 
-To reorder the tasks from a task list you need to make an **update task list** request with a body similar to:
+To reorder the tasks in a task list you need to make an **update task list** request with a body similar to:
 
 ```json
 {

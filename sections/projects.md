@@ -164,9 +164,9 @@ To archive a project, make an update request with the following request body:
 To activate, send a `true` value.
 
 <a name="update-tasklists-order"></a>
-## Changing the order of task lists 
+## Changing the order of task lists
 
-To reorder the task list from a project, make an update request to:
+To reorder the task lists in a project, make an update request to:
 
 * `/api/projects/[PROJECT_ID]`
 
@@ -174,7 +174,7 @@ with a body similar to:
 
 ```json
 {
-   "tasklists_order": [ 3, 4, 2, 1 ]
+   "tasklists_order": [ 493, 50, 128, 2, 4 ]
 }
 ```
 
