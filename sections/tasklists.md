@@ -11,28 +11,28 @@ You can list task lists by making a GET request to:
 Example of response:
 
 ```json
-     {
-        "tasklists": [
-           {
-              "id": 499,
-              "name": "Design",
-              "project_id": 1,
-              "seq": 1,
-              "milestone_id": 3,
-              "created_on": "2013-06-26T12:07:44Z",
-              "updated_on": "2014-07-23T14:22:05Z"
-           },
-           {
-              "id": 518,
-              "name": "Coding",
-              "project_id": 1,
-              "seq": 2,
-              "milestone_id": null,
-              "created_on": "2013-06-26T12:07:44Z",
-              "updated_on": "2014-07-23T14:22:05Z"
-           }
-        ]
-     }
+{
+   "tasklists": [
+      {
+         "id": 499,
+         "name": "Design",
+         "project_id": 1,
+         "seq": 1,
+         "milestone_id": 3,
+         "created_on": "2013-06-26T12:07:44Z",
+         "updated_on": "2014-07-23T14:22:05Z"
+      },
+      {
+         "id": 518,
+         "name": "Coding",
+         "project_id": 1,
+         "seq": 2,
+         "milestone_id": null,
+         "created_on": "2013-06-26T12:07:44Z",
+         "updated_on": "2014-07-23T14:22:05Z"
+      }
+   ]
+}
 ```
 
 You can also [include related content](includes.md) when listing task lists.
@@ -46,19 +46,19 @@ To get the task list info, make a GET request to:
 Example response:
 
 ```json
- {
-        "tasklists": [
-           {
-              "id": 499,
-              "name": "Design",
-              "project_id": 1,
-              "seq": 1,
-              "milestone_id": 3,
-              "created_on": "2013-06-26T12:07:44Z",
-              "updated_on": "2014-07-23T14:22:05Z"
-           }
-        ]
-     }
+{
+   "tasklists": [
+      {
+         "id": 499,
+         "name": "Design",
+         "project_id": 1,
+         "seq": 1,
+         "milestone_id": 3,
+         "created_on": "2013-06-26T12:07:44Z",
+         "updated_on": "2014-07-23T14:22:05Z"
+      }
+   ]
+}
 ```
 
 You can also [include related content](includes.md) when getting a task list.

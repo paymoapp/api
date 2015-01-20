@@ -13,42 +13,42 @@ You can list timesheet entries by making a GET request to:
 Example of response:
 
 ```json
+{
+  "entries": [
      {
-        "entries": [
-           {
-              "id": 15200864,
-              "task_id": 241184,
-              "user_id": 1563,
-              "start_time": "2014-12-11T09:30:00Z",
-              "end_time": "2014-12-11T10:15:00Z",
-              "description": "",
-              "added_manually": true,
-              "invoice_item_id": null,
-              "billed": false,
-              "is_bulk": false,
-              "project_id": 28934,
-              "created_on": "2014-12-12T14:42:49Z",
-              "updated_on": "2014-12-12T14:42:49Z",
-              "duration": 2700
-           },
-           {
-              "id": 14527147,
-              "task_id": 267662,
-              "user_id": 1647,
-              "start_time": "2014-12-02T08:53:40Z",
-              "end_time": "2014-12-02T08:58:40Z",
-              "description": "updated colors",
-              "added_manually": false,
-              "invoice_item_id": null,
-              "billed": false,
-              "is_bulk": false,
-              "project_id": 28930,
-              "created_on": "2014-12-02T09:01:34Z",
-              "updated_on": "2014-12-02T09:01:34Z",
-              "duration": 300
-           }
-        ]
+        "id": 15200864,
+        "task_id": 241184,
+        "user_id": 1563,
+        "start_time": "2014-12-11T09:30:00Z",
+        "end_time": "2014-12-11T10:15:00Z",
+        "description": "",
+        "added_manually": true,
+        "invoice_item_id": null,
+        "billed": false,
+        "is_bulk": false,
+        "project_id": 28934,
+        "created_on": "2014-12-12T14:42:49Z",
+        "updated_on": "2014-12-12T14:42:49Z",
+        "duration": 2700
+     },
+     {
+        "id": 14527147,
+        "task_id": 267662,
+        "user_id": 1647,
+        "start_time": "2014-12-02T08:53:40Z",
+        "end_time": "2014-12-02T08:58:40Z",
+        "description": "updated colors",
+        "added_manually": false,
+        "invoice_item_id": null,
+        "billed": false,
+        "is_bulk": false,
+        "project_id": 28930,
+        "created_on": "2014-12-02T09:01:34Z",
+        "updated_on": "2014-12-02T09:01:34Z",
+        "duration": 300
      }
+  ]
+}
 ```
 
 You can also [include related content](includes.md) when listing entries.
