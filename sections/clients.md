@@ -4,7 +4,9 @@
 
 You can list clients by making a GET request to:
 
-* `/api/clients` 
+* `/api/clients` for a list of all clients
+* `/api/clients?where=active=true` for a list of active clients
+* `/api/clients?where=active=false` for a list of archived clients
  
 Example of response:
 
@@ -150,7 +152,7 @@ If successful, the response will have a `200 OK` status code.
 
 ### Warning
 
-**Deleting a client will also delete all info related to that client: projects, task and task lists, time entries from those projects!
+**Deleting a client will also delete all info related to that client: projects, task and task lists, time entries from those projects!**
 
 ## The client object
 
@@ -169,7 +171,7 @@ phone | text | Phone number
 fax | text | Fax number
 email | email | Email address
 website | url | Website address
-active | boolean | _(read-only)_ If `true` the client is active, otherwise is archived.
+active | boolean | _(read-only)_ If `true` the client is active, otherwise the client is archived.
 fiscal_information | text | Fiscal information. It is used in invoice headers to display client details. 
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the client was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the client was last updated
