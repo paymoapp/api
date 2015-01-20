@@ -83,7 +83,7 @@ Example response:
 }
 ```
 
-You can also [include related content](includes.md) when getting a client.
+You can also [include related content](includes.md) when getting a time entry.
 
 ## Creating a time entry
 
@@ -119,11 +119,11 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 ### Required fields
 
-When creating a client: `task_id`, (`date` and `duration`) or (`start_time` and `end_time`).
+When creating a time entry: `task_id`, (`date` and `duration`) or (`start_time` and `end_time`).
 
 ## Updating a time entry
 
-To update an existing client, make a POST or PUT request to:
+To update an existing time entry, make a POST or PUT request to:
 
 * `/api/entries/[ENTRY_ID]`
 
@@ -141,7 +141,7 @@ You can change the `duration` only for the time entries that were added with `da
 
 For entries added with `start_time` and `end_time` the duration can be adjusted by updating the `end_time`.
 
-The response will return `200 OK` and will contain the updated client info as in the **Getting a client** section.
+The response will return `200 OK` and will contain the updated time entry info as in the **Getting a time entry** section.
 
 ## Deleting a time entry
 
