@@ -32,20 +32,19 @@ Example of response:
         "duration": 2700
      },
      {
-        "id": 14527147,
-        "task_id": 267662,
-        "user_id": 1647,
-        "start_time": "2014-12-02T08:53:40Z",
-        "end_time": "2014-12-02T08:58:40Z",
-        "description": "updated colors",
+        "id": 12186606,
+        "task_id": 2093082,
+        "user_id": 1563,
+        "description": "",
         "added_manually": false,
         "invoice_item_id": null,
         "billed": false,
-        "is_bulk": false,
-        "project_id": 28930,
-        "created_on": "2014-12-02T09:01:34Z",
-        "updated_on": "2014-12-02T09:01:34Z",
-        "duration": 300
+        "is_bulk": true,
+        "project_id": 347452,
+        "created_on": "2014-10-21T09:07:39Z",
+        "updated_on": "2014-10-21T09:07:39Z",
+        "duration": 21600,
+        "date": "2014-10-21"
      }
   ]
 }
