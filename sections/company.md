@@ -85,7 +85,7 @@ Example of request body if you want to change the company name:
 
 Attribute|Type|Description
 ------|------|-----
-id | integer | Unique company identifier
+id | integer | _(read-only)_ Unique company identifier
 name | text | Company name
 address | text | Company address
 phone | text | Company phone number
@@ -94,11 +94,11 @@ url | url | Company website
 fiscal_information | text | Fiscal information (used in invoice headers)
 country | text | Company country code in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format
 image | url | Company logo image URL
-image_thumb_large | url | Company logo large size thumnail URL
-image_thumb_medium | url | Company logo medium size thumnail URL
-image_thumb_small | url | Company logo small size thumnail URL
-created_on | [datetime](datetime.md) | Date and time when the project was created
-updated_on | [datetime](datetime.md) | Date and time when the project was last updated
+image_thumb_large | url | _(read-only)_ Company logo large size thumbnail URL
+image_thumb_medium | url | _(read-only)_ Company logo medium size thumbnail URL
+image_thumb_small | url | _(read-only)_ Company logo small size thumbnail URL
+created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was created
+updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was last updated
 timezone | text | Default company timezone. This timezone value will be used by default when viewing invoices, reports, estimates in permalinks. [List of available options](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 default_currency | text | Default currency for the company. [List of available currencies](currencies.md)
 default_price_per_hour | text | Default price per hour. It is used as the default value for user price per hour, when adding new users. 
@@ -116,13 +116,13 @@ week_start | text | Numeric value in the range 0-6 representing the day the week
 workday_start | text | Workday start hour in HH:SS 24-hour format
 workday_end | text | Workday end hour in HH:SS 24-hour format
 working_days | text | Comma separated list of working days of the week. Days are represented by numbers in the range 0-6, 0 being Sunday, 6 being Saturday.
-account_type | text | Type of Paymo account: free or commercial
-max_users | integer | Maximal number of active users for the company, as set up in the Paymo subscription
-current_users | integer | Number of active users in the company
-max_projects | integer | Maximal number of active projects for the company. If `null`, the limit does not apply.
-current_projects | integer | Number of active projects in the company
-max_invoices | integer | Maximal number of invoices that can be created this month, as set up in the Paymo subscription. If `null`, the limit does not apply.
-current_invoices | integer | Number of invoices created this month
+account_type | text | _(read-only)_ Type of Paymo account: free or commercial
+max_users | integer | _(read-only)_ Maximal number of active users for the company, as set up in the Paymo subscription
+current_users | integer | _(read-only)_ Number of active users in the company
+max_projects | integer | _(read-only)_ Maximal number of active projects for the company. If `null`, the limit does not apply.
+current_projects | integer | _(read-only)_ Number of active projects in the company
+max_invoices | integer | _(read-only)_ Maximal number of invoices that can be created this month, as set up in the Paymo subscription. If `null`, the limit does not apply.
+current_invoices | integer | _(read-only)_ Number of invoices created this month
 
 
 

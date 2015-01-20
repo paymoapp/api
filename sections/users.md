@@ -203,7 +203,7 @@ A user object has the following attributes:
 
 Attribute|Type|Description
 ---------|----|-----------
-id | integer | Unique user identifier
+id | integer | _(read-only)_ Unique user identifier
 name | text | Full name
 email | email | Email address. There are no two active users in Paymo with the same email address. Email is used to receive notifications from Paymo as well as to log into Paymo.
 type | text | Account type. Available options: `Admin`, `Employee`.
@@ -214,12 +214,12 @@ skype | text | Skype account
 position | text | Job position description
 workday_hours | decimal | Number of working hours in a day. It is used to compute user performance.
 price_per_hour | decimal | Price per hour. It is used in invoicing to compute the cost of worked time.
-created_on | [datetime](datetime.md) | Date and time when the user was created
-updated_on | [datetime](datetime.md) | Date and time when the user was last updated
+created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the user was created
+updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the user was last updated
 image | url | User profile image URL
-image_thumb_large | url | User profile image large size thumnail URL
-image_thumb_medium | url | User profile image medium size thumnail URL
-image_thumb_small | url | User profile image small size thumnail URL
+image_thumb_large | url | _(read-only)_ User profile image large size thumbnail URL
+image_thumb_medium | url | _(read-only)_ User profile image medium size thumbnail URL
+image_thumb_small | url | _(read-only)_ User profile image small size thumbnail URL
 date_format | text | Format for displaying dates in the application. Available options: `Y-m-d`, `d/m/Y`, `m/d/Y`, `d.m.Y`.
 time_format | text | Format for displaying time values. Available options: `H:i` for 24-hour format, `h:i a` for 12-hour format. 
 decimal_sep | text | Decimal separator for displaying numeric values
@@ -229,4 +229,18 @@ language | text | Paymo user interface language
 theme | text | Paymo user interface theme name
 assigned_projects | list | List of projects ids to which the user is assigned 
 managed_projects | list | List of projects ids that the user manages. This list is a subset of `assigned_projects`.
-is_online | boolean | If `true` the user is logged into Paymo.
+is_online | boolean | _(read-only)_ If `true` the user is logged into Paymo.
+
+## Dependent objects
+
+The following object types ca be used in [includes](includes.md):
+
+Object type|Include key
+-----------|-----------
+[Comment](comments.md) | comments
+[Discussion](discussions.md) | discussions
+[Time entry](entries.md) | entries
+[Expense](expenses.md) | expenses
+[File](files.md) | files
+[Milestone](milestones.md) | milestones
+[Report](reports.md) | reports

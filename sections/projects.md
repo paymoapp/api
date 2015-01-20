@@ -1,6 +1,6 @@
-#Projects
+# Projects
 
-##Getting projects
+## Getting projects
 
 You can list projects by making a GET request to:
 
@@ -169,7 +169,7 @@ To delete a project, make a DELETE request to:
 
 * `/api/projects/[PROJECT_ID]`
 
-If successful, the response will contain a `200 OK`. 
+If successful, the response will have a `200 OK` status code. 
 
 ### Warning
 
@@ -181,7 +181,7 @@ A project object has the following attributes:
 
 Attribute|Type|Description
 ---------|----|-----
-id | integer | Unique project identifier
+id | integer | _(read-only)_ Unique project identifier
 name | text | Project name 
 description | text | Project description
 client_id | integer | Id of the client for whom the project was created
@@ -192,8 +192,8 @@ billable | boolean | Used in reporting. If true the project is taken into accoun
 color | text | An RGB value representing a color for the project when used in charts.
 users | list | A list of ids of users assigned to the project. This list contains also the ids of the managers for this project.
 managers | list | A list of ids of users that are managers for the project. It is a subset of the `users` list.
-created_on | [datetime](datetime.md) | Date and time when the project was created
-updated_on | [datetime](datetime.md) | Date and time when the project was last updated
+created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was created
+updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was last updated
 
 ## Dependent objects
 
@@ -208,5 +208,3 @@ Object type|Include key
 [Milestone](milestones.md) | milestones
 [Discussion](discussions.md) | discussions
 [File](files.md) | files
-
-

@@ -10,6 +10,7 @@ curl -u email:password -H 'Accept: application/json' https://app.paymoapp.com/ap
 
 Most HTTP client applications support HTTP Basic authentication out of the box.
 
+<a name="sessions"></a>
 ##Using Sessions
 
 Another way to authenticate the API requests are by using session tokens. This token is sent by an HTTP header named `X-Session`
