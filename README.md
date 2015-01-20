@@ -11,13 +11,18 @@ The API base URL is `https://app.paymoapp.com/api/`. It is **SSL only**. There i
 An example request using `curl` for retrieving the list of clients may look like this:
 
 ```shell
-curl -u email:password -H 'Accept: application/json' https://app.paymoapp.com/api/clients
+curl -u email:password 
+  -H 'Accept: application/json' 
+  https://app.paymoapp.com/api/clients
 ```
 
 Updating a client using `curl` my look like:
 
 ```shell
-curl -d "name=updated%20name" https://app.paymoapp.com/api/clients/12345
+curl -u email:password
+  -H 'Accept: application/json'
+  -d "name=updated%20name"
+  https://app.paymoapp.com/api/clients/12345
 ```
 
 ##Authentication
@@ -34,7 +39,7 @@ Read more about [content types](sections/content_types.md).
 
 ##Response codes and error handling
 
-The Paymo 3 API will return an 2xx for successful requests. The 4xx errors means an error on the user side. And the 5xx errors are returned when the Paymo service is having trouble processing your request.
+The Paymo 3 API will return a 2xx status code for successful requests. The 4xx error means an error on the user side. And the 5xx errors are returned when the Paymo service is having trouble processing your request.
 
 The response in case of error will contain an error message to help you fix it.
 

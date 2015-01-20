@@ -1,0 +1,232 @@
+# Users
+
+Paymo users are assigned to a company. The types of users are:
+  
+  * _Admins_, have rights to everything in a company.
+  * _Employees_, have rights only to the projects they are assigned to.
+  * _Project Managers_, like and employee, except they have full rights to the projects they manage.
+   
+To access Paymo, a user must be activated. The opposite of being activated is being retired (or archived) from Paymo.
+Retired users cannot log into Paymo. 
+   
+The maximal number of active users in a company is set up in the Paymo subscription.
+  
+## Getting users
+
+You can list users by making a GET request to:
+
+* `/api/users` for a list of all users in the company.
+* `/api/users?where=active=true` for a list of active users only.
+* `/api/users?where=active=false` for a list of retired users.
+* `/api/users?where=type=Admin` for a list of admin users.
+* `/api/users?where=type=Employee` for a list of employees.
+
+Example response for listing requests:
+
+```json
+{
+   "users": [
+      {
+         "id": 1,
+         "name": "Michael Scott",
+         "email": "michael@dundermifflin.com",
+         "type": "Admin",
+         "active": true,
+         "phone": "860-437-7283",
+         "skype": null,
+         "position": "CEO",
+         "workday_hours": 10,
+         "price_per_hour": 80,
+         "image": "https://app.paymoapp.com/assets/1/users/michael.jpg",
+         "created_on": "2013-08-01T13:09:16Z",
+         "updated_on": "2015-01-06T19:53:51Z",
+         "timezone": "US/Eastern",
+         "date_format": "m/d/Y",
+         "decimal_sep": ".",
+         "language": "en",
+         "thousands_sep": "",
+         "time_format": "H:i",
+         "week_start": "1",
+         "assigned_projects": [
+            28917,
+         ],
+         "managed_projects": [
+            28917
+         ]
+      },   
+      {
+         "id": 2,
+         "name": "Dwight Schrute",
+         "email": "dwight@dundermifflin.com",
+         "type": "Employee",
+         "active": true,
+         "timezone": "US/Central",
+         "phone": "860-437-1329",
+         "skype": null,
+         "position": "Marketing",
+         "workday_hours": 8,
+         "price_per_hour": 45,
+         "image": "https://app.paymoapp.com/assets/1/users/dwight.jpg",
+         "created_on": "2013-06-26T12:07:44Z",
+         "updated_on": "2014-10-15T12:56:43Z",
+         "date_format": "m/d/Y",
+         "decimal_sep": ".",
+         "language": "en",
+         "time_format": "H:i",
+         "week_start": "1",
+         "assigned_projects": [
+            28918,
+            28936
+         ],
+         "managed_projects": [
+            28936
+         ]
+      }      
+   ]
+}
+```
+
+You can also [include related content](includes.md) when getting the list of users.
+
+## Getting a user 
+
+To get the user's info, make a GET request to:
+
+* `/api/users/[USER_ID]`
+
+Example of response:
+
+```json
+{
+   "users": [
+      {
+         "id": 1,
+         "name": "Michael Scott",
+         "email": "michael@dundermifflin.com",
+         "type": "Admin",
+         "active": true,
+         "phone": "860-437-7283",
+         "skype": null,
+         "position": "CEO",
+         "workday_hours": 10,
+         "price_per_hour": 80,
+         "image": "https://app.paymoapp.com/assets/1/users/michael.jpg",
+         "created_on": "2013-08-01T13:09:16Z",
+         "updated_on": "2015-01-06T19:53:51Z",
+         "timezone": "US/Eastern",
+         "date_format": "m/d/Y",
+         "decimal_sep": ".",
+         "language": "en",
+         "thousands_sep": "",
+         "time_format": "H:i",
+         "week_start": "1",
+         "assigned_projects": [
+            28917,
+         ],
+         "managed_projects": [
+            28917
+         ]
+      }
+   ]
+}
+```
+
+You can also [include related content](includes.md) when getting a user.
+
+## Creating a user
+
+To create a user, make a POST request to:
+
+* `/api/users`
+
+with the request body containing the new user info, as in the example below:
+
+```json
+{
+    "email": "kelly@dundermifflin.com",
+    "type": "Employee",
+    "assigned_projects": [28917]
+}
+```
+
+If successful, the response will return `201 Created`. The response body will contain the new user info as in the **Getting a user** section.
+
+If your company does not have a paid Paymo subscription or you have reached the active users limit set up by the subscription, you will get a `403 Error: Could not add user. Maximum number of users reached.`
+
+The user will receive a welcome email with a link that will take the user through the setup process, where a name and a password will be set.
+
+### Required fields 
+
+When creating a user: `email`.
+
+## Updating a user
+
+To update an existing user, make a POST or PUT request to:
+
+* `/api/users/[USER_ID]`
+
+with the request body containing the updated info. You can send only the changed fields.
+
+Example of request body if you want to change the list of assigned projects of a user:
+
+```json
+{
+    "assigned_projects": [28917, 28918]
+}
+```
+
+### Archiving (retiring) or activating a user
+
+To archive a user, make an update request with the following request body:
+
+```json
+{
+    "active": false
+}
+```
+
+To activate, send a `true` value.
+
+## Deleting a user
+
+To delete a user, make a DELETE request to:
+
+* `/api/users/[USER_ID]`
+
+### Warning
+
+**Deleting a user will also delete all time logged by that user!**
+
+## The user object
+
+A user object has the following attributes:
+
+Attribute|Type|Description
+---------|----|-----------
+id | integer | Unique user identifier
+name | text | Full name
+email | email | Email address. There are no two active users in Paymo with the same email address. Email is used to receive notifications from Paymo as well as to log into Paymo.
+type | text | Account type. Available options: `Admin`, `Employee`.
+active | boolean | If `true` the user is active and can use Paymo, otherwise it is retired (archived).
+timezone | text | User timezone. [List of available options](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+phone | text | Phone number
+skype | text | Skype account
+position | text | Job position description
+workday_hours | decimal | Number of working hours in a day. It is used to compute user performance.
+price_per_hour | decimal | Price per hour. It is used in invoicing to compute the cost of worked time.
+created_on | [datetime](datetime.md) | Date and time when the user was created
+updated_on | [datetime](datetime.md) | Date and time when the user was last updated
+image | url | User profile image URL
+image_thumb_large | url | User profile image large size thumnail URL
+image_thumb_medium | url | User profile image medium size thumnail URL
+image_thumb_small | url | User profile image small size thumnail URL
+date_format | text | Format for displaying dates in the application. Available options: `Y-m-d`, `d/m/Y`, `m/d/Y`, `d.m.Y`.
+time_format | text | Format for displaying time values. Available options: `H:i` for 24-hour format, `h:i a` for 12-hour format. 
+decimal_sep | text | Decimal separator for displaying numeric values
+thousands_sep | text | Thousands separator for displaying numeric values
+week_start | text | Numeric value in the range 0-6 representing the day the week starts, 0 being Sunday, 6 being Saturday.
+language | text | Paymo user interface language
+theme | text | Paymo user interface theme name
+assigned_projects | list | List of projects ids to which the user is assigned 
+managed_projects | list | List of projects ids that the user manages. This list is a subset of `assigned_projects`.
+is_online | boolean | If `true` the user is logged into Paymo.
