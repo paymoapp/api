@@ -142,6 +142,25 @@ To archive a client, make an update request with the following body:
 
 To activate, send a `true` value.
 
+## Adding a client logo 
+
+To add a client logo image, make a POST request to:
+
+* `/api/clients/[CLIENT_ID]`
+
+The request content-type should be `multipart-form-data` and the file field name equal to `image`. Here's an example using `curl` command line:
+
+```curl
+curl -u email:password
+  -H 'Accept: application/json'
+  -F "image=@logo.png"
+  https://app.paymoapp.com/api/clients/12345
+```
+
+Accepted image file formats are: JPEG, PNG, GIF.
+
+The logo image of a client can be added when creating the client. In that case, all the client fields should be send in `multipart-form-data` format together with the file.
+
 ## Deleting a client
 
 To delete a client, make a DELETE request to:

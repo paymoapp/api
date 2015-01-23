@@ -149,6 +149,25 @@ To remove access, make the update request with the following body:
 }
 ```
 
+## Adding a client contact profile image 
+
+To add a client contact profile image, make a POST request to:
+
+* `/api/clientcontacts/[CONTACT_ID]`
+
+The request content-type should be `multipart-form-data` and the file field name equal to `image`. Here's an example using `curl` command line:
+
+```curl
+curl -u email:password
+  -H 'Accept: application/json'
+  -F "image=@photo.jpg"
+  https://app.paymoapp.com/api/clientcontacts/12345
+```
+
+Accepted image file formats are: JPEG, PNG, GIF.
+
+The profile image of a client contact can be added when creating the client contact. In that case, all the client contact fields should be send in `multipart-form-data` format together with the file.
+
 ## Deleting a client contact
 
 To delete a client contact, make a DELETE request to:

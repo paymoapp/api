@@ -187,6 +187,25 @@ To archive a user, make an update request with the following request body:
 
 To activate, send a `true` value.
 
+## Adding a profile photo 
+
+To add a user profile photo, make a POST request to:
+
+* `/api/users/[USER_ID]`
+
+The request content-type should be `multipart-form-data` and the file field name equal to `image`. Here's an example using `curl` command line:
+
+```curl
+curl -u email:password
+  -H 'Accept: application/json'
+  -F "image=@file.jpg"
+  https://app.paymoapp.com/api/users/12345
+```
+
+Accepted image file formats are: JPEG, PNG, GIF.
+
+The profile image of an user can be added when creating the user. In that case, all the user fields should be send in `multipart-form-data` format together with the file.
+
 ## Deleting a user
 
 To delete a user, make a DELETE request to:

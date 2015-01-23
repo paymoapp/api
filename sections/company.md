@@ -81,6 +81,23 @@ Example of request body if you want to change the company name:
 
 **Note**: Not all the attributes of a company can be changed.
 
+## Adding a company logo 
+
+To add a company logo image, make a POST request to:
+
+* `/api/company`
+
+The request content-type should be `multipart-form-data` and the file field name equal to `image`. Here's an example using `curl` command line:
+
+```curl
+curl -u email:password
+  -H 'Accept: application/json'
+  -F "image=@logo.png"
+  https://app.paymoapp.com/api/company
+```
+
+Accepted image file formats are: JPEG, PNG, GIF.
+
 ## The company object
 
 Attribute|Type|Description
