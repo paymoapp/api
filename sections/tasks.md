@@ -5,6 +5,7 @@
 * [Creating a task](#create)
 * [Updating a task](#update)
 * [Changing the order of tasks](#update-tasks-order)
+* [Adding a file to a task](#add-file)
 * [Deleting a task](#delete)
 * [The task object](#object)
 * [Dependent objects](#dependencies)
@@ -77,6 +78,8 @@ You can also [include related content](includes.md) when listing tasks.
 To get the task info, make a GET request to:
 
 * `/api/tasks/[TASK_ID]`
+* `/api/tasks/[TASK_ID]?include=thread.comments` for task info with a list of comments to it
+* `/api/tasks/[TASK_ID]?include=files` for task info with a list of attached files
 
 Example response:
 
@@ -166,6 +169,24 @@ where `tasks_order` is a list of task ids (from the task list) in the new order.
 
 You can change the order of a subset of tasks by sending only the list of task ids that changed their position.
 
+<a name="add-file"></a>
+## Adding a file to a task
+
+To add a file to a task, make a POST request to:
+
+* `/api/tasks/[TASK_ID]`
+
+The request content-type should be `multipart-form-data` and the file field name equal to `file`. Here's an example using `curl` command line:
+
+```curl
+curl -u email:password
+  -H 'Accept: application/json'
+  -F "file=@screenshot.png"
+  https://app.paymoapp.com/api/tasks/12345
+```
+
+The file can also be added when creating the task. In that case, all the task fields should be send in `multipart-form-data` format together with the file.
+
 <a name="delete"></a>
 ## Deleting a task 
 
@@ -211,4 +232,5 @@ Object type|Include key|Relationship
 [Project](projects.md) | project | parent
 [Task list](tasklists.md) | tasklist | parent
 [User](users.md) | user | parent
+[Comments thread](comments.md) | thread | parent
 [Time entry](entries.md) | entries | child
