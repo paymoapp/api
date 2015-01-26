@@ -172,7 +172,7 @@ Example of request body if you want to attach the uploaded file to a comment:
 
 ```json
 {
-    "token": "060bee5d4f7aaf94ddd8629518260dc9"
+    "token": "060bee5d4f7aaf94ddd8629518260dc9",
     "comment_id": 123456
 }
 ```
