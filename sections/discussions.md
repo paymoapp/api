@@ -158,7 +158,7 @@ id | integer | _(read-only)_ Unique discussion identifier
 name | text | Discussion name
 description | html | Discussion description
 project_id | integer | Id of the project the discussion is about
-user_id | integer | Id of the user that started the discussion
+user_id | integer | _(read-only)_ Id of the user that started the discussion
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the discussion was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the discussion was last updated
 
