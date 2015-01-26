@@ -4,7 +4,7 @@
 * [Getting a file](#get)
 * [Uploading a file](#create)
 * [Updating a file](#update)
-* [Attaching a temporary file](#attach)
+* [Attaching an unattached file](#attach)
 * [Deleting a file](#delete)
 * [The file object](#object)
 * [Dependent objects](#dependencies)
@@ -160,7 +160,7 @@ Example of request body:
 The response will return `200 OK` and will contain the updated file info as in the **Getting a file** section.
 
 <a name="attach"></a>
-## Attaching a temporary file
+## Attaching an unattached file
 
 For a file added with no `project_id` info you get a `token` attribute. To attach this file to a project (or discussion, or task, or comment), make a POST or PUT request to:
 
