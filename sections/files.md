@@ -162,16 +162,18 @@ The response will return `200 OK` and will contain the updated file info as in t
 <a name="attach"></a>
 ## Attaching a temporary file
 
-For a file added with no `project_id` info you get a `token` attribute. To attach this file to a project (or discussion, or task, or comment), make a POST request to:
+For a file added with no `project_id` info you get a `token` attribute. To attach this file to a project (or discussion, or task, or comment), make a POST or PUT request to:
 
 * `/api/files/[FILE_ID]`
+
+with the `token` and `project_id` (or `discussion_id` or `task_id` or `comment_id`) in the request.
 
 Example of request body if you want to attach the uploaded file to a comment:
 
 ```json
 {
     "token": "060bee5d4f7aaf94ddd8629518260dc9"
-    "comment_id": 123456,
+    "comment_id": 123456
 }
 ```
 
