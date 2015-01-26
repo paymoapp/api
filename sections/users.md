@@ -1,5 +1,15 @@
 # Users
 
+* [Getting users](#list)
+* [Getting a user](#get)
+* [Creating a user](#create)
+* [Updating a user](#update)
+* [Archiving or activating a user](#archive)
+* [Adding a profile photo](#add-image)
+* [Deleting a user](#delete)
+* [The user object](#object)
+* [Dependent objects](#dependencies)
+
 Paymo users are assigned to a company. The types of users are:
   
   * _Admins_, have rights to everything in a company.
@@ -11,6 +21,7 @@ Retired users cannot log into Paymo.
    
 The maximal number of active users in a company is set up in the Paymo subscription.
   
+<a name="list"></a>  
 ## Getting users
 
 You can list users by making a GET request to:
@@ -88,6 +99,7 @@ Example response for listing requests:
 
 You can also [include related content](includes.md) when getting the list of users.
 
+<a name="get"></a>
 ## Getting a user 
 
 To get the user's info, make a GET request to:
@@ -133,6 +145,7 @@ Example of response:
 
 You can also [include related content](includes.md) when getting a user.
 
+<a name="create"></a>
 ## Creating a user
 
 To create a user, make a POST request to:
@@ -159,6 +172,7 @@ The user will receive a welcome email with a link that will take the user throug
 
 When creating a user: `email`.
 
+<a name="update"></a>
 ## Updating a user
 
 To update an existing user, make a POST or PUT request to:
@@ -175,7 +189,8 @@ Example of request body if you want to change the list of assigned projects of a
 }
 ```
 
-### Archiving (retiring) or activating a user
+<a name="archive"></a>
+## Archiving (retiring) or activating a user
 
 To archive a user, make an update request with the following request body:
 
@@ -187,6 +202,7 @@ To archive a user, make an update request with the following request body:
 
 To activate, send a `true` value.
 
+<a name="add-image"></a>
 ## Adding a profile photo 
 
 To add a user profile photo, make a POST request to:
@@ -206,6 +222,7 @@ Accepted image file formats are: JPEG, PNG, GIF.
 
 The profile image of an user can be added when creating the user. In that case, all the user fields should be send in `multipart-form-data` format together with the file.
 
+<a name="delete"></a>
 ## Deleting a user
 
 To delete a user, make a DELETE request to:
@@ -216,6 +233,7 @@ To delete a user, make a DELETE request to:
 
 **Deleting a user will also delete all time logged by that user!**
 
+<a name="object"></a>
 ## The user object
 
 A user object has the following attributes:
@@ -250,6 +268,7 @@ assigned_projects | list | List of projects ids to which the user is assigned
 managed_projects | list | List of projects ids that the user manages. This list is a subset of `assigned_projects`.
 is_online | boolean | _(read-only)_ If `true` the user is logged into Paymo.
 
+<a name="dependencies"></a>
 ## Dependent objects
 
 The following object types ca be used in [includes](includes.md):

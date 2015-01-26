@@ -1,5 +1,14 @@
 # Time entries
 
+* [Getting time entries](#list)
+* [Getting a time entry](#get)
+* [Creating a time entry](#create)
+* [Updating a time entry](#update)
+* [Deleting a time entry](#delete)
+* [The time entry object](#object)
+* [Dependent objects](#dependencies)
+
+<a name="list"></a>
 ## Getting time entries
 
 You can list timesheet entries by making a GET request to:
@@ -52,6 +61,7 @@ Example of response:
 
 You can also [include related content](includes.md) when listing entries.
 
+<a name="get"></a>
 ## Getting a time entry
 
 To get the time entry info, make a GET request to:
@@ -85,6 +95,7 @@ Example response:
 
 You can also [include related content](includes.md) when getting a time entry.
 
+<a name="create"></a>
 ## Creating a time entry
 
 To create a time entry, make a POST request to:
@@ -121,6 +132,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 When creating a time entry: `task_id`, (`date` and `duration`) or (`start_time` and `end_time`).
 
+<a name="update"></a>
 ## Updating a time entry
 
 To update an existing time entry, make a POST or PUT request to:
@@ -143,6 +155,7 @@ For entries added with `start_time` and `end_time` the duration can be adjusted 
 
 The response will return `200 OK` and will contain the updated time entry info as in the **Getting a time entry** section.
 
+<a name="delete"></a>
 ## Deleting a time entry
 
 To delete a time entry, make a DELETE request to:
@@ -151,6 +164,7 @@ To delete a time entry, make a DELETE request to:
 
 If successful, the response will have a `200 OK` status code.
 
+<a name="object"></a>
 ## The time entry object
 
 A time entry object has the following attributes:
@@ -172,6 +186,7 @@ invoice_item_id | integer | Id of the invoice item if the entry was billed (adde
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the entry was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the entry was last updated
 
+<a name="dependencies"></a>
 ## Dependent objects
 
 The following object types can be used in [includes](includes.md):

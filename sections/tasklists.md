@@ -1,5 +1,16 @@
 # Task lists
 
+* [Getting task lists](#list)
+* [Getting a task list](#get)
+* [Creating a task list](#create)
+* [Updating a task list](#update)
+* [Changing the order of task lists](#update-tasklists-order)
+* [Changing the order of tasks](#update-tasks-order)
+* [Deleting a task list](#delete)
+* [The task list object](#object)
+* [Dependent objects](#dependencies)
+
+<a name="list"></a>
 ## Getting task lists
 
 You can list task lists by making a GET request to:
@@ -37,6 +48,7 @@ Example of response:
 
 You can also [include related content](includes.md) when listing task lists.
 
+<a name="get"></a>
 ## Getting a task list
 
 To get the task list info, make a GET request to:
@@ -63,6 +75,7 @@ Example response:
 
 You can also [include related content](includes.md) when getting a task list.
 
+<a name="create"></a>
 ## Creating a task list
 
 To create a task list, make a POST request to:
@@ -84,6 +97,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 When creating a task list: `name`, `project_id`.
 
+<a name="update"></a>
 ## Updating a task list
 
 To update an existing task list, make a POST or PUT request to:
@@ -102,6 +116,7 @@ Example of request body if you want to change the tasklist name:
 
 The response will return `200 OK` and will contain the updated task list info as in the **Getting a task list** section.
 
+<a name="update-tasklists-order"></a>
 ## Changing the order of task lists
 
 To reorder the task lists in a project you need to make an **[update project](projects.md#update-tasklists-order)** request with a body similar to:
@@ -129,6 +144,7 @@ where `tasks_order` is a list of task ids in the new order.
 
 **Note**: The order of tasks is defined per task list, not per project. 
 
+<a name="delete"></a>
 ## Deleting a task list
 
 To delete a task list, make a DELETE request to:
@@ -141,6 +157,7 @@ If successful, the response will have a `200 OK` status code.
 
 **Deleting a task list will also delete all other data from that tasklist: tasks and time entries!
 
+<a name="object"></a>
 ## The task list object
 
 A task list object has the following attributes:
@@ -154,6 +171,7 @@ milestone_id | integer | Id of the milestone it is linked with. If a task list i
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the list was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the list was last updated
 
+<a name="dependencies"></a>
 ## Dependent objects
 
 The following object types can be used in [includes](includes.md):

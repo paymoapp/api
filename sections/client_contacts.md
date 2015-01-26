@@ -1,5 +1,16 @@
 # Client contacts
 
+* [Getting client contacts](#list)
+* [Getting a client contact](#get)
+* [Creating a client contact](#create)
+* [Updating a client contact](#update)
+* [Giving access to clients portal](#access)
+* [Adding a client contact profile image](#add-image)
+* [Deleting a client contact](#delete)
+* [The client contact object](#object)
+* [Dependent objects](#dependencies)
+
+<a name="list"></a>
 ## Getting client contacts
 
 You can list client contacts by making a GET request to:
@@ -52,6 +63,7 @@ Example of response:
 
 You can also [include related content](includes.md) when listing client contacts.
 
+<a name="get"></a>
 ## Getting a client contact
 
 To get the client contact info, make a GET request to:
@@ -86,6 +98,7 @@ Example response:
 
 You can also [include related content](includes.md) when getting a client contact.
 
+<a name="create"></a>
 ## Creating a client contact
 
 To create a client contact, make a POST request to:
@@ -109,6 +122,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 When creating a client: `name`, `client_id`.
 
+<a name="update"></a>
 ## Updating a client contact
 
 To update an existing client contact, make a POST or PUT request to:
@@ -128,6 +142,7 @@ Example of request body if you want to change the contact name and phone number:
 
 The response will return `200 OK` and will contain the updated client contact info as in the **Getting a client contact** section.
 
+<a name="access"></a>
 ## Giving access to clients portal
 
 To give a client contact access to the clients portal, make an update request with the following body:
@@ -149,6 +164,7 @@ To remove access, make the update request with the following body:
 }
 ```
 
+<a name="add-image"></a>
 ## Adding a client contact profile image 
 
 To add a client contact profile image, make a POST request to:
@@ -168,6 +184,7 @@ Accepted image file formats are: JPEG, PNG, GIF.
 
 The profile image of a client contact can be added when creating the client contact. In that case, all the client contact fields should be send in `multipart-form-data` format together with the file.
 
+<a name="delete"></a>
 ## Deleting a client contact
 
 To delete a client contact, make a DELETE request to:
@@ -176,6 +193,7 @@ To delete a client contact, make a DELETE request to:
 
 If successful, the response will have a `200 OK` status code.
 
+<a name="object"></a>
 ## The client contact object
 
 A client contact object has the following attributes:
@@ -200,6 +218,7 @@ image_thumb_large | url | _(read-only)_ Profile image large size thumbnail URL
 image_thumb_medium | url | _(read-only)_ Profile image medium size thumbnail URL
 image_thumb_small | url | _(read-only)_ Profile image small size thumbnail URL
 
+<a name="dependencies"></a>
 ## Dependent objects
 
 The following object types can be used in [includes](includes.md):

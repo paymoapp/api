@@ -1,5 +1,16 @@
 # Clients
 
+* [Getting clients](#list)
+* [Getting a client](#get)
+* [Creating a client](#create)
+* [Updating a client](#update)
+* [Archiving or activating a client](#archive)
+* [Adding a client logo](#add-image)
+* [Deleting a client](#delete)
+* [Client object](#object)
+* [Dependent objects](#dependecies)
+
+<a name="list"></a>
 ## Getting clients
 
 You can list clients by making a GET request to:
@@ -55,6 +66,7 @@ Example of response:
 
 You can also [include related content](includes.md) when listing clients.
 
+<a name="get"></a>
 ## Getting a client
 
 To get the client info, make a GET request to:
@@ -90,6 +102,7 @@ Example response:
 
 You can also [include related content](includes.md) when getting a client.
 
+<a name="create"></a>
 ## Creating a client
 
 To create a client, make a POST request to:
@@ -130,6 +143,7 @@ Example of request body if you want to change the client name and address:
 
 The response will return `200 OK` and will contain the updated client info as in the **Getting a client** section.
 
+<a name="archive"></a>
 ## Archiving or activating a client
 
 To archive a client, make an update request with the following body:
@@ -142,6 +156,7 @@ To archive a client, make an update request with the following body:
 
 To activate, send a `true` value.
 
+<a name="add-image"></a>
 ## Adding a client logo 
 
 To add a client logo image, make a POST request to:
@@ -161,6 +176,7 @@ Accepted image file formats are: JPEG, PNG, GIF.
 
 The logo image of a client can be added when creating the client. In that case, all the client fields should be send in `multipart-form-data` format together with the file.
 
+<a name="delete"></a>
 ## Deleting a client
 
 To delete a client, make a DELETE request to:
@@ -173,6 +189,7 @@ If successful, the response will have a `200 OK` status code.
 
 **Deleting a client will also delete all info related to that client: projects, task and task lists, time entries from those projects!**
 
+<a name="object"></a>
 ## The client object
 
 A client object has the following attributes:
@@ -199,6 +216,7 @@ image_thumb_large | url | _(read-only)_ Client logo image large size thumbnail U
 image_thumb_medium | url | _(read-only)_ Client logo image medium size thumbnail URL
 image_thumb_small | url | _(read-only)_ Client logo image small size thumbnail URL
 
+<a name="dependencies"></a>
 ## Dependent objects
 
 The following object types can be used in [includes](includes.md):

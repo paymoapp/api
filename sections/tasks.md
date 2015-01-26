@@ -1,5 +1,15 @@
 # Tasks
 
+* [Getting tasks](#list)
+* [Getting a task](#get)
+* [Creating a task](#create)
+* [Updating a task](#update)
+* [Changing the order of tasks](#update-tasks-order)
+* [Deleting a task](#delete)
+* [The task object](#object)
+* [Dependent objects](#dependencies)
+
+<a name="list"></a>
 ## Getting tasks
 
 You can list tasks by making a GET request to:
@@ -61,6 +71,7 @@ Example of response:
 
 You can also [include related content](includes.md) when listing tasks.
 
+<a name="get"></a>
 ## Getting a task 
 
 To get the task info, make a GET request to:
@@ -97,6 +108,7 @@ Example response:
 
 You can also [include related content](includes.md) when getting a tasks.
 
+<a name="create"></a>
 ## Creating a task
 
 To create a task, make a POST request to:
@@ -120,6 +132,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 When creating a task list: `name`, `tasklist_id`.
 
+<a name="update"></a>
 ## Updating a task
 
 To update an existing task, make a POST or PUT request to:
@@ -138,6 +151,7 @@ Example of request body if you want to change the task name:
 
 The response will return `200 OK` and will contain the updated task info as in the **Getting a task** section.
 
+<a name="update-tasks-order"></a>
 ## Changing the order of tasks
 
 To reorder the tasks in a task list you need to make an **[update task list](tasklists.md#update-tasks-order)** request with a body similar to:
@@ -152,6 +166,7 @@ where `tasks_order` is a list of task ids (from the task list) in the new order.
 
 You can change the order of a subset of tasks by sending only the list of task ids that changed their position.
 
+<a name="delete"></a>
 ## Deleting a task 
 
 To delete a task, make a DELETE request to:
@@ -164,6 +179,7 @@ If successful, the response will have a `200 OK` status code.
 
 **Deleting a task will also delete all time entries logged for that task!**
 
+<a name="object"></a>
 ## The task object
 
 A task object has the following attributes:
@@ -185,6 +201,7 @@ users | list | List of user ids that are assigned to the task. If no users are a
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the list was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the list was last updated
 
+<a name="dependencies"></a>
 ## Dependent objects
 
 The following object types can be used in [includes](includes.md):

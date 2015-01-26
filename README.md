@@ -1,9 +1,20 @@
 #The Paymo 3 API
 
+* [Making a request](#make-request)
+* [Authentication](#authentication)
+* [Request and response content types](#content-types)
+* [Response codes and error handling](#response-codes)
+* [Rate limiting](#rate-limit)
+* [Common API structures](#api-structures)
+* [Filtering](#filtering)
+* [Including related content](#includes)
+
+
 The Paymo 3 API is not compatible with the [Paymo 2 API](http://api.paymo.biz/). This is a [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) API that uses XML/JSON for serialization.
 
 Accepted request types (HTTP verbs) are: GET, POST, PUT, DELETE.
 
+<a name="make-request"></a>
 ##Making a request
 
 The API base URL is `https://app.paymoapp.com/api/`. It is **SSL only**. There is no way to use the API over unsecure http:// protocol.
@@ -25,18 +36,21 @@ curl -u email:password
   https://app.paymoapp.com/api/clients/12345
 ```
 
+<a name="authentication"></a>
 ##Authentication
 
 For the moment, only [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication) is available. This is secure because all requests go over SSL.
  
 Read the [authentication guide](https://github.com/paymoapp/api/blob/master/sections/authentication.md) for more details.
 
+<a name="content-types"></a>
 ##Request and response content types
 
 Paymo 3 API supports JSON as well as XML for data serialization, as well as specific types such as PDF, XLS for reports, invoices, estimates.
 
 Read more about [content types](sections/content_types.md).
 
+<a name="response-codes"></a>
 ##Response codes and error handling
 
 The Paymo 3 API will return a 2xx status code for successful requests. The 4xx error means an error on the user side. And the 5xx errors are returned when the Paymo service is having trouble processing your request.
@@ -45,6 +59,12 @@ The response in case of error will contain an error message to help you fix it.
 
 You may want to consult a reference for [HTTP Status codes](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
+<a name="rate-limit"></a>
+## Rate limiting
+
+If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4) response and for all following requests until the limit expires. A header `Retry-After` will also be returned and will represent the number of seconds you should wait before making the next request.
+
+<a name="api-structures"></a>
 ##Common API structures
 
 ###Object types
@@ -77,12 +97,14 @@ This is the list of object types that exist in the Paymo 3 API:
 
 * [Date and time values](sections/datetime.md)
 
+<a name="filtering"></a>
 ##Filtering
 
 If you want to filter the response of listings, you can do so by supplying the `where` parameter in the request URL. 
 
 Read more about [response filtering](sections/filtering.md)
 
+<a name="includes"></a>
 ##Including related content
 
 If you want a response to include additional information about an object, you can do so by supplying the `include` or `partial_include` parameters in the request URL. 

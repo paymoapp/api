@@ -1,5 +1,11 @@
 # Company
 
+* [Getting company info](#get)
+* [Updating company](#update)
+* [Adding a company logo](#add-image)
+* [The company object](#object)
+
+<a name="get"></a>
 ## Getting company info
 
 You can get the company info along with the settings for the company by making a GET request to:
@@ -63,6 +69,7 @@ Example response:
 }
 ```
 
+<a name="update"></a>
 ## Updating company 
 
 To update the company info or add/modify a company setting, make a POST or PUT request to:
@@ -81,6 +88,7 @@ Example of request body if you want to change the company name:
 
 **Note**: Not all the attributes of a company can be changed.
 
+<a name="add-image"></a>
 ## Adding a company logo 
 
 To add a company logo image, make a POST request to:
@@ -98,6 +106,7 @@ curl -u email:password
 
 Accepted image file formats are: JPEG, PNG, GIF.
 
+<a name="object"></a>
 ## The company object
 
 Attribute|Type|Description

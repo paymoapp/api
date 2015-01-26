@@ -1,7 +1,13 @@
 # Sessions
 
+* [Getting sessions](#list)
+* [Getting a session](#get)
+* [Creating a session](#create)
+* [Deleting a session](#delete)
+
 Sessions are used for authentication as described in [Authentication Guide](authentication.md#sessions). 
 
+<a name="list"></a>
 ## Getting sessions
 
 You can list sessions for the current user by making a GET request to:
@@ -33,6 +39,7 @@ Example of response:
 }     
 ```
 
+<a name="get"></a>
 ## Getting a session
 
 To get the session info, make a GET request to:
@@ -56,6 +63,7 @@ Example response:
 }     
 ```
 
+<a name="create"></a>
 ## Creating a session
 
 To create a session, make a POST request with an empty body to:
@@ -64,6 +72,7 @@ To create a session, make a POST request with an empty body to:
 
 The response will contain the new session info.
 
+<a name="delete"></a>
 ## Ending a session
 
 To end a session, send a DELETE request to:

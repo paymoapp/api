@@ -1,5 +1,16 @@
 # Projects
 
+* [Getting projects](#list)
+* [Getting a project](#get)
+* [Creating a project](#create)
+* [Updating a project](#update)
+* [Archiving or activating a project](#archive)
+* [Changing the order of task lists](#update-tasklists-order)
+* [Deleting a project](#delete)
+* [The project object](#object)
+* [Dependent objects](#dependencies)
+
+<a name="list"></a>
 ## Getting projects
 
 You can list projects by making a GET request to:
@@ -65,6 +76,7 @@ Example response for listing requests:
 
 You can also [include related content](includes.md) when getting the list of projects.
 
+<a name="get"></a>
 ## Getting a project
 
 To get the project's info if you know the project id, make a GET request to:
@@ -101,6 +113,7 @@ Example of response:
 
 You can also [include related content](includes.md) when getting a project.
 
+<a name="create"></a>
 ## Creating a project
 
 To create a new project, make a POST request to:
@@ -128,6 +141,7 @@ If your company does not have a Paymo paid subscription and you have reached the
 
 When creating a project: `name`, `client_id`.
 
+<a name="update"></a>
 ## Updating a project
 
 To update an existing project, make a POST or PUT request to:
@@ -151,6 +165,7 @@ The response will return `200 OK` and will contain the updated project info as i
 
 If the user does not have the rights to update the project, a `403 Forbidden` response will be returned.
 
+<a name="archive"></a>
 ## Archiving or activating a project
 
 To archive a project, make an update request with the following request body:
@@ -180,6 +195,7 @@ with a body similar to:
 
 where `tasklists_order` is a list of task list ids in the new order.
 
+<a name="delete"></a>
 ## Deleting a project
 
 To delete a project, make a DELETE request to:
@@ -192,6 +208,7 @@ If successful, the response will have a `200 OK` status code.
 
 **Deleting a project will also delete all info contained by the project: task lists and tasks, discussions, files and time entries!**
 
+<a name="object"></a>
 ## The project object
  
 A project object has the following attributes:
@@ -212,6 +229,7 @@ managers | list | A list of ids of users that are managers for the project. It i
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was last updated
 
+<a name="dependencies"></a>
 ## Dependent objects
 
 The following object types can be used in [includes](includes.md):

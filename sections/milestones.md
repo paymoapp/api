@@ -1,5 +1,15 @@
 # Milestones
 
+* [Getting milestones](#list)
+* [Getting a milestone](#get)
+* [Creating a milestone](#create)
+* [Updating a milestone](#update)
+* [Completing a milestone](#complete)
+* [Deleting a milestone](#delete)
+* [The milestone object](#object)
+* [Dependent objects](#dependencies)
+
+<a name="list"></a>
 ## Getting milestones
 
 You can list milestones by making a GET request to:
@@ -48,6 +58,7 @@ Example of response:
 
 You can also [include related content](includes.md) when listing milestones.
 
+<a name="get"></a>
 ## Getting a milestone
 
 To get the milestone info, make a GET request to:
@@ -78,6 +89,7 @@ Example response:
 
 You can also [include related content](includes.md) when getting a milestone.
 
+<a name="create"></a>
 ## Creating a milestone
 
 To create a milestone, make a POST request to:
@@ -101,6 +113,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 When creating a milestones: `name`, `project_id`, `due_date`.
 
+<a name="update"></a>
 ## Updating a milestone
 
 To update an existing milestone, make a POST or PUT request to:
@@ -119,6 +132,7 @@ Example of request body if you want to change the milestone due date:
 
 The response will return `200 OK` and will contain the updated milestone info as in the **Getting a milestone** section.
 
+<a name="complete"></a>
 ## Completing a milestone
 
 To mark a milestone as complete, make an update request with the following body:
@@ -129,6 +143,7 @@ To mark a milestone as complete, make an update request with the following body:
 }
 ```
 
+<a name="delete"></a>
 ## Deleting a milestone
 
 To delete a milestone, make a DELETE request to:
@@ -137,6 +152,7 @@ To delete a milestone, make a DELETE request to:
 
 If successful, the response will have a `200 OK` status code.
 
+<a name="object"></a>
 ## The milestone object
 
 A milestone object has the following attributes:
@@ -155,6 +171,7 @@ linked_tasklists | list | List of task list ids that are linked with this milest
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the milestone was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the milestone was last updated
 
+<a name="dependencies"></a>
 ## Dependent objects
 
 The following object types can be used in [includes](includes.md):
