@@ -95,7 +95,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 ### Required fields
 
-When creating a discussions: `name`, `project_id`.
+When creating a discussion: `name`, `project_id`.
 
 <a name="update"></a>
 ## Updating a discussion
@@ -125,7 +125,7 @@ To add a file to a discussion, make a POST request to:
 
 The request content-type should be `multipart-form-data` and the file field name equal to `file`. Here's an example using `curl` command line:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   -F "file=@plan.doc"

@@ -111,7 +111,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 ### Required fields
 
-When creating a milestones: `name`, `project_id`, `due_date`.
+When creating a milestone: `name`, `project_id`, `due_date`.
 
 <a name="update"></a>
 ## Updating a milestone

@@ -173,7 +173,7 @@ To add a client contact profile image, make a POST request to:
 
 The request content-type should be `multipart-form-data` and the file field name equal to `image`. Here's an example using `curl` command line:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   -F "image=@photo.jpg"

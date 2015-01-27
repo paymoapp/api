@@ -112,7 +112,7 @@ The request content-type should be `multipart-form-data` and the file field name
 
 Here's an example using `curl` command line for uploading a file to a project:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   -F "file=@file.jpg"
@@ -122,7 +122,7 @@ curl -u email:password
 
 or an example of uploading a file and attaching it to a task:
 
-```curl
+```shell
 curl -u email:password
   -H 'Accept: application/json'
   -F "file=@file.jpg"
