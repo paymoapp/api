@@ -10,9 +10,9 @@
 
 Reports in Paymo 3 are of several types:
 
-* _static_ This is the most common type. It represents data as it was at the moment of report creation.
-* _live_ Reports of this type are regenerated every time you view them. These are useful when you have to make periodic reports with the same parameters.
-* _temp_ Temporary reports are not stored, so you cannot see them inside the Paymo application. Use them when you only need the data from the report, without the report persisting in Paymo.
+* _static_ - This is the most common type. It represents data as it was at the moment of report creation.
+* _live_ - Reports of this type are regenerated every time you view them. These are useful when you have to make periodic reports with the same parameters.
+* _temp_ - Temporary reports are not stored, so you cannot see them inside the Paymo application. Use them when you only need the data from the report, without the report persisting in Paymo.
 
 <a name="list"></a>
 ## Getting reports
@@ -96,6 +96,8 @@ Example of response:
     ]
 }
 ```
+
+*Note* When listing the reports, the actual content of the reports is not included. 
 
 You can also [include related content](includes.md) when listing reports.
 
@@ -426,8 +428,8 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 When creating a report: 
 
-Field|Required| Description
----- | ---------
+Field | Required | Description
+---- | --------- | -----------
 `name`| optional | Report name. Will appear in report header as well as in listings.
 `type`| required | Report type. A value from the list: `static`, `live`, `temp`
 `date_interval` | optional (to `start_date`, `end_date`) | If `date_interval` is sent, `start_date` and `end_date` are optional. See options below. 
