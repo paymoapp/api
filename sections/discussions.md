@@ -106,7 +106,7 @@ To update an existing discussion, make a POST or PUT request to:
 
 with the request body containing the updated info. You can send only the changed fields.
 
-Example of request body if you want to change the discussion due date:
+Example of request body if you want to change the discussion description:
 
 ```json
 {
