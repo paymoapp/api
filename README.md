@@ -5,7 +5,8 @@
 * [Request and response content types](#content-types)
 * [Response codes and error handling](#response-codes)
 * [Rate limiting](#rate-limit)
-* [Common API structures](#api-structures)
+* [API Endpoints](#api-endpoints)
+* [Data formats](#data-formats)
 * [Filtering](#filtering)
 * [Including related content](#includes)
 
@@ -64,12 +65,8 @@ You may want to consult a reference for [HTTP Status codes](http://en.wikipedia.
 
 If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4) response and for all following requests until the limit expires. A header `Retry-After` will also be returned and will represent the number of seconds you should wait before making the next request.
 
-<a name="api-structures"></a>
-##Common API structures
-
-###Object types
-
-This is the list of object types that exist in the Paymo 3 API:
+<a name="api-endpoints"></a>
+## API endpoints
 
 * [Company](sections/company.md)
 * [Users](sections/users.md)
@@ -93,9 +90,12 @@ This is the list of object types that exist in the Paymo 3 API:
 * [Invoice Templates](sections/invoice_templates.md)
 * [Estimate Templates](sections/estimate_templates.md)
 
-### Other data formats
+<a name="data-formats"></a>
+## Data formats
 
 * [Date and time values](sections/datetime.md)
+
+For a sample and an explanation of each endpoint object, see individual endpoint pages.
 
 <a name="filtering"></a>
 ##Filtering

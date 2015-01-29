@@ -55,5 +55,4 @@ When you want to end a session and make its token invalid, make a DELETE request
 
 ##OAuth 2
 
-Currently, OAuth 2 authentication is not implemented. But it is on our TODO list.
-
+Currently, Paymo 3 API does not support OAuth 2 authentication. 
