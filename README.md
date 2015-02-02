@@ -1,4 +1,4 @@
-#The Paymo 3 API
+#Paymo 3 API
 
 * [Making a request](#make-request)
 * [Authentication](#authentication)
