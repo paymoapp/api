@@ -10,6 +10,20 @@ curl -u email:password -H 'Accept: application/json' https://app.paymoapp.com/ap
 
 Most HTTP client applications support HTTP Basic authentication out of the box.
 
+<a name="api-keys"></a>
+##API Keys
+
+When using Paymo 3 API with a third-party software, we recommend you using API Keys instead of asking for user's email/password. API Keys can be generated from the Paymo application, on the [My Account](https://app.paymoapp.com/#Paymo.module.myaccount/) page. 
+Using an API Key is similar to Basic Auth, but instead of providing the email/password, you provide the API Key as the username and any text for the password. 
+
+For example:
+
+```shell
+curl -u apikey:X 
+    -H 'Accept: application/json'
+    https://app.paymoapp.com/api/me
+```
+
 <a name="sessions"></a>
 ##Using Sessions
 
@@ -53,6 +67,3 @@ A session token has an expiration date, after which it will be no longer valid.
 
 When you want to end a session and make its token invalid, make a DELETE request to `https://app.paymoapp.com/api/sessions/[SessionID]`.
 
-##OAuth 2
-
-Currently, Paymo 3 API does not support OAuth 2 authentication. 

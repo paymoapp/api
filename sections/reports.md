@@ -485,6 +485,7 @@ Option|Description
 `display_costs` | if set, the report will also contain computed costs for each included report element
 `display_project_budgets` | if set, the projects items from the report will contain project budget info
 `display_tasks_descriptions` | if set, tasks from the report will also contain their descriptions
+`display_tasks_complete_status` | if set, tasks from the report will also contain their completed status
 `display_entries_descriptions` | if set, entries from the report will also contain their descriptions
 `display_projects_descriptions` | if set, projects from the report will also contain their descriptions
 `display_seconds` | if set, the report will display time entries to the seconds (in Paymo application)
@@ -555,4 +556,4 @@ The following object types can be used in [includes](includes.md):
 Object type|Include key|Relationship
 -----------|-----------|----
 [User](users.md) | user | parent
-[Client](clients.md) | clients | parent
+[Client](clients.md) | client | parent
