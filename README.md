@@ -40,8 +40,6 @@ curl -u email:password
 <a name="authentication"></a>
 ##Authentication
 
-For the moment, only [HTTP Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication) is available. This is secure because all requests go over SSL.
- 
 Read the [authentication guide](https://github.com/paymoapp/api/blob/master/sections/authentication.md) for more details.
 
 <a name="content-types"></a>
