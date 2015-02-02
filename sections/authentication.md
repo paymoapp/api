@@ -44,7 +44,11 @@ Anyone using the session token has the same access level as the user for whom th
 
 ###Creating session tokens
 
-Session tokens are creating by making a POST request to `https://app.paymoapp.com/api/sessions`. When making this request, you have to use HTTP Basic authentication.
+Session tokens are creating by making a POST request to 
+
+* `https://app.paymoapp.com/api/sessions`
+
+When making this request, you have to use HTTP Basic authentication or an API Key.
 
 Sample request:
 
@@ -74,5 +78,7 @@ A session token has an expiration date, after which it will be no longer valid.
 
 ###Ending a session
 
-When you want to end a session and make its token invalid, make a DELETE request to `https://app.paymoapp.com/api/sessions/[SessionID]`.
+When you want to end a session and make its token invalid, make a DELETE request to:
+ 
+* `https://app.paymoapp.com/api/sessions/[SessionID]`
 
