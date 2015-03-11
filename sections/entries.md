@@ -180,6 +180,7 @@ start_time | datetime | Date and time when the time entry started. Note: `start_
 end_time | datetime | Date and time when the time entry ended
 date | date | Date when the time entry was added. Note: `date` and `duration` are not present for entries with `start_time` and `end_time`. 
 duration | integer | Time entry duration in seconds
+description | text | Time entry description
 added_manually | boolean | If `false` the entry was added using a timer (using start/stop in Paymo Widget).
 billed | boolean | If `true` the entry is billed. Time for the entry was added into an invoice.
 invoice_item_id | integer | Id of the invoice item if the entry was billed (added into an invoice).
