@@ -52,7 +52,7 @@ The options are:
 * `Accept: application/json` for getting the response in JSON format.
 * `Accept: text/xml` for XML format.
 
-If `Accept` header is not specified, the response will be in XML format by default.
+If `Accept` header is not specified, the response will be in JSON format by default.
 
 Additionally, for reports, invoices, estimates, expenses there is a PDF version of the document. You can get it by adding a `format=pdf` param to the query string.
 
