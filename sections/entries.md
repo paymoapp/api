@@ -194,7 +194,6 @@ The following object types can be used in [includes](includes.md):
 
 Object type|Include key|Relationship
 -----------|-----------|----
-[Project](projects.md) | project | parent
 [Task](tasks.md) | task | parent
 [Invoice item](invoices.md) | invoiceitem | parent
 [User](users.md) | user | parent
