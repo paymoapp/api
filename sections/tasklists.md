@@ -167,6 +167,7 @@ Attribute|Type|Description
 id | integer | _(read-only)_ Unique task list identifier
 name | text | Task list name
 seq | integer | Position (order) of the task list in the project
+project_id | integer | _(read-only)_ Project id
 milestone_id | integer | Id of the milestone it is linked with. If a task list is linked with a milestone, all tasks from the task list should be completed by the milestone due date. 
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the list was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the list was last updated
