@@ -228,6 +228,12 @@ Invoice items are defined in `items` property of the request object. It is an ar
 * `seq` (int) (optional) specifies the position of this invoice item among the items list
 * `entries` (array of entries ids) (optional) a list of entries that will be marked as billed (it is used when billing time from timesheets)
 
+<a name="create-from-estimate"></a>
+### Creating an invoice from an estimate
+
+When creating an invoice from an estimate, you should submit an additional field `estimate_id`. This will update the estimate status to `invoiced`.
+Note that you have to provide all the usual invoice information including invoice items. 
+
 <a name="update"></a>
 ## Updating an invoice
 
