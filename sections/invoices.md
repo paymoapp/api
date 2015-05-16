@@ -181,30 +181,28 @@ with the request body containing the new invoice info including the invoice item
 
 ```json
 {
-	{
-       "date":"2015-02-24",
-       "due_date":"2015-03-24",
-       "client_id":10869,
-       "currency":"USD",
-       "number":"INV-488",
-       "company_info":"Company Info\nMore info",
-       "bill_to":"Billing Info\nMore info",
-       "tax":20,
-       "items":[
-          {
-             "item":"Item 1",
-             "description":"Description & specs for item 1",
-             "price_unit":5.5,
-             "quantity":2,
-          },
-          {
-             "item":"Item 2",
-             "description":"Description\nFor Item 2",
-             "price_unit":159,
-             "quantity":1,
-          }
-       ]
-    }
+   "date":"2015-02-24",
+   "due_date":"2015-03-24",
+   "client_id":10869,
+   "currency":"USD",
+   "number":"INV-488",
+   "company_info":"Company Info\nMore info",
+   "bill_to":"Billing Info\nMore info",
+   "tax":20,
+   "items":[
+	  {
+		 "item":"Item 1",
+		 "description":"Description & specs for item 1",
+		 "price_unit":5.5,
+		 "quantity":2,
+	  },
+	  {
+		 "item":"Item 2",
+		 "description":"Description\nFor Item 2",
+		 "price_unit":159,
+		 "quantity":1,
+	  }
+   ]
 }
 ```
 
@@ -317,6 +315,7 @@ pay_online | boolean | If `true` and online payments are configured in company s
 reminder_1_sent | boolean | _(read-only)_ This flag that is set to `true` when 1st reminder email was sent to client for the overdue invoice. You can define up to 3 late payment reminders in Invoicing area of Paymo application's company settings
 reminder_2_sent | boolean | _(read-only)_ Same as above, but for the 2nd reminder
 reminder_3_sent | boolean | _(read-only)_ Same as above, but for the 3rd reminder
+permalink | text | _(read-only)_ A link for viewing the invoice that can be accessed by anyone with the link (usually the permalink is sent to clients)
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the invoice was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the invoice was last updated
 
