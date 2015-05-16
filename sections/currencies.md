@@ -75,3 +75,4 @@ TTD | TT$ | Trinidad and Tobago dollar
 DOP | RD$ | Dominican peso
 PKR | ₨ | Pakistani Rupee
 BWP | P | Botswana pula
+NIO | C$ | Nicaraguan córdoba
