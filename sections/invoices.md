@@ -308,7 +308,7 @@ bill_to | text | Text block with customer information as it appears on invoice
 company_info | text | Text block with provider information as it appears on invoice
 footer | text | Text block for footer area of the invoice
 notes | text | Text block for notes area (just below the invoice items)
-outstanding | decimal | Note about any outstanding payments for the client (this amount does not add to invoice total)
+outstanding | decimal | Any outstanding payments for the client. This is just a note to the client and does not add up to invoice total.
 tax_text | text | Tax text label (name)
 tax2_text | text | 2nd tax text label (name)
 pay_online | boolean | If `true` and online payments are configured in company settings, your clients can pay for the invoice through any of the set up providers
@@ -345,7 +345,7 @@ The following object types can be used in [includes](includes.md) for the invoic
 Object type|Include key|Relationship
 -----------|-----------|----
 [Client](clients.md) | client | parent
-[Invoice item](#item-object) | invoiceitems | child
+[Invoice Item](#item-object) | invoiceitems | child
 [Invoice Template](invoice_templates.md) | invoicetemplate | parent
 
 For the invoice item object, the following includes are available:
