@@ -239,7 +239,10 @@ Object type|Include key|Relationship
 [Client](clients.md) | client | parent
 [Task list](tasklists.md) | tasklists | child
 [Task](tasks.md) | tasks | child
-[Time entry](entries.md) | entries | child
 [Milestone](milestones.md) | milestones | child
 [Discussion](discussions.md) | discussions | child
 [File](files.md) | files | child
+
+*Note:* Time entries can be included through `tasks`, as in:
+
+* `/api/projects/[PROJECT_ID]?include=tasks.entries`
