@@ -216,6 +216,7 @@ description | text | Task description and notes
 complete | boolean | If `true` the task is marked as complete
 billable | boolean | If `true` the task is billable. It is used in invoicing when computing the cost of worked time on the task.
 budget_hours | decimal | Number of budget hours for the task
+price_per_hour | decimal | Price per hour for the time worked for this task (Note: task price per hour takes precedence over project and user prices per hour).
 due_date | date | Task due date. If task is not completed and due date has passed, the task is overdue.
 user_id | integer | Id of the user who created the task
 users | list | List of user ids that are assigned to the task. If no users are assigned, anyone assigned to the project sees this task in "My Tasks".
