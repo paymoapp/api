@@ -226,6 +226,13 @@ Invoice items are defined in `items` property of the request object. It is an ar
 * `seq` (int) (optional) specifies the position of this invoice item among the items list
 * `entries` (array of entries ids) (optional) a list of entries that will be marked as billed (it is used when billing time from timesheets)
 
+### Invoice number
+
+When creating an invoice, if you don't provide an invoice number, Paymo will automatically create one using the number format and next invoice number from Company Settings (`invoice_format` and `next_invoice_number` attributes of the company object).
+
+If you provide your custom number, this number will be checked against existing invoice number. In case there is already an invoice with the provided number, the creation of the new invoice will fail.
+After each new invoice is created (either the invoice number is automatically assigned or custom defined) the value of `next_invoice_number` will be incremented.
+
 <a name="create-from-estimate"></a>
 ### Creating an invoice from an estimate
 
