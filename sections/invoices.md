@@ -210,7 +210,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 ### Required fields
 
-When creating an invoice: `client_id`, `number`, `currency`.
+When creating an invoice: `client_id`, `currency`.
 For a complete description of all invoice fields, see [invoice object](#object).
 
 ### Invoice items 
