@@ -60,6 +60,7 @@ Example of response:
          "updated_on":"2015-04-30T10:06:43Z",
          "download_token":"Ghz61QJSem+pJCCH59o+Gie7kYb6Cxx+pVsmATYpoJSDeKDvvi8Gn4LEUIkTBCN2jotfDTo4PyQwpjLu5zigGg==",
          "permalink":"https://app.paymoapp.com/api/invoices/14423/?token=v6k0kR4pNpyQT%2FboFYDfy62IRoL0Al%2BhwrMHq7wEwBPkylBCkaBv8XU%2Bm8wFNLwp7KZRo1a3edqg2870JNrCSQoAIrh7eNVZIkDa%2BVcV7AY%3D&format=html",
+         "pdf_link":"https://app.paymoapp.com/api/invoices/14423/?token=v6k0kR4pNpyQT%2FboFYDfy62IRoL0Al%2BhwrMHq7wEwBPkylBCkaBv8XU%2Bm8wFNLwp7KZRo1a3edqg2870JNrCSQoAIrh7eNVZIkDa%2BVcV7AY%3D&format=pdf",
          "token":"v6k0kR4pNpyQT/boFYDfy62IRoL0Al+hwrMHq7wEwBPkylBCkaBv8XU+m8wFNLwp7KZRo1a3edqg2870JNrCSQoAIrh7eNVZIkDa+VcV7AY="
       },
       {
@@ -94,6 +95,7 @@ Example of response:
          "updated_on":"2014-07-23T14:22:05Z",
          "download_token":"WuAQPeqS1WRpzHtROUbZk4k2JJ47sBF5R6YuFT4vP04UW8+cOcZn0yNETRmqhr0dJZAkGBPQIzqQD41T42HUPQ==",
          "permalink":"https://app.paymoapp.com/api/invoices/110723/?token=i%2Bz6uJ%2BahzZKdfM0pu8e%2BF3OSt1xKShAWdtliiXHlKL6eEbWCOACHQutqPz1IUI%2BdMqSYuvJ9omKUz%2BgqmXhdLvkovr%2BSyE%2BoR3plvIuuVE%3D&format=html",
+         "pdf_link":"https://app.paymoapp.com/api/invoices/110723/?token=i%2Bz6uJ%2BahzZKdfM0pu8e%2BF3OSt1xKShAWdtliiXHlKL6eEbWCOACHQutqPz1IUI%2BdMqSYuvJ9omKUz%2BgqmXhdLvkovr%2BSyE%2BoR3plvIuuVE%3D&format=pdf",
          "token":"i+z6uJ+ahzZKdfM0pu8e+F3OSt1xKShAWdtliiXHlKL6eEbWCOACHQutqPz1IUI+dMqSYuvJ9omKUz+gqmXhdLvkovr+SyE+oR3plvIuuVE="
       }
   ]
@@ -145,6 +147,7 @@ Example response:
          "reminder_3_sent":null,
          "download_token":"MUakYT1hv12mgT/Me8TsMiw9gGl+nB+5pUuK1UbY36ykR2Di/4dBmuNYormwYZ7BbLLqJ+5+emQHh2cBW2Xc7g==",
          "permalink":"https://app.paymoapp.com/api/invoices/110723/?token=i%2Bz6uJ%2BahzZKdfM0pu8e%2BF3OSt1xKShAWdtliiXHlKL6eEbWCOACHQutqPz1IUI%2BdMqSYuvJ9omKUz%2BgqmXhdLvkovr%2BSyE%2BoR3plvIuuVE%3D&format=html",
+         "pdf_link":"https://app.paymoapp.com/api/invoices/110723/?token=i%2Bz6uJ%2BahzZKdfM0pu8e%2BF3OSt1xKShAWdtliiXHlKL6eEbWCOACHQutqPz1IUI%2BdMqSYuvJ9omKUz%2BgqmXhdLvkovr%2BSyE%2BoR3plvIuuVE%3D&format=pdf",
          "token":"i+z6uJ+ahzZKdfM0pu8e+F3OSt1xKShAWdtliiXHlKL6eEbWCOACHQutqPz1IUI+dMqSYuvJ9omKUz+gqmXhdLvkovr+SyE+oR3plvIuuVE=",
          "created_on":"2014-03-12T10:10:02Z",
          "updated_on":"2014-07-23T14:22:05Z",
@@ -316,6 +319,7 @@ reminder_1_sent | boolean | _(read-only)_ This flag that is set to `true` when 1
 reminder_2_sent | boolean | _(read-only)_ Same as above, but for the 2nd reminder
 reminder_3_sent | boolean | _(read-only)_ Same as above, but for the 3rd reminder
 permalink | text | _(read-only)_ A link for viewing the invoice that can be accessed by anyone with the link (usually the permalink is sent to clients)
+pdf_link | text | _(read-only)_ Same as above, but in pdf format
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the invoice was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the invoice was last updated
 
