@@ -140,7 +140,7 @@ When creating a task: `name`, `tasklist_id`.
 
 To update an existing task, make a POST or PUT request to:
 
-* `/api/task/[TASK_ID]`
+* `/api/tasks/[TASK_ID]`
 
 with the request body containing the updated info. You can send only the changed fields.
 
