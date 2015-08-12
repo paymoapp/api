@@ -280,7 +280,7 @@ theme | text | Paymo user interface theme name
 assigned_projects | list | List of projects ids to which the user is assigned 
 managed_projects | list | List of projects ids that the user manages. This list is a subset of `assigned_projects`.
 is_online | boolean | _(read-only)_ If `true` the user is logged into Paymo.
-password | text | _(only for create/update requests)_ | User password when creating or updating a user.
+password | text | _(only for create/update requests)_ User password when creating or updating a user.
 
 <a name="dependencies"></a>
 ## Dependent objects
