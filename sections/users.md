@@ -158,7 +158,8 @@ with the request body containing the new user info, as in the example below:
 {
     "email": "kelly@dundermifflin.com",
     "type": "Employee",
-    "assigned_projects": [28917]
+    "assigned_projects": [28917],
+    "password": "secret"
 }
 ```
 
@@ -166,7 +167,8 @@ If successful, the response will return `201 Created`. The response body will co
 
 If your company does not have a paid Paymo subscription or you have reached the active users limit set up by the subscription, you will get a `403 Error: Could not add user. Maximum number of users reached.`
 
-The user will receive a welcome email with a link that will take the user through the setup process, where a name and a password will be set.
+If the `password` attribute is sent, the user will have the desired password. If not, the user will not have a password set. 
+If the user is added from the Paymo application, a Welcome to Paymo email will be sent which contains a link that will take the user through the setup process, where a name and a password will be set.
 
 ### Required fields 
 
@@ -186,6 +188,17 @@ Example of request body if you want to change the list of assigned projects of a
 ```json
 {
     "assigned_projects": [28917, 28918]
+}
+```
+
+<a name="change-password"></a>
+## Changing user password
+
+To change a user's password, make an update request with new password, as in:
+
+```json
+{
+    "password": "new password"
 }
 ```
 
@@ -267,6 +280,7 @@ theme | text | Paymo user interface theme name
 assigned_projects | list | List of projects ids to which the user is assigned 
 managed_projects | list | List of projects ids that the user manages. This list is a subset of `assigned_projects`.
 is_online | boolean | _(read-only)_ If `true` the user is logged into Paymo.
+password | text | _(only for create/update requests)_ | User password when creating or updating a user.
 
 <a name="dependencies"></a>
 ## Dependent objects
