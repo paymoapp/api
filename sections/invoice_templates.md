@@ -29,6 +29,7 @@ Example of response:
         {
             "id": 1130,
             "name": "English - Client on right",
+            "title":"INVOICE",
             "is_default": false,
             "html": "<<html template goes in here>>",
             "css": "<<css template goes in here>>",
@@ -38,6 +39,7 @@ Example of response:
         {
 			"id": 1129,
 			"name": "English - Client on left",
+			"title":"INVOICE",
 			"is_default": true,
 			"html": "<<html template goes in here>>",
 			"css": "<<css template goes in here>>",
@@ -64,6 +66,7 @@ Example of response:
         {
             "id": 1,
             "name": "English - Client on left",
+            "title": "INVOICE",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/a2aed6fbca9d292f3ec3d8859a66ef83.jpg",
@@ -73,6 +76,7 @@ Example of response:
         {
             "id": 2,
             "name": "English - Client on right",
+            "title": "INVOICE",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/9ae0c5b134a5abdc73f3e25241cd93e8.jpg",
@@ -82,6 +86,7 @@ Example of response:
         {
             "id": 5,
             "name": "Deutsch - Client on left",
+            "title": "INVOICE",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/bb5fd4a7298e9acd3400254b84826701.jpg",
@@ -91,6 +96,7 @@ Example of response:
         {
             "id": 6,
             "name": "Deutsch - Client on right",
+            "title": "INVOICE",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/56d214e6c349dfe4cdd78558a2e5fd87.jpg",
@@ -100,6 +106,7 @@ Example of response:
         {
             "id": 13,
             "name": "Español - Client on left",
+            "title": "INVOICE",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/5b2c9c0f702d1def37af2aeb1e9189b2.jpg",
@@ -109,6 +116,7 @@ Example of response:
         {
             "id": 14,
             "name": "Español - Client on right",
+            "title": "INVOICE",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/816273056f7059918f7bde0d7f48c36a.jpg",
@@ -134,8 +142,9 @@ Example response:
         {
             "id": 1130,
             "name": "English - Client on right",
+            "title": "INVOICE",
             "is_default": false,
-            "html": "<div class=\"invoice\">\r\n\t<div id=\"logo-img\" class=\"left\"></div>\r\n\t<div id=\"company-info\" class=\"right\">\r\n\t\t<div class=\"title\">Provider</div>\r\n\t\t{company_info}\r\n\t</div>\r\n\t<div class=\"right clear\">\r\n\t\t<div id=\"customer\" class=\"title\">\r\n\t\t\t<div>Customer</div>\r\n\t\t\t<!-- {CUSTOMER} ( DO NOT EDIT THIS LINE )-->\r\n\t\t</div>\r\n\t\t<div id=\"bill-to\">{bill_to}</div>\r\n\t</div>\r\n\t<div id=\"single-settings\" class=\"left\">\r\n\t\t<!-- {CUSTOM_FIELDS_START} ( DO NOT EDIT THIS LINE )-->\r\n\t\t<table>\r\n\t\t\t<thead>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<th id=\"invoice-number-label\" class=\"label\">Invoice No.</th>\r\n\t\t\t\t\t<th id=\"invoice-number-value\" class=\"value\">{number}</th>\r\n\t\t\t\t</tr>\r\n\t\t\t</thead>\r\n\t\t\t<tbody>\r\n\t\t\t\t<tr id=\"date-row\">\r\n\t\t\t\t\t<td id=\"date-label\" class=\"label\">Date</td>\r\n\t\t\t\t\t<td id=\"date-value\" class=\"value\">{date}</td>\r\n\t\t\t\t</tr>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td id=\"due-date-label\" class=\"label\">Due Date</td>\r\n\t\t\t\t\t<td id=\"due-date-value\">{due_date}</td>\r\n\t\t\t\t</tr>\r\n\t\t\t</tbody>\r\n\t\t</table>\r\n\t\t<!-- {CUSTOM_FIELDS_END} ( DO NOT EDIT THIS LINE )-->\r\n\t</div>\r\n\t<!-- {EXPENSE_BUTTON_WRAPPER} ( DO NOT EDIT THIS LINE )-->\r\n\t<div id=\"invoice-title\" class=\"clear\">INVOICE</div>\r\n\t<div id=\"items\">\r\n\t\t<table id=\"items-table\">\r\n\t\t\t<thead id=\"items-header\">\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<!-- {HEADER_ACF} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t\t<th class=\"item\">Item</th>\r\n\t\t\t\t\t<th class=\"description\">Description</th>\r\n\t\t\t\t\t<th class=\"price-unit\">Price/Unit</th>\r\n\t\t\t\t\t<th class=\"quantity\">Quantity</th>\r\n\t\t\t\t\t<th class=\"price\">Price</th>\r\n\t\t\t\t\t<!-- {HEADER_ACL} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t</tr>\r\n\t\t\t</thead>\r\n\t\t\t<tbody id=\"items-body\">\r\n\t\t\t\t<!-- {INVOICE_ROWS_START} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t<tr class=\"item-row\" id=\"{row_id}\">\r\n\t\t\t\t\t<!-- {ROW_ACF} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t\t<td class=\"item\" >{item}</td>\r\n\t\t\t\t\t<td class=\"description\">{description}</td>\r\n\t\t\t\t\t<td class=\"price-unit\">{price_unit}</td>\r\n\t\t\t\t\t<td class=\"quantity\">{quantity}</td>\r\n\t\t\t\t\t<td class=\"price\">{price}</td>\r\n\t\t\t\t\t<!-- {ROW_ACL} (DO NOT EDIT THIS LINE)-->\r\n\t\t\t\t</tr>\r\n\t\t\t\t<!-- {INVOICE_ROWS_END} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t</tbody>\r\n\t\t</table>\r\n\t</div>\r\n\t<div class=\"section\">\r\n\t\t<div id=\"totals\" class=\"right\">\r\n\t\t\t<table>\r\n\t\t\t\t<tbody>\r\n\t\t\t\t\t<tr {check_subtotal_hide}>\r\n\t\t\t\t\t\t<td class=\"label\" id=\"subtotal-label\">Subtotal</td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"subtotal\">{subtotal}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr {check_tax_hide}>\r\n\t\t\t\t\t\t<td id=\"tax-value-label\" class=\"label\"><span id = \"tax-text\">{tax_text}</span><span id=\"tax-percent-value\">{tax}</span></td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"tax-value\">{tax_value}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr {check_tax2_hide}>\r\n\t\t\t\t\t\t<td id=\"tax2-value-label\" class=\"label\"><span id = \"tax2-text\">{tax2_text}</span><span id=\"tax-percent-value\">{tax2}</span></td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"tax2-value\">{tax2_value}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr class=\"highlighted\">\r\n\t\t\t\t\t\t<td id=\"total-label\" class=\"label\">Total</td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"total\">{total}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<!-- {OUTSTANDING_START} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t\t<tr {hide_outstanding_balance} id=\"outstanding-balance\">\r\n\t\t\t\t\t\t<td class=\"label\">Outstanding Balance</td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"outstanding-balance-value\">{outstanding}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr class=\"highlighted\" {hide_grand_total}><td class=\"label\">Grand Total</td>\r\n\t\t\t\t\t\t<td class=\"right-align\" id=\"grand-total-value\">{grand_total_value}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<!-- {OUTSTANDING_END} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t</tbody>\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t\t<!-- {BUTTONS_WRAPPER} ( DO NOT EDIT THIS LINE )-->\r\n\t</div>\r\n\t<div id=\"footer\" class=\"clear\">{footer}</div>\r\n\t<div id=\"invoice-brand\">Sent using <a href=\"http://www.paymoapp.com/?utm_source=invoice_footer&utm_medium=inv&utm_campaign=invoice_footer\" target=\"_blank\">paymoapp.com</a></div>\r\n</div>",
+            "html": "<div class=\"invoice\">\r\n\t<div id=\"logo-img\" class=\"left\"></div>\r\n\t<div id=\"company-info\" class=\"right\">\r\n\t\t<div class=\"title\">Provider</div>\r\n\t\t{company_info}\r\n\t</div>\r\n\t<div class=\"right clear\">\r\n\t\t<div id=\"customer\" class=\"title\">\r\n\t\t\t<div>Customer</div>\r\n\t\t\t<!-- {CUSTOMER} ( DO NOT EDIT THIS LINE )-->\r\n\t\t</div>\r\n\t\t<div id=\"bill-to\">{bill_to}</div>\r\n\t</div>\r\n\t<div id=\"single-settings\" class=\"left\">\r\n\t\t<!-- {CUSTOM_FIELDS_START} ( DO NOT EDIT THIS LINE )-->\r\n\t\t<table>\r\n\t\t\t<thead>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<th id=\"invoice-number-label\" class=\"label\">Invoice No.</th>\r\n\t\t\t\t\t<th id=\"invoice-number-value\" class=\"value\">{number}</th>\r\n\t\t\t\t</tr>\r\n\t\t\t</thead>\r\n\t\t\t<tbody>\r\n\t\t\t\t<tr id=\"date-row\">\r\n\t\t\t\t\t<td id=\"date-label\" class=\"label\">Date</td>\r\n\t\t\t\t\t<td id=\"date-value\" class=\"value\">{date}</td>\r\n\t\t\t\t</tr>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td id=\"due-date-label\" class=\"label\">Due Date</td>\r\n\t\t\t\t\t<td id=\"due-date-value\">{due_date}</td>\r\n\t\t\t\t</tr>\r\n\t\t\t</tbody>\r\n\t\t</table>\r\n\t\t<!-- {CUSTOM_FIELDS_END} ( DO NOT EDIT THIS LINE )-->\r\n\t</div>\r\n\t<!-- {EXPENSE_BUTTON_WRAPPER} ( DO NOT EDIT THIS LINE )-->\r\n\t<div id=\"invoice-title\" class=\"clear\">{title}</div>\r\n\t<div id=\"items\">\r\n\t\t<table id=\"items-table\">\r\n\t\t\t<thead id=\"items-header\">\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<!-- {HEADER_ACF} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t\t<th class=\"item\">Item</th>\r\n\t\t\t\t\t<th class=\"description\">Description</th>\r\n\t\t\t\t\t<th class=\"price-unit\">Price/Unit</th>\r\n\t\t\t\t\t<th class=\"quantity\">Quantity</th>\r\n\t\t\t\t\t<th class=\"price\">Price</th>\r\n\t\t\t\t\t<!-- {HEADER_ACL} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t</tr>\r\n\t\t\t</thead>\r\n\t\t\t<tbody id=\"items-body\">\r\n\t\t\t\t<!-- {INVOICE_ROWS_START} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t<tr class=\"item-row\" id=\"{row_id}\">\r\n\t\t\t\t\t<!-- {ROW_ACF} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t\t<td class=\"item\" >{item}</td>\r\n\t\t\t\t\t<td class=\"description\">{description}</td>\r\n\t\t\t\t\t<td class=\"price-unit\">{price_unit}</td>\r\n\t\t\t\t\t<td class=\"quantity\">{quantity}</td>\r\n\t\t\t\t\t<td class=\"price\">{price}</td>\r\n\t\t\t\t\t<!-- {ROW_ACL} (DO NOT EDIT THIS LINE)-->\r\n\t\t\t\t</tr>\r\n\t\t\t\t<!-- {INVOICE_ROWS_END} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t</tbody>\r\n\t\t</table>\r\n\t</div>\r\n\t<div class=\"section\">\r\n\t\t<div id=\"totals\" class=\"right\">\r\n\t\t\t<table>\r\n\t\t\t\t<tbody>\r\n\t\t\t\t\t<tr {check_subtotal_hide}>\r\n\t\t\t\t\t\t<td class=\"label\" id=\"subtotal-label\">Subtotal</td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"subtotal\">{subtotal}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr {check_tax_hide}>\r\n\t\t\t\t\t\t<td id=\"tax-value-label\" class=\"label\"><span id = \"tax-text\">{tax_text}</span><span id=\"tax-percent-value\">{tax}</span></td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"tax-value\">{tax_value}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr {check_tax2_hide}>\r\n\t\t\t\t\t\t<td id=\"tax2-value-label\" class=\"label\"><span id = \"tax2-text\">{tax2_text}</span><span id=\"tax-percent-value\">{tax2}</span></td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"tax2-value\">{tax2_value}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr class=\"highlighted\">\r\n\t\t\t\t\t\t<td id=\"total-label\" class=\"label\">Total</td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"total\">{total}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<!-- {OUTSTANDING_START} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t\t<tr {hide_outstanding_balance} id=\"outstanding-balance\">\r\n\t\t\t\t\t\t<td class=\"label\">Outstanding Balance</td>\r\n\t\t\t\t\t\t<td class=\"value right-align\" id=\"outstanding-balance-value\">{outstanding}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr class=\"highlighted\" {hide_grand_total}><td class=\"label\">Grand Total</td>\r\n\t\t\t\t\t\t<td class=\"right-align\" id=\"grand-total-value\">{grand_total_value}</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<!-- {OUTSTANDING_END} ( DO NOT EDIT THIS LINE )-->\r\n\t\t\t\t</tbody>\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t\t<!-- {BUTTONS_WRAPPER} ( DO NOT EDIT THIS LINE )-->\r\n\t</div>\r\n\t<div id=\"footer\" class=\"clear\">{footer}</div>\r\n\t<div id=\"invoice-brand\">Sent using <a href=\"http://www.paymoapp.com/?utm_source=invoice_footer&utm_medium=inv&utm_campaign=invoice_footer\" target=\"_blank\">paymoapp.com</a></div>\r\n</div>",
             "css": "",
             "created_on": "2014-11-19T09:45:32Z",
             "updated_on": "2014-11-19T09:45:32Z"
@@ -158,6 +167,7 @@ Sample request body to create a template with a custom invoice title color:
 ```json
 {
 	"name": "Template with custom title color",
+	"title": "INVOICE",
 	"is_default": false,
 	"html": "<<use the html code of an invoice template from Paymo library>>",
 	"css": "#invoice-title { color: #999; }"	
@@ -232,6 +242,7 @@ Attribute|Type|Description
 ---------|----|-----------
 id | integer | _(read-only)_ Unique template identifier
 name | text | Template name
+title | text | Default invoice title (this is copied from invoice_templates_gallery when company add new invoice_template)
 html | text | HTML template code
 css | text | Additional CSS code (basic CSS rules for invoices are already included by Paymo)
 is_default | boolean | If `true`, this template is the default invoice template for your company
