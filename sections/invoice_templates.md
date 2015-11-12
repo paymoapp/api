@@ -167,7 +167,6 @@ Sample request body to create a template with a custom invoice title color:
 ```json
 {
 	"name": "Template with custom title color",
-	"title": "INVOICE",
 	"is_default": false,
 	"html": "<<use the html code of an invoice template from Paymo library>>",
 	"css": "#invoice-title { color: #999; }"	
