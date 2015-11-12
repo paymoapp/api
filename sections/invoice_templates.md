@@ -29,7 +29,7 @@ Example of response:
         {
             "id": 1130,
             "name": "English - Client on right",
-            "title":"INVOICE",
+            "title": "INVOICE",
             "is_default": false,
             "html": "<<html template goes in here>>",
             "css": "<<css template goes in here>>",
@@ -39,7 +39,7 @@ Example of response:
         {
 			"id": 1129,
 			"name": "English - Client on left",
-			"title":"INVOICE",
+			"title": "INVOICE",
 			"is_default": true,
 			"html": "<<html template goes in here>>",
 			"css": "<<css template goes in here>>",
