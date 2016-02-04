@@ -52,6 +52,7 @@ Example of response:
          "outstanding":0,
          "tax_text":"V.A.T.",
          "tax2_text":"Tax2",
+         "title":"INVOICE",
          "pay_online":false,
          "reminder_1_sent":null,
          "reminder_2_sent":null,
@@ -87,6 +88,7 @@ Example of response:
          "outstanding":null,
          "tax_text":"V.A.T.",
          "tax2_text":"Tax2",
+         "title":"INVOICE",
          "pay_online":false,
          "reminder_1_sent":null,
          "reminder_2_sent":null,
@@ -141,6 +143,7 @@ Example response:
          "outstanding":null,
          "tax_text":"V.A.T.",
          "tax2_text":"Tax2",
+         "title":"INVOICE",
          "pay_online":false,
          "reminder_1_sent":null,
          "reminder_2_sent":null,
@@ -321,6 +324,7 @@ notes | text | Text block for notes area (just below the invoice items)
 outstanding | decimal | Any outstanding payments for the client. This is just a note to the client and does not add up to invoice total.
 tax_text | text | Tax text label (name)
 tax2_text | text | 2nd tax text label (name)
+title | text | Editable invoice title
 pay_online | boolean | If `true` and online payments are configured in company settings, your clients can pay for the invoice through any of the set up providers
 reminder_1_sent | boolean | _(read-only)_ This flag that is set to `true` when 1st reminder email was sent to client for the overdue invoice. You can define up to 3 late payment reminders in Invoicing area of Paymo application's company settings
 reminder_2_sent | boolean | _(read-only)_ Same as above, but for the 2nd reminder

@@ -48,6 +48,7 @@ Example of response:
 		"tax_on_tax": true,
 		"tax_text": "V.A.T.",
 		"tax2_text": "Tax2",
+		"title": "INVOICE",
 		"language": "",
 		"invoice_id": null,
 		"notes": "",
@@ -76,6 +77,7 @@ Example of response:
         "tax_on_tax": true,
         "tax_text": "Tax",
         "tax2_text": "",
+        "title": "INVOICE",
         "language": "",
         "invoice_id": null,
         "notes": "",
@@ -123,6 +125,7 @@ Example response:
       "tax_on_tax": true,
       "tax_text": "Tax",
       "tax2_text": "",
+      "title": "INVOICE",
       "language": "",
       "invoice_id": null,
       "notes": "",
@@ -314,6 +317,7 @@ footer | text | Text block for footer area of the estimate
 notes | text | Text block for notes area (just below the estimate items)
 tax_text | text | Tax text label (name)
 tax2_text | text | 2nd tax text label (name)
+title | text | Editable estimate title
 invoice_id | integer | _(optional)_ Id of the invoice that was created from this estimate
 permalink | text | _(read-only)_ A link for viewing the estimate that can be accessed by anyone with the link (usually the permalink is sent to clients)
 pdf_link | text | _(read-only)_ Same as above, but in pdf format
