@@ -86,7 +86,7 @@ Example of response:
         {
             "id": 5,
             "name": "Deutsch - Client on left",
-            "title": "INVOICE",
+            "title": "RECHNUNG",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/bb5fd4a7298e9acd3400254b84826701.jpg",
@@ -96,7 +96,7 @@ Example of response:
         {
             "id": 6,
             "name": "Deutsch - Client on right",
-            "title": "INVOICE",
+            "title": "RECHNUNG",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/56d214e6c349dfe4cdd78558a2e5fd87.jpg",
@@ -106,7 +106,7 @@ Example of response:
         {
             "id": 13,
             "name": "Español - Client on left",
-            "title": "INVOICE",
+            "title": "FACTURA",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/5b2c9c0f702d1def37af2aeb1e9189b2.jpg",
@@ -116,7 +116,7 @@ Example of response:
         {
             "id": 14,
             "name": "Español - Client on right",
-            "title": "INVOICE",
+            "title": "FACTURA",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/invoice-templates-gallery/816273056f7059918f7bde0d7f48c36a.jpg",

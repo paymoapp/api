@@ -66,7 +66,7 @@ Example of response:
         {
             "id": 1,
             "name": "English - Client on left",
-            "title": "INVOICE",
+            "title": "ESTIMATE",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/estimate-templates-gallery/a2aed6fbca9d292f3ec3d8859a66ef83.jpg",
@@ -76,7 +76,7 @@ Example of response:
         {
             "id": 2,
             "name": "English - Client on right",
-            "title": "INVOICE",
+            "title": "ESTIMATE",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/estimate-templates-gallery/9ae0c5b134a5abdc73f3e25241cd93e8.jpg",
@@ -86,7 +86,7 @@ Example of response:
         {
             "id": 5,
             "name": "Deutsch - Client on left",
-            "title": "INVOICE",
+            "title": "ANGEBOT",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/estimate-templates-gallery/bb5fd4a7298e9acd3400254b84826701.jpg",
@@ -96,7 +96,7 @@ Example of response:
         {
             "id": 6,
             "name": "Deutsch - Client on right",
-            "title": "INVOICE",
+            "title": "ANGEBOT",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/estimate-templates-gallery/56d214e6c349dfe4cdd78558a2e5fd87.jpg",
@@ -106,7 +106,7 @@ Example of response:
         {
             "id": 13,
             "name": "Español - Client on left",
-            "title": "INVOICE",
+            "title": "PRESUPUESTO",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/estimate-templates-gallery/5b2c9c0f702d1def37af2aeb1e9189b2.jpg",
@@ -116,7 +116,7 @@ Example of response:
         {
             "id": 14,
             "name": "Español - Client on right",
-            "title": "INVOICE",
+            "title": "PRESUPUESTO",
             "html": "<<html template goes in here>>",
             "css": "<css template goes in here>>",
             "image": "https://app.paymoapp.com/assets/estimate-templates-gallery/816273056f7059918f7bde0d7f48c36a.jpg",
