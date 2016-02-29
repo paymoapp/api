@@ -73,7 +73,7 @@ In the example above, the URL should look like this: `https://app.paymoapp.com/a
 
 ##Available operators
 
-Operators used in `where` condition are: `=`, `>`, `>=`, `<`, `<=`, `!=`, `like`, `in (value1,value2,...)`, `not in (value1, value2)`
+Operators used in `where` condition are: `=`, `>`, `>=`, `<`, `<=`, `!=`, `like`, `not like`, `in (value1,value2,...)`, `not in (value1, value2)`
 
 Examples of `where` conditions (not urlencoded for clarity):
 
