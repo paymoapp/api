@@ -220,8 +220,8 @@ price_per_hour | decimal | Price per hour for the time worked for this task (Not
 due_date | date | Task due date. If task is not completed and due date has passed, the task is overdue.
 user_id | integer | Id of the user who created the task
 users | list | List of user ids that are assigned to the task. If no users are assigned, anyone assigned to the project sees this task in "My Tasks".
-created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the list was created
-updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the list was last updated
+created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the task was created
+updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the task was last updated
 
 <a name="dependencies"></a>
 ## Dependent objects
