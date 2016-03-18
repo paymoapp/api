@@ -131,9 +131,11 @@ with the request body containing the new task info, as in the example below:
 
 If successful, the response will return `201 Created`. The response header `Location` will contain a link for the new task. The response body will contain the new task info as in the **Getting a task** section.
 
+When `project_id` is provided the task will be added in the `Default Task List`. It will create a tasklist named `Default Task List` if it doesn't exists.
+
 ### Required fields
 
-When creating a task: `name`, `tasklist_id`.
+When creating a task: `name`, `tasklist_id` or `project_id`
 
 <a name="update"></a>
 ## Updating a task
