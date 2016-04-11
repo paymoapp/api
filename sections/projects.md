@@ -248,8 +248,8 @@ Tasks in project templates can have assigned users. If you add these tasks to a 
 
 For example:
 
-You have project with users A and B assigned to that project.
-And you have a project template that has some tasks assigned to user B and some tasks assigned to another user C (not yet assigned to the project). 
+You have a project with users A and B assigned to that project.
+And you have a project template that has some tasks assigned to user B, and some tasks assigned to another user C (not yet assigned to the project). 
 When you add tasks from the project template to the project, the list of users assigned to the project will grow to: A, B and C. 
 
 <a name="object"></a>
