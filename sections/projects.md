@@ -7,6 +7,7 @@
 * [Archiving or activating a project](#archive)
 * [Changing the order of task lists](#update-tasklists-order)
 * [Deleting a project](#delete)
+* [Adding tasks from a project template](#from-template)
 * [The project object](#object)
 * [Dependent objects](#dependencies)
 
@@ -207,6 +208,49 @@ If successful, the response will have a `200 OK` status code.
 ### Warning
 
 **Deleting a project will also delete all info contained by the project: task lists and tasks, discussions, files and time entries!**
+
+<a name="from-template"></a>
+## Adding tasks from a project template
+
+You can add the tasks and task lists from a project template when creating a project, or at a later time.
+
+To do this, send an additional `template_id` param to the create project or update project request with the project template ID as its value.
+
+An example of a request that creates a project and adds the tasks from a project template:
+
+* POST `/api/projects` with the body:
+
+```json
+{
+   "name": "Project from template",
+   "description": "This project was created from a template",
+   "billable": true,
+   "client_id": 561,
+   "users": [ 123, 124 ],
+   "managers": [ 123 ],
+   "template_id": 10
+}
+```
+
+An example of a request that adds tasks from the project template:
+
+* PUT `/api/projects/[PROJECT_ID]` with the body:
+
+```json
+{
+	"template_id": 10
+}
+```
+
+**A note about assigned users**
+
+Tasks in project templates can have assigned users. If you add these tasks to a project and the list of project's assigned users does not contain all the users from the template's tasks, Paymo will assign the missing users to the project.
+
+For example:
+
+You have project with users A and B assigned to that project.
+And you have a project template that has some tasks assigned to user B and some tasks assigned to another user C (not yet assigned to the project). 
+When you add tasks from the project template to the project, the list of users assigned to the project will grow to: A, B and C. 
 
 <a name="object"></a>
 ## The project object

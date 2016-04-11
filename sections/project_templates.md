@@ -11,6 +11,7 @@ Other project related content such as files, discussions, comments are not prese
 * [Creating a project template](#create)
 * [Updating a project template](#update)
 * [Deleting a project template](#delete)
+* [Applying a template to an existing project](#apply)
 * [The project template object](#object)
 * [Dependent objects](#dependencies)
 
@@ -286,6 +287,14 @@ To delete a task, make a DELETE request to:
 * `/api/projecttemplatestasks/[TASK_ID]`
 
 If successful, the response will have a `200 OK` status code.
+
+<a name="apply"></a>
+## Applying a template to an existing project
+
+By applying a template to a project you can add all the tasks and task lists from the project template to the respective project.
+This will not replace or remove any existing tasks from the project.
+
+For more info about how to apply a project template to a project, see [Adding tasks from a project template](projects.md#from-template) in the Projects section.
 
 <a name="object"></a>
 ## The project template object
