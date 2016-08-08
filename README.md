@@ -85,6 +85,7 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Invoices](sections/invoices.md)
 * [Estimates](sections/estimates.md)
 * [Recurring Invoice Profiles](sections/recurring_profiles.md)
+* [Expenses](sections/expenses.md)
 * [Tags](sections/tags.md)
 * [Project Templates](sections/project_templates.md)
 * [Invoice Templates](sections/invoice_templates.md)
