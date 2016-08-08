@@ -24,7 +24,8 @@ You can list tasks by making a GET request to:
 * `/api/tasks?where=users=anyone` for a list tasks that have no users assigned 
 * `/api/tasks?where=users in ("anyone",[USER1_ID])` for a list tasks that have no users assigned or are assigned to USER1 
 * `/api/tasks?where=users<>anyone` for a list tasks that have some user assigned  
- 
+* `/api/tasks?where=mytasks=true` for a list of "My Tasks", those are tasks assigned to the user making the request, or tasks not assigned to any specific user, tasks being limited only to the projects the user is assigned to.
+
 Example of response:
 
 ```json
