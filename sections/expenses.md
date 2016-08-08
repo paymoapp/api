@@ -163,8 +163,8 @@ To invoice an expense, you have to create an invoice with the expense as an invo
    "date":"2013-08-14",
    "items":[
       {
-         "item":"Expense"
-         "expense_id":100545,
+         "item":"Expense",
+         "expense_id":100545
       }
    ]
 }
