@@ -8,6 +8,12 @@
 
 ## Node.js
 
+Examples require npm module `request`:
+
+```sh
+npm install request --save
+```
+
 * [GET request](samples/get.js)
 * [POST request](samples/post.js)
 * [File upload](samples/file_upload.js)
