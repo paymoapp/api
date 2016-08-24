@@ -7,7 +7,7 @@ payload = {'project_id': 123456}
 headers = {'Accept': 'application/json'}
 r = requests.post('https://app.paymoapp.com/api/files',
     data=payload,
-    files={'file': open('/Users/ldim/Pictures/interiors/zooco-estudio-etoday-06.jpg', 'rb')},
+    files={'file': open('/path/to/file.jpg', 'rb')},
     headers=headers,
     auth=(email, password))
 
