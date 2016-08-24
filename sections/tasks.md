@@ -7,6 +7,7 @@
 * [Changing the order of tasks](#update-tasks-order)
 * [Adding a file to a task](#add-file)
 * [Deleting a task](#delete)
+* [Task billing](#billing)
 * [The task object](#object)
 * [Dependent objects](#dependencies)
 
@@ -203,6 +204,58 @@ If successful, the response will have a `200 OK` status code.
 
 **Deleting a task will also delete all time entries logged for that task!**
 
+<a name="billing"></a>
+## Task billing
+
+Tasks from billable projects (flat rate projects and time & materials projects) can be:
+* time based
+* flat rate
+* non-billable
+
+### Time based tasks
+
+Defining fields for time based tasks:
+* `billable` will be `true`
+* `flat_billing` will be `false`
+* `price_per_hour` will be the task hourly rate. See project's [`hourly_billing_mode`](projects.md#billing) for how the actual hourly rate is selected.
+
+Example request to create a time based task:
+
+* POST `/api/tasks` with the body:
+
+```json
+{
+    "name": "Time based task",
+    "billable": true,
+    "flat_billing": false,
+    "price_per_hour": 50.00,
+    "tasklist_id": 1234
+}
+```
+
+### Flat rate tasks
+
+Defining fields for time based tasks:
+* `billable` will be `true`
+* `flat_billing` will be `true`
+* `estimated_price` will be the task flat rate
+
+Example request to create a flat rate task:
+
+* POST `/api/tasks` with the body:
+
+```json
+{
+    "name": "Flat rate task",
+    "billable": true,
+    "flat_billing": true,
+    "estimated_price": 100.00,
+    "tasklist_id": 1234
+}
+```
+
+See also [project billing](projects.md#billing).
+
 <a name="object"></a>
 ## The task object
 
@@ -217,12 +270,16 @@ tasklist_id | integer | Task list id
 seq | integer | Position (order) of the task in the task list
 description | text | Task description and notes
 complete | boolean | If `true` the task is marked as complete
-billable | boolean | If `true` the task is billable. It is used in invoicing when computing the cost of worked time on the task.
-budget_hours | decimal | Number of budget hours for the task
-price_per_hour | decimal | Price per hour for the time worked for this task (Note: task price per hour takes precedence over project and user prices per hour).
 due_date | date | Task due date. If task is not completed and due date has passed, the task is overdue.
 user_id | integer | Id of the user who created the task
 users | list | List of user ids that are assigned to the task. If no users are assigned, anyone assigned to the project sees this task in "My Tasks".
+billable | boolean | Only for tasks from billable projects, if `true` the task is billable. See [billing](#billing).
+flat_billing | boolean | Only for tasks from time & materials projects, if `true` the task has a flat rate. See [billing](#billing).
+price_per_hour | decimal | For billable time based tasks, price per hour when billing the time for this task. Note: actual hourly rate used depends on project's `hourly_billing_mode`. See [project billing](projects.md#billing).
+budget_hours | decimal | Budget hours for the task
+estimated_price | decimal | For billable tasks, the estimated task price based on tracked time for time based tasks, and the task flat price for flat rate tasks.
+invoiced | boolean | For flat rate tasks, if `true`, the task was already invoiced.
+invoice_item_id | integer | For flat rate tasks, if set, the ID of the invoice line (part of the invoice for the task).
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the task was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the task was last updated
 
@@ -238,3 +295,4 @@ Object type|Include key|Relationship
 [User](users.md) | user | parent
 [Comments thread](comments.md) | thread | parent
 [Time entry](entries.md) | entries | child
+[Invoice Item](invoices.md) | invoiceitem | parent

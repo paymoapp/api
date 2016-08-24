@@ -8,6 +8,7 @@
 * [Changing the order of task lists](#update-tasklists-order)
 * [Deleting a project](#delete)
 * [Adding tasks from a project template](#from-template)
+* [Billing](#billing)
 * [The project object](#object)
 * [Dependent objects](#dependencies)
 
@@ -252,6 +253,76 @@ You have a project with users A and B assigned to that project.
 And you have a project template that has some tasks assigned to user B, and some tasks assigned to another user C (not yet assigned to the project). 
 When you add tasks from the project template to the project, the list of users assigned to the project will grow to: A, B and C. 
 
+<a name="billing"></a>
+## Project Billing
+
+There are three types of projects in Paymo:
+
+* *Time and materials* - these are generally used for service contracts or any other type of work in which the client agrees to pay the contractor based upon the time spent to perform the work, and for materials/expenses incurred during the project.
+* *Flat rate* - used when the client agrees to pay the contractor a lump sum for fulfillment of the project (no matter how much time is spent in order to deliver the project).
+* *Non-billable* - for projects that you’re not going to bill (e.g. internal projects).
+
+### Time and materials projects
+
+A time & materials project can have three types of tasks: *time-based* tasks, *flat rate* tasks and *non-billable* tasks.
+The time-based tasks are based upon time spent to perform the work, the flat rate tasks have a fixed price associated with them and non-billable tasks for activities that won’t be invoiced.
+
+Defining fields for time & materials projects:
+
+* `billable` will be `true`
+* `flat_billing` will be `false`
+* `price_per_hour` will be the project hourly rate
+* `hourly_billing_mode` will define the order in which the hourly rates (user rate, task rate, project rate, or company rate) will be selected for billing the project time. If an hourly rate is not set, the next set value will be used.
+ Available options:
+ * `null` or `user`, first set value from the list will be used: user hourly rate, then task rate, then project rate, then company rate.
+ * `task`, first set value from the list: task hourly rate, then user rate, then project rate, then company rate.
+ * `project`, first set value from the list: project hourly rate, then user rate, then task rate, then company rate.
+ * `company`, first set value from the list: company hourly rate, then user rate, then task rate, then project rate.
+
+Example request to create a time & materials project:
+
+* POST `/api/projects` with the body:
+
+```json
+{
+    "name": "Time and materials project",
+    "billable": true,
+    "flat_billing": false,
+    "price_per_hour": 50.00,
+    "hourly_billing_mode": "project"
+}
+```
+
+### Flat rate projects
+
+Defining fields for flat rate projects:
+
+* `billable` will be `true`
+* `flat_billing` will be `true`
+* `price` will be the project flat rate
+
+Example request to create a flat rate project:
+
+* POST `/api/projects` with the body:
+
+```json
+{
+    "name": "Flat rate project",
+    "billable": true,
+    "flat_billing": true,
+    "price": 2000.00
+}
+```
+
+### Non-billable projects
+
+For non-billable projects:
+
+* `billable` will be `false`
+* all other billing related fields will be ignored
+
+More info about project billing can be found in the [Knowledge Base](https://www.paymoapp.com/knowledge-base/types-of-projects/).
+
 <a name="object"></a>
 ## The project object
  
@@ -264,12 +335,19 @@ name | text | Project name
 description | text | Project description
 client_id | integer | Id of the client for whom the project was created
 active | boolean | If `true` the project is being active (you can add time to its tasks), otherwise it is archived (you cannot add time to its tasks)
-budget_hours | decimal | Project budget in hours
-price_per_hour | decimal | Price per hour for the time worked in the project (Note: if a user has a price per hour set, that price per hour will take precedence for the time worked by that user in this project).
-billable | boolean | Used in reporting. If true the project is taken into account for unbilled time for a client or project.
 color | text | An RGB value representing a color for the project when used in charts.
 users | list | A list of ids of users assigned to the project. This list contains also the ids of the managers for this project.
 managers | list | A list of ids of users that are managers for the project. It is a subset of the `users` list.
+billable | boolean | If `true` the project is billable. See [billing](#billing).
+flat_billing | boolean | For billable projects, if `true` the project is *flat rate*, otherwise the project is *time & materials*. See [billing](#billing).
+price_per_hour | decimal | For time & materials projects, the project hourly rate. Note: which hourly rate (user, task, project, or company) will be used for billing is defined by the `hourly_billing_mode` field.
+price | decimal | For flat rate project, the project flat rate. See [billing](#billing).
+estimated_price | decimal | For billable projects, the estimated project price consisting of the price of all its billable tasks (including flat rate tasks).
+hourly_billing_mode | text | For time & materials projects, defines the hierarchy of rates used when deciding on the hourly rate for billing the time in the project. See [billing](#billing).
+budget_hours | decimal | Project budget in hours. If not set, the project will have unlimited budget hours.
+adjustable_hours | boolean | If `true` the budget_hours will be adjusted automatically based on tasks budget hours.
+invoiced | boolean | For flat rate projects, if `true`, the project was already invoiced.
+invoice_item_id | integer | For flat rate projects, if set, the ID of the invoice line (part of the invoice for the project).
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was last updated
 
@@ -286,6 +364,7 @@ Object type|Include key|Relationship
 [Milestone](milestones.md) | milestones | child
 [Discussion](discussions.md) | discussions | child
 [File](files.md) | files | child
+[Invoice Item](invoices.md) | invoiceitem | parent
 
 *Note:* Time entries can be included through `tasks`, as in:
 
