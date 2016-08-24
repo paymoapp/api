@@ -1,8 +1,8 @@
-#Paymo 3 API Authentication
+#Paymo API Authentication
 
 ##Basic Auth
 
-For a quick start using the Paymo 3 API, you can use HTTP Basic authentication with your email and password info:
+For a quick start using the Paymo API, you can use HTTP Basic authentication with your email and password info:
 
 ```shell
 curl -u email:password 
@@ -15,7 +15,7 @@ Most HTTP client applications support HTTP Basic authentication out of the box.
 <a name="api-keys"></a>
 ##API Keys
 
-When using Paymo 3 API with a third-party software, we recommend you using API Keys instead of asking for user's email/password. 
+When using Paymo API with a third-party software, we recommend you using API Keys instead of asking for user's email/password.
 
 API Keys can be generated from the Paymo application, on the [My Account](https://app.paymoapp.com/#Paymo.module.myaccount/) page. 
 

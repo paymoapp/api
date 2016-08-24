@@ -8,7 +8,7 @@ Usually, what you do is:
 * Get the project info. That will get you the desired project name and the client id.
 * Get the client info, in which you finally get the client name, the last piece of the puzzle.
 
-In Paymo 3 API you can get all that data in a single API request by using `include` param to the request.
+In Paymo API you can get all that data in a single API request by using `include` param to the request.
 
 Example:
 

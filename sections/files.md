@@ -9,7 +9,7 @@
 * [The file object](#object)
 * [Dependent objects](#dependencies)
 
-In Paymo 3 files can be attached to projects. Besides this, inside a project, files can be attached to discussions, tasks or comments.
+In Paymo files can be attached to projects. Besides this, inside a project, files can be attached to discussions, tasks or comments.
 
 <a name="list"></a>
 ## Getting files

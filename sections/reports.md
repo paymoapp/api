@@ -8,7 +8,7 @@
 * [The report object](#object)
 * [Dependent objects](#dependencies)
 
-Reports in Paymo 3 are of several types:
+Reports in Paymo are of several types:
 
 * _static_ - This is the most common type. It represents data as it was at the moment of report creation.
 * _live_ - Reports of this type are regenerated every time you view them. These are useful when you have to make periodic reports with the same parameters.

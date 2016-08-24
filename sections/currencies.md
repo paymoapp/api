@@ -1,6 +1,6 @@
 # Currencies
 
-List of available currencies in Paymo 3:
+List of available currencies in Paymo:
 
 Code | Symbol | Description
 ---- | ------ | -----------

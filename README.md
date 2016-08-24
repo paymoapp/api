@@ -1,4 +1,4 @@
-#Paymo 3 API
+#Paymo API
 
 * [Making a request](#make-request)
 * [Authentication](#authentication)
@@ -11,7 +11,7 @@
 * [Including related content](#includes)
 
 
-The Paymo 3 API is not compatible with the [Paymo 2 API](http://api.paymo.biz/). This is a [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) API that uses XML/JSON for serialization.
+The Paymo is a [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) API that uses JSON/XML for serialization.
 
 Accepted request types (HTTP verbs) are: GET, POST, PUT, DELETE.
 
@@ -47,14 +47,14 @@ Read the [authentication guide](https://github.com/paymoapp/api/blob/master/sect
 <a name="content-types"></a>
 ##Request and response content types
 
-Paymo 3 API supports JSON as well as XML for data serialization, as well as specific types such as PDF, XLS for reports, invoices, estimates.
+Paymo API supports JSON as well as XML for data serialization, as well as specific types such as PDF, XLS for reports, invoices, estimates.
 
 Read more about [content types](sections/content_types.md).
 
 <a name="response-codes"></a>
 ##Response codes and error handling
 
-The Paymo 3 API will return a 2xx status code for successful requests. The 4xx error means an error on the user side. And the 5xx errors are returned when the Paymo service is having trouble processing your request.
+The Paymo API will return a 2xx status code for successful requests. The 4xx error means an error on the user side. And the 5xx errors are returned when the Paymo service is having trouble processing your request.
 
 The response in case of error will contain an error message to help you fix it.
 

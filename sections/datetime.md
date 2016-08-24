@@ -1,6 +1,6 @@
 # Date and time formats
 
-Paymo 3 API uses dates in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
+Paymo API uses dates in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
 
 Examples:
 

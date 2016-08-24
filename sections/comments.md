@@ -9,7 +9,7 @@
 * [The comment object](#object)
 * [Dependent objects](#dependencies)
 
-In Paymo 3 you can comment on discussions, tasks and files. Each comment belongs to a comments thread.  
+In Paymo you can comment on discussions, tasks and files. Each comment belongs to a comments thread.
 
 <a name="list"></a>
 ## Getting comments
