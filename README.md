@@ -37,7 +37,7 @@ curl -u email:password
   https://app.paymoapp.com/api/clients/12345
 ```
 
-See sample code examples on how to make a request to the API [here](https://github.com/paymoapp/api/blob/master/sections/sample_code.md).
+See sample [code examples](sections/sample_code.md) on how to make a request to the API.
 
 <a name="authentication"></a>
 ##Authentication

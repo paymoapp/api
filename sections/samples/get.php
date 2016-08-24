@@ -11,7 +11,11 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec($ch);
 if ($result === false) {
-	echo "Curl error: " . curl_error($ch) . "\n";
+    echo "Curl error: " . curl_error($ch) . "\n";
 }
 curl_close($ch);
-echo $result;
+
+// List project names
+foreach( json_decode($result, true)['projects'] as $project ) {
+    echo $project['name'] . "\n";
+}
