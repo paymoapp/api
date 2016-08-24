@@ -8,7 +8,7 @@
 
 ## Node.js
 
-Examples require npm module `request`:
+Examples require `request` npm module:
 
 ```sh
 npm install request --save
@@ -17,3 +17,15 @@ npm install request --save
 * [GET request](samples/get.js)
 * [POST request](samples/post.js)
 * [File upload](samples/file_upload.js)
+
+## Python
+
+Examples require `requests` package:
+
+```sh
+pip install requests
+```
+
+* [GET request](samples/get.py)
+* [POST request](samples/post.py)
+* [File upload](samples/file_upload.py)
