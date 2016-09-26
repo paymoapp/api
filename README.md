@@ -1,4 +1,4 @@
-Paymo is [project management software](https://www.paymoapp.com/project-management/) for small and medium businesses that allows you to manage projects from start to finish. 
+Paymo is a [project management software](https://www.paymoapp.com/project-management/) for small and medium businesses that allows you to manage projects from start to finish. 
 
 This is the official Paymo API. 
 
