@@ -29,3 +29,8 @@ pip install requests
 * [GET request](samples/get.py)
 * [POST request](samples/post.py)
 * [File upload](samples/file_upload.py)
+
+## Google Apps Script
+
+* [GET request](samples/get.gs)
+* [POST request](samples/post.gs)
