@@ -219,7 +219,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 When creating an invoice: `client_id`, `currency`.
 For a complete description of all invoice fields, see [invoice object](#object).
 
-### Invoice items 
+### Invoice items
 
 Invoice items are defined in `items` property of the request object. It is an array of objects, each one having the following keys:
 
@@ -243,7 +243,7 @@ After each new invoice is created (either the invoice number is automatically as
 ### Creating an invoice from an estimate
 
 When creating an invoice from an estimate, you should submit an additional field `estimate_id`. This will update the estimate status to `invoiced`.
-Note that you have to provide all the usual invoice information including invoice items. 
+Note that you have to provide all the usual invoice information including invoice items.
 
 <a name="update"></a>
 ## Updating an invoice
@@ -312,11 +312,11 @@ due_date | date | Due payment date
 subtotal | decimal | _(read-only)_ Invoice subtotal (not including the taxes)
 total | decimal | _(read-only)_ Invoice total (including taxes)
 tax | decimal | Tax (percentage)
-tax_amount | decimal | _(read-only)_ Tax amount 
-tax2 | decimal | _(optional)_ 2nd tax (percentage) 
+tax_amount | decimal | _(read-only)_ Tax amount
+tax2 | decimal | _(optional)_ 2nd tax (percentage)
 tax2_amount | decimal | _(read-only)_ 2nd tax amount
 tax_on_tax | boolean | If `true` and `tax2` is set, the 2nd tax is applied to invoice subtotal + 1st tax amount, otherwise the 2nd tax is applied to invoice subtotal
-language | text | _(deprecated)_ Invoice language (Use invoice templates instead) 
+language | text | _(deprecated)_ Invoice language (Use invoice templates instead)
 bill_to | text | Text block with customer information as it appears on invoice
 company_info | text | Text block with provider information as it appears on invoice
 footer | text | Text block for footer area of the invoice
@@ -344,7 +344,7 @@ Attribute|Type|Description
 id | integer | _(read-only)_ Unique invoice item identifier
 item | text | Item name
 description | text | Item description
-price_unit | decimal | Price per unit 
+price_unit | decimal | Price per unit
 quantity | decimal | Item quantity
 expense_id | integer | Id of expense that that is invoiced by this invoice item
 apply_tax | boolean | If `true` this invoice item is used to compute the tax amount for the invoice
@@ -361,6 +361,7 @@ Object type|Include key|Relationship
 -----------|-----------|----
 [Client](clients.md) | client | parent
 [Invoice Item](#item-object) | invoiceitems | child
+[Invoice Payment](invoice_payments.md) | invoicepayments | child
 [Invoice Template](invoice_templates.md) | invoicetemplate | parent
 
 For the invoice item object, the following includes are available:

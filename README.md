@@ -23,8 +23,8 @@ The API base URL is `https://app.paymoapp.com/api/`. It is **SSL only**. There i
 An example request using `curl` for retrieving the list of clients may look like this:
 
 ```shell
-curl -u email:password 
-  -H 'Accept: application/json' 
+curl -u email:password
+  -H 'Accept: application/json'
   https://app.paymoapp.com/api/clients
 ```
 
@@ -78,6 +78,7 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Expenses](sections/expenses.md)
 * [Files](sections/files.md)
 * [Invoice Templates](sections/invoice_templates.md)
+* [Invoice Payments](sections/invoice_payments.md)
 * [Invoices](sections/invoices.md)
 * [Milestones](sections/milestones.md)
 * [Project Templates](sections/project_templates.md)
@@ -101,14 +102,14 @@ For a sample and an explanation of each endpoint object, see individual endpoint
 <a name="filtering"></a>
 ##Filtering
 
-If you want to filter the response of listings, you can do so by supplying the `where` parameter in the request URL. 
+If you want to filter the response of listings, you can do so by supplying the `where` parameter in the request URL.
 
 Read more about [response filtering](sections/filtering.md)
 
 <a name="includes"></a>
 ##Including related content
 
-If you want a response to include additional information about an object, you can do so by supplying the `include` or `partial_include` parameters in the request URL. 
+If you want a response to include additional information about an object, you can do so by supplying the `include` or `partial_include` parameters in the request URL.
 
 Read more about [additional includes](sections/includes.md)
 
