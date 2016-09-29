@@ -1,6 +1,6 @@
-Paymo is a [project management software](https://www.paymoapp.com/project-management/) for small and medium businesses that allows you to manage projects from start to finish. 
+Paymo is a [project management software](https://www.paymoapp.com/project-management/) for small and medium businesses that allows you to manage projects from start to finish.
 
-This is the official Paymo API. 
+This is the official Paymo API.
 
 #Paymo API
 
@@ -13,6 +13,7 @@ This is the official Paymo API.
 * [Data formats](#data-formats)
 * [Filtering](#filtering)
 * [Including related content](#includes)
+* [Webhooks](#webhooks)
 
 
 The Paymo is a [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) API that uses JSON/XML for serialization.
@@ -120,3 +121,11 @@ Read more about [additional includes](sections/includes.md)
 ##Help us make it better
 
 Please tell us how we can make the API better. If you have a specific feature request or if you found a bug, please use GitHub issues. Fork these docs and send a pull request with improvements.
+
+## Webhooks
+
+Webhooks allow for 3rd party integrations.
+
+By creating a webhook you create a link between an event in Paymo (e.g. adding a task) and a URL that will be notified by Paymo when the event occurs.
+
+Read more about [webhooks](sections/webhooks.md)
