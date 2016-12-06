@@ -146,6 +146,7 @@ Attribute|Type|Description
 ---------|----|-----------
 id | integer | _(read-only)_ Unique payment identifier
 invoice_id | integer | _(read-only)_ Id of the invoice this payment belongs to
+amount | decimal | Payment amount. The currency is specified in the related invoice.
 date | date | A user set date of the payment
 notes | text | Payment notes or description
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the invoice payment was created
