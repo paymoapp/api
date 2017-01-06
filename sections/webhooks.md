@@ -1,6 +1,8 @@
 # Webhooks
 
 * [Events](#events)
+* [Listing webhooks](#list)
+* [Getting a webhook](#get)
 * [Creating a webhook](#create)
 * [Deleting a webhook](#delete)
 * [Notifications](#notifications)
@@ -11,11 +13,80 @@ Webhooks allow for 3rd parties to be notified when an event in Paymo occurs.
 At the moment, the following events can be hooked:
 
 - model.insert.Client
+- model.update.Client
+- model.delete.Client
 - model.insert.Project
+- model.update.Project
+- model.delete.Project
 - model.insert.Tasklist
+- model.update.Tasklist
+- model.delete.Tasklist
 - model.insert.Task
+- model.update.Task
+- model.delete.Task
 - model.insert.Invoice
+- model.update.Invoice
+- model.delete.Invoice
 - model.insert.Entry
+- model.update.Entry
+- model.delete.Entry
+
+<a name="list"></a>
+## Listing webhooks
+
+You can list your own webhooks by making a GET request to:
+
+* `/api/hooks`
+
+Example of response:
+
+```json
+{
+  "hooks": [
+    {
+      "id": 1,
+      "target_url": "https://myapp.com/paymo-insert-task-hook",
+      "last_status_code": null,
+      "event": "model.insert.Task",
+      "created_on": "2017-01-04T13:39:40Z",
+      "updated_on": "2017-01-04T13:39:40Z"
+    },
+    {
+      "id": 2,
+      "target_url": "https://myapp.com/paymo-delete-task-hook",
+      "last_status_code": null,
+      "event": "model.delete.Task",
+      "created_on": "2017-01-04T13:40:11Z",
+      "updated_on": "2017-01-04T13:40:11Z"
+    }
+  ]
+}
+```
+
+
+<a name="get"></a>
+## Getting a webhook
+
+To get the webhook info, make a GET request to:
+
+* `/api/hooks/[WEBHOOK_ID]`
+
+Example response:
+
+```json
+{
+  "hooks": [
+    {
+      "id": 1,
+      "target_url": "https://myapp.com/paymo-insert-task-hook",
+      "last_status_code": 200,
+      "event": "model.insert.Task",
+      "created_on": "2017-01-04T13:39:40Z",
+      "updated_on": "2017-01-04T13:39:40Z"
+    }
+  ]
+}
+```
 
 <a name="create"></a>
 ## Creating a webhook
@@ -106,10 +177,18 @@ when a task is created, and the user that created the hook has the rights to vie
 }
 ```
 
-The JSON object representation is mostly the same as the response you get by making a GET request to `/api/tasks/[TASK_ID]`, except
+For `insert` and `update` events, the JSON object representation is mostly the same as the response you get by making a GET request to `/api/tasks/[TASK_ID]`, except
 
 - There is no `tasks` parent node in the response. The task object is at the root of JSON.
 - There are additional attributes like `project` and `tasklist`, as in the GET request to `/api/tasks/[TASK_ID]?include=project.name,tasklist.name`
+
+For `delete` events, the notification content is a JSON object with a single attribute: the ID of the object that was deleted. For example:
+
+```json
+{
+    "id": 109404
+}
+```
 
 ### Additional includes in webhook notification body
 
