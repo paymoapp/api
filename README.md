@@ -73,6 +73,7 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 <a name="api-endpoints"></a>
 ## API endpoints
 
+* [Bookings (Resource Scheduling)](sections/bookings.md)
 * [Client Contacts](sections/client_contacts.md)
 * [Clients](sections/clients.md)
 * [Comments](sections/comments.md)
@@ -96,6 +97,7 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Tasks](sections/tasks.md)
 * [Time Entries](sections/entries.md)
 * [Users](sections/users.md)
+* [User-Task Assignments](sections/users_tasks.md)
 
 <a name="data-formats"></a>
 ## Data formats
