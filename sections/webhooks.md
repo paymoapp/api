@@ -30,6 +30,9 @@ At the moment, the following events can be hooked:
 - model.insert.Entry
 - model.update.Entry
 - model.delete.Entry
+- model.insert.Milestone
+- model.update.Milestone
+- model.delete.Milestone
 
 <a name="list"></a>
 ## Listing webhooks
@@ -200,3 +203,4 @@ Object type|Equivalent request
 [Task](tasks.md#get) | `/tasks/[TASK_ID]?include=project.name,tasklist.name`
 [Invoice](invoices.md#get) | `/invoices/[INVOICE_ID]?include=invoiceitems,client.name`
 [Time Entry](entries.md#get) | `/entries/[ENTRY_ID]?include=task.name,user.name`
+[Milestone](milestones.md#get) | `/milestones/[MILESTONE_ID]?include=project.name`
