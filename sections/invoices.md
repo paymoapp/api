@@ -200,13 +200,13 @@ with the request body containing the new invoice info including the invoice item
 		 "item":"Item 1",
 		 "description":"Description & specs for item 1",
 		 "price_unit":5.5,
-		 "quantity":2,
+		 "quantity":2
 	  },
 	  {
 		 "item":"Item 2",
 		 "description":"Description\nFor Item 2",
 		 "price_unit":159,
-		 "quantity":1,
+		 "quantity":1
 	  }
    ]
 }
@@ -264,6 +264,40 @@ Example of request body if you want to change the invoice footer and 'bill to' i
 ```
 
 The response will return `200 OK` and will contain the updated invoice info as in the **Getting an invoice** section.
+
+## Updating invoice items
+
+When updating an invoice you can also add/update/remove invoice items.
+If the update request has an `items` field, this will set the new invoice items.
+
+For example, if we update an invoice with 3 invoice items with IDs equal to 100, 101, 102 and we want to:
+* keep invoice item with ID=100 unchanged
+* modify `quantity` to 2 for invoice item with ID=101
+* remove invoice item with ID=102
+* add new invoice item with `price`=10 and `qty`=2
+
+the update request will look like:
+
+```json
+{
+    "items": [
+        {
+            "id": 100
+        },
+        {
+            "id": 101,
+            "quantity": 2
+        },
+        {
+            "item": "New item",
+            "price_unit": 20,
+            "quantity": 1
+        }
+    ]
+}
+```
+
+After any update the invoice `subtotal`, `tax_amount`, `tax2_amount`, `discount_amount` and `total` fields will also be updated.
 
 ## Changing invoice status
 
