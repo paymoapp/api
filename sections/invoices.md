@@ -274,7 +274,7 @@ For example, if we update an invoice with 3 invoice items with IDs equal to 100,
 * keep invoice item with ID=100 unchanged
 * modify `quantity` to 2 for invoice item with ID=101
 * remove invoice item with ID=102
-* add new invoice item with `price`=10 and `qty`=2
+* add new invoice item with `price`=20 and `qty`=1
 
 the update request will look like:
 
