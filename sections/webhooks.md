@@ -196,7 +196,7 @@ For `delete` events, the notification content is a JSON object with a single att
 ### Additional includes in webhook notification body
 
 Object type|Equivalent request
------------|-----------|----
+-----------|-----------
 [Client](clients.md#get) | `/clients/[CLIENT_ID]`
 [Project](projects.md#get) | `/projects/[PROJECT_ID]?include=client.name`
 [Task List](tasklists.md#get) | `/tasklists/[TASKLIST_ID]?include=project.name`
