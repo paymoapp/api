@@ -200,7 +200,7 @@ Object type|Equivalent request
 [Client](clients.md#get) | `/clients/[CLIENT_ID]`
 [Project](projects.md#get) | `/projects/[PROJECT_ID]?include=client.name`
 [Task List](tasklists.md#get) | `/tasklists/[TASKLIST_ID]?include=project.name`
-[Task](tasks.md#get) | `/tasks/[TASK_ID]?include=project.name,tasklist.name`
+[Task](tasks.md#get) | `/tasks/[TASK_ID]?include=*,progress_status,project.name,tasklist.name`
 [Invoice](invoices.md#get) | `/invoices/[INVOICE_ID]?include=invoiceitems,client.name`
 [Time Entry](entries.md#get) | `/entries/[ENTRY_ID]?include=task.name,user.name`
 [Milestone](milestones.md#get) | `/milestones/[MILESTONE_ID]?include=project.name`
