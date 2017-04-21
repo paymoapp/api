@@ -1,12 +1,12 @@
-#Content types
+# Content types
 
-##Request content type
+## Request content type
 
-**All POST and PUT requests should send the `Content-Type` header** with the appropriate value.
+** All POST and PUT requests should send the `Content-Type` header** with the appropriate value.
 
 Supported types:
 
-###application/json
+### application/json
 
 Example:
 
@@ -17,7 +17,7 @@ curl -u email:password
   https://app.paymoapp.com/api/projects/12345
 ```
 
-###text/xml
+### text/xml
 
 Example:
 
@@ -28,7 +28,7 @@ curl -u email:password
   https://app.paymoapp.com/api/projects/12345
 ```
 
-###application/x-www-form-urlencoded
+### application/x-www-form-urlencoded
  
 Example:
 
@@ -39,11 +39,11 @@ curl -u email:password
   https://app.paymoapp.com/api/projects/12345
 ```
 
-###multipart/form-data
+### multipart/form-data
 
 This content type is used when uploading files.
 
-##Response content type
+## Response content type
 
 The format of the response is specified by the `Accept` header.  
 
