@@ -8,7 +8,6 @@
 * [The booking object](#object)
 * [Dependent objects](#dependencies)
 
-Resource Scheduling it allows you to ...
 <a name="list"></a>
 
 ## Getting bookings
