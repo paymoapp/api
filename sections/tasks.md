@@ -291,8 +291,8 @@ The following object types can be used in [includes](includes.md):
 Object type|Include key|Relationship
 -----------|-----------|----
 [Project](projects.md) | project | parent
-[Task list](tasklists.md) | tasklist | parent
+[Task List](tasklists.md) | tasklist | parent
 [User](users.md) | user | parent
-[Comments thread](comments.md) | thread | parent
-[Time entry](entries.md) | entries | child
+[Comments Thread](comments.md) | thread | parent
+[Time Entry](entries.md) | entries | child
 [Invoice Item](invoices.md) | invoiceitem | parent

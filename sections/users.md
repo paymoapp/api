@@ -291,7 +291,7 @@ Object type|Include key
 -----------|-----------
 [Comment](comments.md) | comments
 [Discussion](discussions.md) | discussions
-[Time entry](entries.md) | entries
+[Time Entry](entries.md) | entries
 [Expense](expenses.md) | expenses
 [File](files.md) | files
 [Milestone](milestones.md) | milestones

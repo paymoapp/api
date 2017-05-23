@@ -406,7 +406,7 @@ For the invoice item object, the following includes are available:
 Object type|Include key|Relationship
 -----------|-----------|------------
 [Invoice](#object) | invoice | parent
-[Entry](entries.md) | entries | child
+[Time Entry](entries.md) | entries | child
 [Expense](expenses.md) | expense | parent
 [Project](projects.md) | projects | child
 [Task](tasks.md) | tasks | child
