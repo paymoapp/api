@@ -132,6 +132,10 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 When creating a time entry: `task_id`, (`date` and `duration`) or (`start_time` and `end_time`).
 
+### Restrictions
+
+When creating a time entry with `start_time` and `end_time` the minimal time entry duration is 1 minute.
+
 <a name="update"></a>
 ## Updating a time entry
 
@@ -154,6 +158,10 @@ You can change the `duration` only for the time entries that were added with `da
 For entries added with `start_time` and `end_time` the duration can be adjusted by updating the `end_time`.
 
 The response will return `200 OK` and will contain the updated time entry info as in the **Getting a time entry** section.
+
+### Restrictions
+
+When updating an entry with `start_time` and `end_time` the new duration cannot be less than 1 minute.
 
 <a name="delete"></a>
 ## Deleting a time entry
