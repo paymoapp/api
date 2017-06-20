@@ -120,10 +120,6 @@ If you want a response to include additional information about an object, you ca
 
 Read more about [additional includes](sections/includes.md)
 
-## Help us make it better
-
-Please tell us how we can make the API better. If you have a specific feature request or if you found a bug, please use GitHub issues. Fork these docs and send a pull request with improvements.
-
 ## Webhooks
 
 Webhooks allow for 3rd party integrations.
@@ -131,3 +127,7 @@ Webhooks allow for 3rd party integrations.
 By creating a webhook you create a link between an event in Paymo (e.g. adding a task) and a URL that will be notified by Paymo when the event occurs.
 
 Read more about [webhooks](sections/webhooks.md)
+
+## Help us make it better
+
+Please tell us how we can make the API better. If you have a specific feature request or if you found a bug, please use GitHub issues. Fork these docs and send a pull request with improvements.
