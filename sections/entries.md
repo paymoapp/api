@@ -5,6 +5,7 @@
 * [Creating a time entry](#create)
 * [Updating a time entry](#update)
 * [Deleting a time entry](#delete)
+* [Timer](#timer)
 * [The time entry object](#object)
 * [Dependent objects](#dependencies)
 
@@ -171,6 +172,56 @@ To delete a time entry, make a DELETE request to:
 * `/api/entries/[ENTRY_ID]`
 
 If successful, the response will have a `200 OK` status code.
+
+<a name="timer"></a>
+## Timer
+
+A timer is a special kind of a time entry with the `end_time` not yet set.
+
+Any user can have at most only one timer started at any time.
+
+### Starting a timer
+
+Starting the timer for a user is the same as creating a time entry for that user with `start_time` and no `end_time`.
+
+For example, make a POST request to:
+
+* `/api/entries` with the body:
+
+```json
+{
+    "task_id": 241184,
+    "user_id": 1563,
+    "description": "Running timer description",
+    "start_time": "2017-06-20T09:30:00Z"
+}
+```
+
+If another timer is already running for that user, the request will fail with a 409 error code.
+
+### Stopping a timer
+
+Stopping the timer is the same as updating the timer's `end_time` with a valid date and time value.
+
+For example, make a PUT request to:
+
+* `/api/entries/[TIMER_ID]` with the body:
+
+```json
+{
+    "end_time": "2017-06-20T15:00:00Z",
+    "description": "Final time entry description"
+}
+```
+
+Same restrictions as for time entries apply for timers. You cannot stop a timer if the final duration is less than a minute.
+To stop the timer in this case, make a DELETE request and delete the timer.
+
+### Listing running timers
+
+To get the running timer of any particular user, make a GET request to:
+
+* `/api/entries?where=user_id=[USER_ID] and end_time=null`
 
 <a name="object"></a>
 ## The time entry object
