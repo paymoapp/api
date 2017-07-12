@@ -38,6 +38,7 @@ Example response for listing requests:
          "name": "Understanding Paymo",
          "description": "",
          "client_id": 151303,
+         "status_id": 93939,
          "active": true,
          "budget_hours": 0.25,
          "price_per_hour": 0,
@@ -57,6 +58,7 @@ Example response for listing requests:
          "name": "Sample Project",
          "description": "",
          "client_id": 151304,
+         "status_id": 83821,
          "active": false,
          "budget_hours": 10,
          "price_per_hour": 30,
@@ -95,6 +97,7 @@ Example of response:
          "name": "Understanding Paymo",
          "description": "",
          "client_id": 151303,
+         "status_id": 1922,
          "active": true,
          "budget_hours": 0.25,
          "price_per_hour": 0,
@@ -334,6 +337,7 @@ id | integer | _(read-only)_ Unique project identifier
 name | text | Project name 
 description | text | Project description
 client_id | integer | Id of the client for whom the project was created
+status_id | integer | Status id
 active | boolean | If `true` the project is being active (you can add time to its tasks), otherwise it is archived (you cannot add time to its tasks)
 color | text | An RGB value representing a color for the project when used in charts.
 users | list | A list of ids of users assigned to the project. This list contains also the ids of the managers for this project.
@@ -359,6 +363,7 @@ The following object types can be used in [includes](includes.md):
 Object type|Include key|Relationship
 -----------|-----------|----
 [Client](clients.md) | client | parent
+[Project status](project_statuses.md) | projectstatus | parent
 [Task list](tasklists.md) | tasklists | child
 [Task](tasks.md) | tasks | child
 [Milestone](milestones.md) | milestones | child
