@@ -200,13 +200,13 @@ with the request body containing the new invoice info including the invoice item
 		 "item":"Item 1",
 		 "description":"Description & specs for item 1",
 		 "price_unit":5.5,
-		 "quantity":2,
+		 "quantity":2
 	  },
 	  {
 		 "item":"Item 2",
 		 "description":"Description\nFor Item 2",
 		 "price_unit":159,
-		 "quantity":1,
+		 "quantity":1
 	  }
    ]
 }
@@ -265,6 +265,40 @@ Example of request body if you want to change the invoice footer and 'bill to' i
 
 The response will return `200 OK` and will contain the updated invoice info as in the **Getting an invoice** section.
 
+## Updating invoice items
+
+When updating an invoice you can also add/update/remove invoice items.
+If the update request has an `items` field, this will set the new invoice items.
+
+For example, if we update an invoice with 3 invoice items with IDs equal to 100, 101, 102 and we want to:
+* keep invoice item with ID=100 unchanged
+* modify `quantity` to 2 for invoice item with ID=101
+* remove invoice item with ID=102
+* add new invoice item with `price`=20 and `qty`=1
+
+the update request will look like:
+
+```json
+{
+    "items": [
+        {
+            "id": 100
+        },
+        {
+            "id": 101,
+            "quantity": 2
+        },
+        {
+            "item": "New item",
+            "price_unit": 20,
+            "quantity": 1
+        }
+    ]
+}
+```
+
+After any update the invoice `subtotal`, `tax_amount`, `tax2_amount`, `discount_amount` and `total` fields will also be updated.
+
 ## Changing invoice status
 
 An invoice can be in one of the following states: `draft`, `sent`, `viewed`, `paid` and `void`.
@@ -315,6 +349,8 @@ tax | decimal | Tax (percentage)
 tax_amount | decimal | _(read-only)_ Tax amount
 tax2 | decimal | _(optional)_ 2nd tax (percentage)
 tax2_amount | decimal | _(read-only)_ 2nd tax amount
+discount | decimal | Discount (percentage)
+discount_amount | decimal | _(read-only)_ Discount amount
 tax_on_tax | boolean | If `true` and `tax2` is set, the 2nd tax is applied to invoice subtotal + 1st tax amount, otherwise the 2nd tax is applied to invoice subtotal
 language | text | _(deprecated)_ Invoice language (Use invoice templates instead)
 bill_to | text | Text block with customer information as it appears on invoice
@@ -324,6 +360,7 @@ notes | text | Text block for notes area (just below the invoice items)
 outstanding | decimal | Any outstanding payments for the client. This is just a note to the client and does not add up to invoice total.
 tax_text | text | Tax text label (name)
 tax2_text | text | 2nd tax text label (name)
+discount_text | text | Discount text label
 title | text | Editable invoice title
 pay_online | boolean | If `true` and online payments are configured in company settings, your clients can pay for the invoice through any of the set up providers
 reminder_1_sent | boolean | _(read-only)_ This flag that is set to `true` when 1st reminder email was sent to client for the overdue invoice. You can define up to 3 late payment reminders in Invoicing area of Paymo application's company settings
@@ -369,4 +406,7 @@ For the invoice item object, the following includes are available:
 Object type|Include key|Relationship
 -----------|-----------|------------
 [Invoice](#object) | invoice | parent
+[Time Entry](entries.md) | entries | child
 [Expense](expenses.md) | expense | parent
+[Project](projects.md) | projects | child
+[Task](tasks.md) | tasks | child

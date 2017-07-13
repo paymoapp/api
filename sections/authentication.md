@@ -1,6 +1,6 @@
-#Paymo API Authentication
+# Paymo API Authentication
 
-##Basic Auth
+## Basic Auth
 
 For a quick start using the Paymo API, you can use HTTP Basic authentication with your email and password info:
 
@@ -13,7 +13,7 @@ curl -u email:password
 Most HTTP client applications support HTTP Basic authentication out of the box.
 
 <a name="api-keys"></a>
-##API Keys
+## API Keys
 
 When using Paymo API with a third-party software, we recommend you using API Keys instead of asking for user's email/password.
 
@@ -30,7 +30,7 @@ curl -u apikey:X
 ```
 
 <a name="sessions"></a>
-##Using Sessions
+## Using Sessions
 
 Another way to authenticate the API requests are by using session tokens. This token is sent by an HTTP header named `X-Session`
 
@@ -42,7 +42,7 @@ curl -H 'X-Session: abcdef01234567890'
 
 Anyone using the session token has the same access level as the user for whom the session token was created.
 
-###Creating session tokens
+### Creating session tokens
 
 Session tokens are creating by making a POST request to 
 
@@ -76,7 +76,7 @@ Sample response:
 
 A session token has an expiration date, after which it will be no longer valid.
 
-###Ending a session
+### Ending a session
 
 When you want to end a session and make its token invalid, make a DELETE request to:
  

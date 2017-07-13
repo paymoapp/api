@@ -438,8 +438,8 @@ Field | Required | Description
 `projects` | optional | A list of project ids from which the time will be included into the report. Or a preset value of: `all` (for all projects, including archived), `all_active` (for active projects only).
 `clients` | optional | A list of client ids from which the time will be included into the report. Or a preset value of: `all` (for all clients, including archived), `all_active` (for active clients only). If no `projects` is specified, this will define the projects to be included.
 `users` | optional | A list of user ids for whom the time will be included into the report. Or a preset value of: `all` (for all users, including archived), `all_active` (for active users only).
-`include` | optional | What info to include into the report. 
-`extra` | optional | Additional options for the report. Options are: `exclude_billed_entries`
+`include` | optional | What info to include into the report. See options below.
+`extra` | optional | Additional options for the report. See options below.
 
 Options for `date_interval` param:
 
