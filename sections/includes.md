@@ -127,6 +127,7 @@ The response will look like:
          "name": "Best Buy Website - small changes",
          "description": "",
          "client_id": 10875,
+         "status_id": 39384,
          "active": false,
          "budget_hours": 700,
          "price_per_hour": 90,
