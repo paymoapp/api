@@ -14,7 +14,7 @@ This is the official Paymo API.
 * [Filtering](#filtering)
 * [Including related content](#includes)
 * [Webhooks](#webhooks)
-
+* [Leaves Support](#leaves_support)
 
 The Paymo is a [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) API that uses JSON/XML for serialization.
 
@@ -78,6 +78,7 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Clients](sections/clients.md)
 * [Comments](sections/comments.md)
 * [Company](sections/company.md)
+* [Company-Days-Exceptions](sections/companies_days_exceptions.md)
 * [Discussions](sections/discussions.md)
 * [Estimate Templates](sections/estimate_templates.md)
 * [Estimates](sections/estimates.md)
@@ -86,6 +87,7 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Invoice Templates](sections/invoice_templates.md)
 * [Invoice Payments](sections/invoice_payments.md)
 * [Invoices](sections/invoices.md)
+* [Leave Types](sections/leave_types.md)
 * [Milestones](sections/milestones.md)
 * [Project Templates](sections/project_templates.md)
 * [Projects](sections/projects.md)
@@ -97,6 +99,7 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Tasks](sections/tasks.md)
 * [Time Entries](sections/entries.md)
 * [Users](sections/users.md)
+* [Users-Days-Exceptions](sections/users_days_exceptions.md)
 * [User-Task Assignments](sections/users_tasks.md)
 
 <a name="data-formats"></a>
@@ -127,6 +130,9 @@ Webhooks allow for 3rd party integrations.
 By creating a webhook you create a link between an event in Paymo (e.g. adding a task) and a URL that will be notified by Paymo when the event occurs.
 
 Read more about [webhooks](sections/webhooks.md)
+
+<a name="leaves_support"></a>
+## [Leaves Support](sections/leaves_support.md)
 
 ## Help us make it better
 
