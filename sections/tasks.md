@@ -35,6 +35,7 @@ Example of response:
       {
          "id": 2158,
          "name": "Design",
+         "code": "PD-16",
          "project_id": 1,
          "tasklist_id": 2,
          "user_id": 1,
@@ -54,6 +55,7 @@ Example of response:
       {
          "id": 3320,
          "name": "Testing",
+         "code": "PD-17",
          "project_id": 1,
          "tasklist_id": 3,
          "user_id": 2,
@@ -91,6 +93,7 @@ Example response:
       {
          "id": 2158,
          "name": "Design",
+         "code": "PD-12",
          "project_id": 1,
          "tasklist_id": 2,
          "user_id": 1,
@@ -265,6 +268,7 @@ Attribute|Type|Description
 ---------|----|-----------
 id | integer | _(read-only)_ Unique task identifier
 name | text | Task name
+code | text | | _(read-only)_ | Task code format <project code>-<task number>.
 project_id | integer | _(read-only)_ Project id
 tasklist_id | integer | Task list id
 seq | integer | Position (order) of the task in the task list

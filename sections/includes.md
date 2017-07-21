@@ -26,6 +26,7 @@ And the response looks like:
       {
          "id": 241147,
          "name": "Logo",
+         "code": "PW-32",
          "project_id": 28917,
          "tasklist_id": 59917,
          "user_id": null,
@@ -68,6 +69,7 @@ The response looks like:
       {
          "id": 241147,
          "name": "Logo",
+         "code": "PW-32",
          "project_id": 28917,
          "tasklist_id": 59917,
          "user_id": null,
@@ -125,6 +127,8 @@ The response will look like:
       {
          "id": 28917,
          "name": "Best Buy Website - small changes",
+         "code": "BBW",
+         "task_code_increment": 19,
          "description": "",
          "client_id": 10875,
          "status_id": 39384,
@@ -155,6 +159,7 @@ The response will look like:
                   {
                      "id": 241147,
                      "name": "Logo",
+                     "code": "PW-23",
                      "project_id": 28917,
                      "tasklist_id": 59917,
                      "user_id": null,
@@ -174,6 +179,7 @@ The response will look like:
                   {
                      "id": 266875,
                      "name": "Header",
+                     "code": "PW-22",
                      "project_id": 28917,
                      "tasklist_id": 59917,
                      "user_id": 1562,
@@ -193,6 +199,7 @@ The response will look like:
                   {
                      "id": 266876,
                      "name": "Mobile version",
+                     "code": "PW-21",
                      "project_id": 28917,
                      "tasklist_id": 59917,
                      "user_id": 1562,
@@ -223,6 +230,7 @@ The response will look like:
                   {
                      "id": 241148,
                      "name": "HTML coding",
+                     "code": "RDS-2",
                      "project_id": 28917,
                      "tasklist_id": 59918,
                      "user_id": null,
@@ -242,6 +250,7 @@ The response will look like:
                   {
                      "id": 266874,
                      "name": "Testing",
+                     "code": "RDS-3",
                      "project_id": 28917,
                      "tasklist_id": 59918,
                      "user_id": 1562,
