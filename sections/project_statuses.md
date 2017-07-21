@@ -122,6 +122,8 @@ An example response with projects info included:
                 {
                     "id": 1383832,
                     "name": "Paymo Walkthrough",
+                    "code": "PW",
+                    "task_code_increment": 7,
                     "description": "This walkthrough sample project contains a collection of tasks/to-dos that help describe the basics of using Paymo. If you need help you can always get in touch with us using the small chat icon in the bottom right corner of the screen.",
                     "client_id": 923821,
                     "status_id": 28282,
@@ -148,8 +150,10 @@ An example response with projects info included:
                     "billing_type": "non"
                 },
                 {
-                    "id": 2,
+                    "id": 393932,
                     "name": "Product downloader",
+                    "code": "PD",
+                    "task_code_increment": 54,
                     "description": "",
                     "client_id": 923821,
                     "status_id": 28282,

@@ -36,6 +36,8 @@ Example response for listing requests:
       {
          "id": 397706,
          "name": "Understanding Paymo",
+         "code": "UP",
+         "task_code_increment": 19,
          "description": "",
          "client_id": 151303,
          "status_id": 93939,
@@ -56,6 +58,8 @@ Example response for listing requests:
       {
          "id": 397707,
          "name": "Sample Project",
+         "code": "SP",
+         "task_code_increment": 10,
          "description": "",
          "client_id": 151304,
          "status_id": 83821,
@@ -95,6 +99,8 @@ Example of response:
       {
          "id": 397706,
          "name": "Understanding Paymo",
+         "code": "UP",
+         "task_code_increment": 19,
          "description": "",
          "client_id": 151303,
          "status_id": 1922,
@@ -335,6 +341,8 @@ Attribute|Type|Description
 ---------|----|-----
 id | integer | _(read-only)_ Unique project identifier
 name | text | Project name 
+code | text | Project code can only contain alphanumeric characters (letters A-Z, numbers 0-9). Project code is used as a prefix in task code.
+task_code_increment | integer | _(read-only)_ This is the sequence of the last task from this project.
 description | text | Project description
 client_id | integer | Id of the client for whom the project was created
 status_id | integer | Status id
