@@ -448,10 +448,8 @@ Option | Description
 `today`| date range equals to today (from midnight to midnight)
 `yesterday`| date range starts yesterday at 00:00 and ends yesterday at 23:59.
 `this_month` | starts on the 1st of this month (at 00:00) and ends on the last day of this month (at 23:59)
-`this_month_strict` | starts on the 1st of this month (at 00:00) and ends today at 23:59
 `last_month` | starts on the 1st of last month (at 00:00) and ends on the last day of last month (at 23:59)
 `this_week` | starts on the 1st day of the week (as defined by user week start settings) at 00:00 and ends on the last day of the week (at 23:59)
-`this_week_strict` | starts on the 1st day of the week (as defined by user week start settings) at 00:00 and ends today at 23:59
 `last_week` | start on the 1st day of last week at 00:00 and ends on last day of last week at 23:59
 `this_year` | starts on the 1st day of this year at 00:00 and ends on the last day of this year at 23:59
 `last_year` | starts on the 1st day of last year at 00:00 and ends on the last day of last year at 23:59
@@ -478,7 +476,6 @@ Option|Description
 ------|-----------
 `exclude_billed_entries`| excludes from report entries that were billed (an invoice for those entries was created)
 `exclude_nonbillable_tasks`|excludes from report time from tasks that are not billable
-`exclude_nonbillable_projects`|excludes from report time from projects that are not billable
 `enable_time_rounding`|enables rounding up time to increments of `rounding_step` value (see below)
 `rounding_step` | minimal time entry length increment (in minutes). Example: if `rounding_step` = 15, and a time entry included into the report has a length of 8 minutes, in the report it will appear as 15 minutes. If the time entry length was 32 minutes, it will appear as 45 minutes.
 `display_charts` | if set, the Paymo application will also display a pie chart representing all report time distribution
