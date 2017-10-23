@@ -284,10 +284,10 @@ Defining fields for time & materials projects:
 * `hourly_billing_mode` will define the order in which the hourly rates (user rate, task rate, project rate, or company rate) will be selected for billing the project time. If an hourly rate is not set, the next set value will be used.
 
 Available options for `hourly_billing_mode`:
- * `null`, first set value from the list will be used: user hourly rate, then task rate, then project rate, then company rate.
- * `task`, first set value from the list: task hourly rate, then user rate, then project rate, then company rate.
- * `project`, first set value from the list: project hourly rate, then user rate, then task rate, then company rate.
- * `company`, first set value from the list: company hourly rate, then user rate, then task rate, then project rate.
+ * `null`, first not null value from the list will be used: *user* hourly rate, then *task* rate, then *project* rate, then *company* rate.
+ * `task`, first not null value from the list: *task* hourly rate, then *user* rate, then *project* rate, then *company* rate.
+ * `project`, first not null value from the list: *project* hourly rate, then *user* rate, then *task* rate, then *company* rate.
+ * `company`, first not null value from the list: *company* hourly rate, then *user* rate, then *task* rate, then *project* rate.
 
 Example request to create a time & materials project:
 
