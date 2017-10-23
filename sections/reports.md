@@ -480,7 +480,7 @@ Option|Description
 `rounding_step` | minimal time entry length increment (in minutes). Example: if `rounding_step` = 15, and a time entry included into the report has a length of 8 minutes, in the report it will appear as 15 minutes. If the time entry length was 32 minutes, it will appear as 45 minutes.
 `display_charts` | if set, the Paymo application will also display a pie chart representing all report time distribution
 `display_costs` | if set, the report will also contain computed costs for each included report element
-`display_project_budgets` | if set, the projects items from the report will contain project budget info
+`display_projects_budgets` | if set, the projects items from the report will contain project budget info
 `display_tasks_descriptions` | if set, tasks from the report will also contain their descriptions
 `display_tasks_complete_status` | if set, tasks from the report will also contain their completed status
 `display_entries_descriptions` | if set, entries from the report will also contain their descriptions
