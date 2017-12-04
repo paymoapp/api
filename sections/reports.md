@@ -435,9 +435,9 @@ Field | Required | Description
 `date_interval` | optional (to `start_date`, `end_date`) | If `date_interval` is sent, `start_date` and `end_date` are optional. See options below. 
 `start_date` | optional (to `date_interval`) | If `date_interval` is not sent, `start_date` and `end_date` are required. Represents a date that starts the reporting date range.  
 `end_date` | optional (to `date_interval`) | If `date_interval` is not sent, `start_date` and `end_date` are required. Represents a date that ends the reporting date range.
-`projects` | optional | A list of project ids from which the time will be included into the report. Or a preset value of: `all` (for all projects, including archived), `all_active` (for active projects only).
-`clients` | optional | A list of client ids from which the time will be included into the report. Or a preset value of: `all` (for all clients, including archived), `all_active` (for active clients only). If no `projects` is specified, this will define the projects to be included.
-`users` | optional | A list of user ids for whom the time will be included into the report. Or a preset value of: `all` (for all users, including archived), `all_active` (for active users only).
+`projects` | optional | A list of project ids from which the time will be included into the report, or one of the presets: <br/> `all` (for all projects, including archived), <br/> `all_active` (for active projects only), <br/>`all_archived` (for archived projects only),<br/>`status_id=[STATUS]` (for a list of projects with the given status).<br/>If `clients` param was set, the projects selection will be limited to those clients.
+`clients` | optional | A list of client ids from which the time will be included into the report. Or a preset value of: <br/> `all` (for all clients, including archived), <br/> `all_active` (for active clients only).<br/> If `projects` has no value specified, this will define the projects to be included.
+`users` | optional | A list of user ids for whom the time will be included into the report, or one of the presets: <br/> `all` (for all users, including archived), <br/> `all_active` (for active users only), <br/>`all_archived` (for archived users only).
 `include` | optional | What info to include into the report. See options below.
 `extra` | optional | Additional options for the report. See options below.
 
@@ -475,17 +475,27 @@ Options for `extra` param:
 Option|Description
 ------|-----------
 `exclude_billed_entries`| excludes from report entries that were billed (an invoice for those entries was created)
-`exclude_nonbillable_tasks`|excludes from report time from tasks that are not billable
+`exclude_unbilled_entries`| excludes from report entries that were not billed
+`exclude_billable_tasks`| excludes from report time from tasks that are billable
+`exclude_nonbillable_tasks`| excludes from report time from tasks that are not billable
+`exclude_flat_rate_tasks`| excludes from report time for tasks with flat rate billing
+`exclude_flats`| excludes from report time for projects and tasks with flat rate billing
 `enable_time_rounding`|enables rounding up time to increments of `rounding_step` value (see below)
-`rounding_step` | minimal time entry length increment (in minutes). Example: if `rounding_step` = 15, and a time entry included into the report has a length of 8 minutes, in the report it will appear as 15 minutes. If the time entry length was 32 minutes, it will appear as 45 minutes.
+`rounding_step` | minimal time entry length increment (in minutes). <br/>Example: if `rounding_step` = 15, and a time entry included into the report has a length of 8 minutes, in the report it will appear as 15 minutes. If the time entry length was 32 minutes, it will appear as 45 minutes.
 `display_charts` | if set, the Paymo application will also display a pie chart representing all report time distribution
 `display_costs` | if set, the report will also contain computed costs for each included report element
-`display_projects_budgets` | if set, the projects items from the report will contain project budget info
+`display_entries_descriptions` | if set, entries from the report will also contain their descriptions
+`display_seconds` | if set, the report will display time entries to the seconds (in Paymo application)
+`display_tasks_codes`| if set, tasks from report will contain their codes
 `display_tasks_descriptions` | if set, tasks from the report will also contain their descriptions
 `display_tasks_complete_status` | if set, tasks from the report will also contain their completed status
-`display_entries_descriptions` | if set, entries from the report will also contain their descriptions
+`display_tasks_remaining_time_budgets` | if set, tasks from the report will also contain remaining budget info (in Paymo application)
+`display_tasks_time_budget` | if set, tasks from reprot will also contain buget hours info
+`display_projects_budgets` | if set, the projects items from the report will contain project budget info
+`display_projects_codes`| if set, projects from report will contain their codes
 `display_projects_descriptions` | if set, projects from the report will also contain their descriptions
-`display_seconds` | if set, the report will display time entries to the seconds (in Paymo application)
+`display_projects_remaining_budgets`| if set, projects from the report will also contain remaining budget info (in Paymo application)
+`order`| if set, the report will group the included items (from `include` param) in the requested order. If not set, the default order is: `['days', 'clients', 'users', 'projects', 'tasklists', 'tasks', 'billed', 'entries']`
 
 ### Report format
 
