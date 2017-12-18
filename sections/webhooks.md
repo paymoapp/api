@@ -4,6 +4,7 @@
 * [Listing webhooks](#list)
 * [Getting a webhook](#get)
 * [Creating a webhook](#create)
+* [Updating a webhook](#update)
 * [Deleting a webhook](#delete)
 * [Notifications](#notifications)
 
@@ -51,6 +52,7 @@ Example of response:
       "target_url": "https://myapp.com/paymo-insert-task-hook",
       "last_status_code": null,
       "event": "model.insert.Task",
+      "where": null,
       "created_on": "2017-01-04T13:39:40Z",
       "updated_on": "2017-01-04T13:39:40Z"
     },
@@ -58,7 +60,7 @@ Example of response:
       "id": 2,
       "target_url": "https://myapp.com/paymo-delete-task-hook",
       "last_status_code": null,
-      "event": "model.delete.Task",
+      "where": "project_id=123456"
       "created_on": "2017-01-04T13:40:11Z",
       "updated_on": "2017-01-04T13:40:11Z"
     }
@@ -84,6 +86,7 @@ Example response:
       "target_url": "https://myapp.com/paymo-insert-task-hook",
       "last_status_code": 200,
       "event": "model.insert.Task",
+      "where": null,
       "created_on": "2017-01-04T13:39:40Z",
       "updated_on": "2017-01-04T13:39:40Z"
     }
@@ -109,6 +112,40 @@ with the request body containing the new webhook info as in the example below:
 
 If successful, the response will contain the new webhook info.
 
+By providing the `where` param you can trigger webhooks only if the model matches the conditions from `where`.
+The `where` param has the same syntax as when used in `where` params of `GET` requests. See [response filtering](filtering.md).
+
+For example, you want to be notified only for new task event in a specific project. The create request for this webhook will look like:
+
+```json
+{
+   "target_url": "https://myapp.com/paymo/project-123-new-tasks",
+   "event": "model.insert.Task",
+   "where": "project_id=123"
+}
+```
+
+<a name="update"></a>
+## Updating a webhook
+
+To update an existing webhook, make a POST or PUT request to:
+
+* `/api/hooks/[WEBHOOK_ID]`
+
+with the request body containing the updated info. You can send only the changed fields.
+
+On update the webhook's `last_response_code` will be reset.
+
+Example of request body if you want to change the webhook `target_url`:
+
+```json
+{
+    "target_url": "https://myotherapp.com/notifications"
+}
+```
+
+The response will return `200 OK` and will contain the updated expense info as in the **Getting an expense** section.
+
 <a name="delete"></a>
 ## Deleting a webook
 
@@ -119,6 +156,8 @@ To delete a webhook, send a DELETE request to:
 * `/api/hooks/[WEBHOOK_ID]`
 
 If successful, the response will have a `200 OK` status code.
+
+A webhook is also deleted when `target url` responds with a status code of `410 Gone`.
 
 <a name="notifications"></a>
 ## Notifications
