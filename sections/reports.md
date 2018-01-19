@@ -495,6 +495,7 @@ Option|Description
 `display_projects_codes`| if set, projects from report will contain their codes
 `display_projects_descriptions` | if set, projects from the report will also contain their descriptions
 `display_projects_remaining_budgets`| if set, projects from the report will also contain remaining budget info (in Paymo application)
+`display_users_positions`| if set, users from report will also contain their role/position info
 `order`| if set, the report will group the included items (from `include` param) in the requested order. If not set, the default order is: `['days', 'clients', 'users', 'projects', 'tasklists', 'tasks', 'billed', 'entries']`
 
 ### Report format
