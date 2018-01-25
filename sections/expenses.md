@@ -226,9 +226,9 @@ invoiced | boolean | If `true` the expense is marked as invoiced.
 invoice_item_id | integer | Id of the invoice line item when the expense was invoiced.
 tags | list | List of tags for the expense.
 file | url | Receipt file URL
-file_thumb_large | url | _(read-only)_ Receipt large size thumbnail URL. _(Only for images)_
-file_thumb_medium | url | _(read-only)_ Receipt medium size thumbnail URL. _(Only for images)_
-file_thumb_small | url | _(read-only)_ Receipt small size thumbnail URL. _(Only for images)_
+image_thumb_large | url | _(read-only)_ Receipt large size thumbnail URL. _(Only for images)_
+image_thumb_medium | url | _(read-only)_ Receipt medium size thumbnail URL. _(Only for images)_
+image_thumb_small | url | _(read-only)_ Receipt small size thumbnail URL. _(Only for images)_
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the expense was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the expense was last updated
 
