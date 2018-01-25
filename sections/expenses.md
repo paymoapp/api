@@ -5,6 +5,7 @@
 * [Creating an expense](#create)
 * [Updating an expense](#update)
 * [Invoicing an expense](#invoicing)
+* [Attaching a receipt to an expense](#attach-receipt)
 * [Deleting an expense](#delete)
 * [The expense object](#object)
 * [Dependent objects](#dependencies)
@@ -179,6 +180,26 @@ Alternatively, to mark an expense as invoiced without creating an invoice, make 
 }
 ```
 
+<a name="attach-receipt"></a>
+## Attaching a receipt to an expense
+
+To add a receipt to an existing expense, make a POST request to:
+
+* `/api/expenses/[EXPENSE_ID]`
+
+The request content-type should be `multipart-form-data` and the file field name equal to `file`. Here's an example using `curl` command line:
+
+```shell
+curl -u email:password
+  -H 'Accept: application/json'
+  -F "file=@receipt.jpg"
+  https://app.paymoapp.com/api/expenses/1261
+```
+
+The receipt for an expense can also be added when creating the expense. In that case, all the expense fields should be send in `multipart-form-data` format together with the file.
+
+If the receipt file is an image, the expense object representation will contain additional fields for thumbnails.
+
 <a name="delete"></a>
 ## Deleting an expense
 
@@ -204,6 +225,10 @@ date | [date](datetime.md) | Date for the expense
 invoiced | boolean | If `true` the expense is marked as invoiced.
 invoice_item_id | integer | Id of the invoice line item when the expense was invoiced.
 tags | list | List of tags for the expense.
+file | url | Receipt file URL
+file_thumb_large | url | _(read-only)_ Receipt large size thumbnail URL. _(Only for images)_
+file_thumb_medium | url | _(read-only)_ Receipt medium size thumbnail URL. _(Only for images)_
+file_thumb_small | url | _(read-only)_ Receipt small size thumbnail URL. _(Only for images)_
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the expense was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the expense was last updated
 
