@@ -4,6 +4,7 @@
 * [Listing webhooks](#list)
 * [Getting a webhook](#get)
 * [Creating a webhook](#create)
+* [Webhook signatures](#signature)
 * [Updating a webhook](#update)
 * [Deleting a webhook](#delete)
 * [Notifications](#notifications)
@@ -124,6 +125,16 @@ For example, you want to be notified only for new task event in a specific proje
    "where": "project_id=123"
 }
 ```
+
+<a name="signature"></a>
+## Webhook signatures
+
+When creating a webhook you can also provide a `secret` param.
+In this case Paymo will sign this webhook requests so you can verify that they originated from Paymo.
+This `secret` value will not be returned when listing webhooks or getting webhook details.
+
+These webhook triggers will contain a HTTP header `X-Paymo-Signature` which is the
+HMAC hex digest of the response body generated using the `sha1` hash function and the `secret` as the HMAC key.
 
 <a name="update"></a>
 ## Updating a webhook
