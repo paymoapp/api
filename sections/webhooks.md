@@ -61,6 +61,7 @@ Example of response:
       "id": 2,
       "target_url": "https://myapp.com/paymo-delete-task-hook",
       "last_status_code": null,
+      "event": "model.delete.Task",
       "where": "project_id=123456",
       "created_on": "2017-01-04T13:40:11Z",
       "updated_on": "2017-01-04T13:40:11Z"
