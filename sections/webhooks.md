@@ -137,6 +137,18 @@ This `secret` value will not be returned when listing webhooks or getting webhoo
 These webhook triggers will contain a HTTP header `X-Paymo-Signature` which is the
 HMAC hex digest of the response body generated using the `sha1` hash function and the `secret` as the HMAC key.
 
+For example, a delete project webhook created with `secret`="secret" will have the header:
+
+```
+X-Paymo-Signature: sha1=dc03736e396e70138bf7af4ffaa2948cde42dcf1
+```
+
+for the body:
+
+```
+{"id":"1679584"}
+```
+
 <a name="update"></a>
 ## Updating a webhook
 
