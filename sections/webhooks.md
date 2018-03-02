@@ -4,10 +4,13 @@
 * [Listing webhooks](#list)
 * [Getting a webhook](#get)
 * [Creating a webhook](#create)
+* [Wildcard events](#wildcard)
 * [Webhook signatures](#signature)
 * [Updating a webhook](#update)
 * [Deleting a webhook](#delete)
 * [Notifications](#notifications)
+* [Webhook headers](#headers)
+* [Additional includes](#includes)
 
 Webhooks allow for 3rd parties to be notified when an event in Paymo occurs.
 
@@ -127,6 +130,24 @@ For example, you want to be notified only for new task event in a specific proje
 }
 ```
 
+<a name="wildcard"></a>
+## Wildcard events
+
+When creating a webhook, you can also use a wildcard for the webhook event using the `*` symbol.
+
+For example, a webhook created with:
+
+* `event`=`*` will be triggered every time any event from the [list](#events) occurs.
+* `event`=`model.insert.*` will be triggered every time an insert event occurs.
+* `event`=`*.Task` will be triggered every time an insert/update/delete event for a task occurs.
+
+When using wildcard events, you can distinguish between event types by using the
+`X-Paymo-Event` header to get the actual event that triggered the webhook. (See [headers](#headers))
+
+*Notice:* When using `where` with wildcard events, the validity of the `where` param will not be
+checked when creating the webhook. It will be checked against an actual event when the event will occur.
+In case the `where` param could not be parsed the webhook will not be triggered.
+
 <a name="signature"></a>
 ## Webhook signatures
 
@@ -168,7 +189,7 @@ Example of request body if you want to change the webhook `target_url`:
 }
 ```
 
-The response will return `200 OK` and will contain the updated expense info as in the **Getting an expense** section.
+The response will return `200 OK` and will contain the updated webhook info.
 
 <a name="delete"></a>
 ## Deleting a webook
@@ -256,7 +277,16 @@ For `delete` events, the notification content is a JSON object with a single att
 }
 ```
 
-### Additional includes in webhook notification body
+<a name="headers"></a>
+## Webhook Headers
+Any request by Paymo to a target URL triggered by a webhook will have additional headers:
+
+* `X-Paymo-Webhook` with the ID of the webhook which is triggered
+* `X-Paymo-Event` with the event that was triggered (e.g. `model.insert.Task`)
+* `X-Paymo-Signature` with the HMAC hash of the request body when the webhook was created with a `secret`
+
+<a name="includes"></a>
+## Additional includes in webhook notification body
 
 Object type|Equivalent request
 -----------|-----------
