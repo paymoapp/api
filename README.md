@@ -23,7 +23,7 @@ Accepted request types (HTTP verbs) are: GET, POST, PUT, DELETE.
 <a name="make-request"></a>
 ## Making a request
 
-The API base URL is `https://app.paymoapp.com/api/`. It is **SSL only**. There is no way to use the API over unsecure http:// protocol.
+The API base URL is `https://app.paymoapp.com/api/`. It is **SSL/TLS 1.2 only**. There is no way to use the API over unsecure http:// protocol.
 
 An example request using `curl` for retrieving the list of clients may look like this:
 
