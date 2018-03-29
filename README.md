@@ -78,7 +78,7 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Clients](sections/clients.md)
 * [Comments](sections/comments.md)
 * [Company](sections/company.md)
-* [Company-Days-Exceptions](sections/companies_days_exceptions.md)
+* [CompaniesDays-Exceptions](sections/companies_days_exceptions.md)
 * [Discussions](sections/discussions.md)
 * [Estimate Templates](sections/estimate_templates.md)
 * [Estimates](sections/estimates.md)

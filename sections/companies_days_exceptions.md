@@ -1,4 +1,4 @@
-# Company Days Exceptions
+# Companies Days Exceptions
 
 Days-exceptions is a date interval that defines a working or a non-working period of time.
 
