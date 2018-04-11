@@ -2,7 +2,7 @@
 
 ## Basic Auth
 
-For a quick start using the Paymo API, you can use HTTP Basic authentication with your email and password info:
+For a quick start using the Paymo API, you can use [HTTP Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) with your email and password info:
 
 ```shell
 curl -u email:password 
