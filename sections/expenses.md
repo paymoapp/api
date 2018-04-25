@@ -217,11 +217,13 @@ An expense object has the following attributes:
 Attribute|Type|Description
 ---------|----|-----------
 id | integer | _(read-only)_ Unique expense identifier
-notes | text | Expense notes or description
 client_id | integer | Client id 
 project_id | integer | Project id 
-user_id | integer | Id of the user who added the expense. 
+user_id | integer | Id of the user who added the expense.
+amount | decimal | Expense amount
+currency | text | Expense currency code. See the [list of currencies](currencies.md). 
 date | [date](datetime.md) | Date for the expense
+notes | text | Expense notes or description
 invoiced | boolean | If `true` the expense is marked as invoiced.
 invoice_item_id | integer | Id of the invoice line item when the expense was invoiced.
 tags | list | List of tags for the expense.
