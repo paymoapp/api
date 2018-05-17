@@ -16,7 +16,7 @@
 You can list client contacts by making a GET request to:
 
 * `/api/clientcontacts` for a list of all contacts for all clients
-* `/api/clientcontacts?where=active=client_id=[CLIENT_ID]` for a list of all contacts for a specific client
+* `/api/clientcontacts?where=client_id=[CLIENT_ID]` for a list of all contacts for a specific client
  
 Example of response:
 
