@@ -90,7 +90,6 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Project Templates](sections/project_templates.md)
 * [Project Statuses](sections/project_statuses.md)
 * [Projects](sections/projects.md)
-* [Recurring Invoice Profiles](sections/recurring_profiles.md)
 * [Reports](sections/reports.md)
 * [Sessions](sections/sessions.md)
 * [Tags](sections/tags.md)
