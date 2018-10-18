@@ -92,7 +92,6 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Projects](sections/projects.md)
 * [Reports](sections/reports.md)
 * [Sessions](sections/sessions.md)
-* [Tags](sections/tags.md)
 * [Task Lists](sections/tasklists.md)
 * [Tasks](sections/tasks.md)
 * [Time Entries](sections/entries.md)
