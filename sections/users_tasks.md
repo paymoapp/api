@@ -1,18 +1,18 @@
-# User-Task Assignments
+# Task Assignments
 
-* [Getting user-task assignments](#list)
-* [Getting a user-task assignment](#get)
-* [Creating a user-task assignment](#create)
-* [Updating a user-task assignment](#update)
-* [Deleting a user-task assignment](#delete)
-* [The user-task assignment object](#object)
+* [Getting task assignments](#list)
+* [Getting a task assignment](#get)
+* [Creating a task assignment](#create)
+* [Updating a task assignment](#update)
+* [Deleting a task assignment](#delete)
+* [The task assignment object](#object)
 * [Dependent objects](#dependencies)
 
 <a name="list"></a>
 
-## Getting user-task assignments
+## Getting task assignments
 
-You can list user-task assignments by making a GET request to:
+You can list task assignments by making a GET request to:
 
 * `/api/userstasks?where=user_id=[USER_ID]` for a list of task assignments for a user 
 * `/api/userstasks?where=task_id=[TASK_ID]` for a list of user assignments for a task 
@@ -42,12 +42,12 @@ Example of response:
 }
 ```
 
-You can also [include related content](includes.md) when listing user-task assignments.
+You can also [include related content](includes.md) when listing task assignments.
 
 <a name="get"></a>
-## Getting a user-task assignment
+## Getting a task assignment
 
-To get the user-task assignment info, make a GET request to:
+To get the task assignment info, make a GET request to:
 
 * `/api/userstasks/[ASSIGNMENT_ID]`
 
@@ -67,16 +67,16 @@ Example response:
 }
 ```
 
-You can also [include related content](includes.md) when getting a user-task assignment.
+You can also [include related content](includes.md) when getting a task assignment.
 
 <a name="create"></a>
-## Creating a user-task assignment
+## Creating a task assignment
 
-To create a user-task assignment, make a POST request to:
+To create a task assignment, make a POST request to:
 
 * `/api/userstasks`
 
-with the request body containing the new user-task assignment info, as in the examples below:
+with the request body containing the new task assignment info, as in the examples below:
 
 ```json
 {
@@ -85,26 +85,26 @@ with the request body containing the new user-task assignment info, as in the ex
 }
 ```
 
-If successful, the response will return `201 Created`. The response header `Location` will contain a link for the new user-task assignment. The response body will contain the new user-task assignment info as in the **Getting a user-task assignment** section.
+If successful, the response will return `201 Created`. The response header `Location` will contain a link for the new task assignment. The response body will contain the new task assignment info as in the **Getting a task assignment** section.
 
 ### Required fields
 
-When creating a user-task assignment: `user_id` and `task_id`.
+When creating a task assignment: `user_id` and `task_id`.
 
 ### Note
  
 You can also assign users to a task directly by updating the task's `users` attribute.
 
 <a name="update"></a>
-## Updating a user-task assignment
+## Updating a task assignment
 
-To update an existing user-task assignment, make a POST or PUT request to:
+To update an existing task assignment, make a POST or PUT request to:
 
 * `/api/userstasks/[ASSIGNMENT_ID]`
 
 with the request body containing the updated info. You can send only the changed fields.
 
-Example of request body if you want to change the user-task assignment task_id:
+Example of request body if you want to change the task assignment task_id:
 
 ```json
 {
@@ -112,29 +112,29 @@ Example of request body if you want to change the user-task assignment task_id:
 }
 ```
 
-The response will return `200 OK` and will contain the updated user-task assignment info as in the **Getting a user-task assignment** section.
+The response will return `200 OK` and will contain the updated task assignment info as in the **Getting a task assignment** section.
 
 <a name="delete"></a>
-## Deleting a user-task assignment
+## Deleting a task assignment
 
-To delete a user-task assignment, make a DELETE request to:
+To delete a task assignment, make a DELETE request to:
 
 * `/api/userstasks/[ASSIGNMENT_ID]`
 
 If successful, the response will have a `200 OK` status code.
 
 <a name="object"></a>
-## The user-task assignment object
+## The task assignment object
 
-A user-task assignment object has the following attributes:
+A task assignment object has the following attributes:
 
 Attribute|Type|Description
 ---------|----|-----------
-id | integer | _(read-only)_ Unique user-task assignment identifier
+id | integer | _(read-only)_ Unique task assignment identifier
 user_id | integer | Id of the user
 task_id | integer | Id of the task
-created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the user-task assignment was created
-updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the user-task assignment was last updated
+created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the task assignment was created
+updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the task assignment was last updated
 
 <a name="dependencies"></a>
 ## Dependent objects
