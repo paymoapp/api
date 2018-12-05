@@ -333,6 +333,15 @@ For non-billable projects:
 
 More info about project billing can be found in the [Knowledge Base](https://www.paymoapp.com/knowledge-base/types-of-projects/).
 
+<a name="workflow"></a>
+## Project workflow
+
+A project workflow is a set of possible statuses for the project's tasks.
+
+### Warning
+
+**When the project workflow is changed, all the tasks statuses will be reset, active tasks will be moved to "Backlog" status and completed tasks to "Complete" status**
+
 <a name="object"></a>
 ## The project object
  
@@ -361,6 +370,7 @@ budget_hours | decimal | Project budget in hours. If not set, the project will h
 adjustable_hours | boolean | If `true` the budget_hours will be adjusted automatically based on tasks budget hours.
 invoiced | boolean | For flat rate projects, if `true`, the project was already invoiced.
 invoice_item_id | integer | For flat rate projects, if set, the ID of the invoice line (part of the invoice for the project).
+workflow_id | integer | Id of the workflow. See [workflows](workflows.md)
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the project was last updated
 
@@ -379,6 +389,7 @@ Object type|Include key|Relationship
 [Discussion](discussions.md) | discussions | child
 [File](files.md) | files | child
 [Invoice Item](invoices.md) | invoiceitem | parent
+[Workflow](workflows.md) | workflow | parent
 
 *Note:* Time entries can be included through `tasks`, as in:
 

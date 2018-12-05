@@ -97,6 +97,8 @@ If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.
 * [Time Entries](sections/entries.md)
 * [Users](sections/users.md)
 * [Task Assignments](sections/users_tasks.md)
+* [Workflows](sections/workflows.md)
+* [Workflow Statuses](sections/workflow_statuses.md)
 
 <a name="data-formats"></a>
 ## Data formats
