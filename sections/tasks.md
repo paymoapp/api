@@ -6,6 +6,8 @@
 * [Updating a task](#update)
 * [Changing the order of tasks](#update-tasks-order)
 * [Adding a file to a task](#add-file)
+* [Changing task workflow status](#status)
+* [Changing task priority](#priority)
 * [Deleting a task](#delete)
 * [Task billing](#billing)
 * [The task object](#object)
@@ -194,6 +196,40 @@ curl -u email:password
 
 The file can also be added when creating the task. In that case, all the task fields should be send in `multipart-form-data` format together with the file.
 
+<a name="status"></a>
+## Changing task workflow status
+
+To change task's status, make an update request with the following request body:
+
+```json
+{
+   "status_id": WORKFLOW_STATUS_ID
+}
+```
+
+The list of available task statuses can be obtained from the project workflow.
+
+**NOTE** When a task is marked as completed, the task workflow status is changed to "Complete" and when it is activated, the task workflow status is changed to "Backlog".
+
+<a name="priority"></a>
+## Changing task priority
+
+To change task's priority, make an update request with the following request body:
+
+```json
+{
+   "priority": TASK_PRIORITY
+}
+```
+
+Allowed task priorities: 100, 75, 50, 25.
+* 100 - Critical
+* 75 - High
+* 50 - Normal
+* 25 - Low
+
+**NOTE** All tasks are created with Normal (50) priority if not specified herwise
+
 <a name="delete"></a>
 ## Deleting a task 
 
@@ -284,6 +320,8 @@ budget_hours | decimal | Budget hours for the task
 estimated_price | decimal | For billable tasks, the estimated task price based on tracked time for time based tasks, and the task flat price for flat rate tasks.
 invoiced | boolean | For flat rate tasks, if `true`, the task was already invoiced.
 invoice_item_id | integer | For flat rate tasks, if set, the ID of the invoice line (part of the invoice for the task).
+priority | integer | Task priority. See [priority](#priority).
+status_id | integer | Task workflow status. See [task status](#status).
 created_on | [datetime](datetime.md) | _(read-only)_ Date and time when the task was created
 updated_on | [datetime](datetime.md) | _(read-only)_ Date and time when the task was last updated
 
@@ -300,3 +338,4 @@ Object type|Include key|Relationship
 [Comments Thread](comments.md) | thread | parent
 [Time Entry](entries.md) | entries | child
 [Invoice Item](invoices.md) | invoiceitem | parent
+[Workflow Status](workflow_status.md) | workflowstatus | parent
