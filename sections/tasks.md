@@ -228,7 +228,7 @@ Allowed task priorities: 100, 75, 50, 25.
 * 50 - Normal
 * 25 - Low
 
-**NOTE** All tasks are created with Normal (50) priority if not specified herwise
+**NOTE** All tasks are created with Normal (50) priority if not specified otherwise
 
 <a name="delete"></a>
 ## Deleting a task 
