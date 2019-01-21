@@ -124,6 +124,7 @@ If successful, the response will return `201 Created`. The response header `Loca
 
 When creating a client: `name`.
 
+<a name="update"></a>
 ## Updating a client
 
 To update an existing client, make a POST or PUT request to:
