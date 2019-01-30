@@ -150,7 +150,7 @@ If your company does not have a Paymo paid subscription and you have reached the
 
 ### Required fields
 
-When creating a project: `name`, `client_id`.
+When creating a project: `name`, `client_id`. If `client_id` is not specified, a `Sample Client` will be created automatically.
 
 <a name="update"></a>
 ## Updating a project
