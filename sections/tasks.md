@@ -19,8 +19,9 @@
 You can list tasks by making a GET request to:
 
 * `/api/tasks` for a list of all task from all projects
-* `/api/tasks?where=project_id=[PROJECT_ID]` for a list of task from a project
-* `/api/tasks?where=tasklist_id=[TASKLIST_ID]` for a list of task from a task list
+* `/api/tasks?where=client_id=[CLIENT_ID]` for a list of tasks from a client
+* `/api/tasks?where=project_id=[PROJECT_ID]` for a list of tasks from a project
+* `/api/tasks?where=tasklist_id=[TASKLIST_ID]` for a list of tasks from a task list
 * `/api/tasks?where=complete=false and project_id=[PROJECT_ID]` for a list of incomplete tasks from a project 
 * `/api/tasks?where=users=[USER_ID]` for a list tasks assigned to a user 
 * `/api/tasks?where=users in ([USER1_ID],[USER2_ID])` for a list tasks assigned to USER1 or USER2 
@@ -51,6 +52,8 @@ Example of response:
          "users": [
             45
          ],
+         "client_id": 2048,
+         "client_name": "AT&T Inc.",
          "created_on": "2014-07-25T11:16:24Z",
          "updated_on": "2014-10-13T14:22:53Z"
       },
@@ -69,6 +72,8 @@ Example of response:
          "due_date": "2014-10-30",
          "budget_hours": null,
          "users": [],
+         "client_id": 2020,
+         "client_name": "Testing Client",
          "created_on": "2014-07-25T11:18:11Z",
          "updated_on": "2014-08-23T14:22:05Z"
       }
@@ -106,6 +111,8 @@ Example response:
          "price_per_hour": null,
          "due_date": null,
          "budget_hours": null,
+         "client_id": 2048,
+         "client_name": "AT&T Inc.",
          "users": [
             45
          ],
@@ -332,6 +339,7 @@ The following object types can be used in [includes](includes.md):
 
 Object type|Include key|Relationship
 -----------|-----------|----
+[Client](clients.md) | client | parent
 [Project](projects.md) | project | parent
 [Task List](tasklists.md) | tasklist | parent
 [User](users.md) | user | parent
