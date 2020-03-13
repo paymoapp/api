@@ -116,7 +116,7 @@ You can do it with the following request:
 ```shell
 curl -u email:password
   -H 'Accept: application/json'
-  https://app.paymoapp.com/api/tasks/241147?include=tasklists,tasklists.tasks
+  https://app.paymoapp.com/api/projects/28917?include=tasklists,tasklists.tasks
 ```
 
 The response will look like:
