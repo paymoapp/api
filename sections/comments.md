@@ -228,4 +228,4 @@ Object type|Include key|Relationship
 [Discussion](discussion.md) | discussion | parent
 [Task](tasks.md) | task | parent
 [Files](files.md) | file | parent
-[Comment](comments.md) | comment | child
+[Comment](comments.md) | comments | child
