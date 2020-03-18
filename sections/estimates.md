@@ -314,10 +314,14 @@ language | text | _(deprecated)_ Estimate language (Use estimate templates inste
 bill_to | text | Text block with customer information as it appears on estimate
 company_info | text | Text block with provider information as it appears on estimate
 footer | text | Text block for footer area of the estimate
-notes | text | Text block for notes area (just below the estimate items)
+notes | text | Text block for "internal" notes area (not shown on the estimate)
 tax_text | text | Tax text label (name)
 tax2_text | text | 2nd tax text label (name)
 title | text | Editable estimate title
+brief_description | text | Text block for notes/description area (above/below the estimate items based on template)
+discount | decimal | Discount (percentage)
+discount_amount | decimal | _(read-only)_ Discount amount
+discount_text | text | Discount text label (name)
 invoice_id | integer | _(optional)_ Id of the invoice that was created from this estimate
 permalink | text | _(read-only)_ A link for viewing the estimate that can be accessed by anyone with the link (usually the permalink is sent to clients)
 pdf_link | text | _(read-only)_ Same as above, but in pdf format
