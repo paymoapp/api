@@ -356,12 +356,13 @@ language | text | _(deprecated)_ Invoice language (Use invoice templates instead
 bill_to | text | Text block with customer information as it appears on invoice
 company_info | text | Text block with provider information as it appears on invoice
 footer | text | Text block for footer area of the invoice
-notes | text | Text block for notes area (just below the invoice items)
+notes | text | Text block for "internal" notes area (just below the invoice items, not visible on invoice)
 outstanding | decimal | Any outstanding payments for the client. This is just a note to the client and does not add up to invoice total.
 tax_text | text | Tax text label (name)
 tax2_text | text | 2nd tax text label (name)
 discount_text | text | Discount text label
 title | text | Editable invoice title
+delivery_date | date | An optional date field to print on the invoice as a delivery date
 pay_online | boolean | If `true` and online payments are configured in company settings, your clients can pay for the invoice through any of the set up providers
 reminder_1_sent | boolean | _(read-only)_ This flag that is set to `true` when 1st reminder email was sent to client for the overdue invoice. You can define up to 3 late payment reminders in Invoicing area of Paymo application's company settings
 reminder_2_sent | boolean | _(read-only)_ Same as above, but for the 2nd reminder
