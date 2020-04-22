@@ -33,7 +33,7 @@ curl -u email:password
   https://app.paymoapp.com/api/clients
 ```
 
-Updating a client using `curl` my look like:
+Updating a client using `curl` may look like:
 
 ```shell
 curl -u email:password
