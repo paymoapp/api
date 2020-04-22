@@ -1,4 +1,4 @@
-# Tasks
+# Task recurring profiles
 
 * [Getting task recurring profiles](#list)
 * [Getting a task recurring profile](#get)
@@ -217,7 +217,7 @@ occurrences | integer | After how many occurrences to stop creating tasks
 until | date | Date until to keep creating tasks
 active | boolean | If task recurring profile is active or halted
 due_date_offset | integer | This is used as task duration
-recurring_start_date | date | Frequency can only be `daily`, `weekly` and `monthly`
+recurring_start_date | date | This date will be considered as a reference for calculating the next date for generating a task. 
 generated_count | integer | Number of generated tasks so far
 last_generated_on | date | Last date when a task ws generated
 next_processing_date | date | Next date when a task will be generated
