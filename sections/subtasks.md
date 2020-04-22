@@ -1,4 +1,4 @@
-# Tasks
+# Subtasks
 
 * [Getting subtasks](#list)
 * [Getting a subtask](#get)
