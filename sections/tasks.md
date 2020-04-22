@@ -8,6 +8,7 @@
 * [Adding a file to a task](#add-file)
 * [Changing task workflow status](#status)
 * [Changing task priority](#priority)
+* [Changing the order of subtasks](#update-subtasks-order)
 * [Deleting a task](#delete)
 * [Task billing](#billing)
 * [The task object](#object)
@@ -230,6 +231,19 @@ Allowed task priorities: 100, 75, 50, 25.
 
 **NOTE** All tasks are created with Normal (50) priority if not specified otherwise
 
+<a name="update-subtasks-order"></a>
+## Changing the order of subtasks
+
+To reorder the subtasks in a task you need to make an **update task** request with a body similar to:
+
+```json
+{
+    "subtasks_order": [ 39, 2, 10, 9, 11 ]
+}
+```
+
+where `subtasks_order` is a list of subtask ids in the new order.
+
 <a name="delete"></a>
 ## Deleting a task 
 
@@ -310,6 +324,8 @@ tasklist_id | integer | Task list id
 seq | integer | Position (order) of the task in the task list
 description | text | Task description and notes
 complete | boolean | If `true` the task is marked as complete
+completed_on | integer | _(read-only)_ Date and time when the subtask was completed
+completed_by | integer | _(read-only)_ Id of the user that completed the subtask
 due_date | date | Task due date. If task is not completed and due date has passed, the task is overdue.
 user_id | integer | Id of the user who created the task
 users | list | List of user ids that are assigned to the task. If no users are assigned, anyone assigned to the project sees this task in "My Tasks".
