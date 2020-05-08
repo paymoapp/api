@@ -19,6 +19,8 @@ curl -u email:password
 
 ### text/xml
 
+Each XML request params should be wrapped inside a `<request/>` tag.
+
 Example:
 
 ```shell
