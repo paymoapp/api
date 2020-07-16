@@ -24,7 +24,7 @@ Using an API Key is similar to Basic Auth, but instead of providing the email/pa
 For example:
 
 ```shell
-curl -u apikey:X 
+curl -u YOUR_API_KEY:SOME_RANDOM_TEXT 
   -H 'Accept: application/json'
   https://app.paymoapp.com/api/me
 ```
