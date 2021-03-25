@@ -136,7 +136,7 @@ If you do not send a `project_id` or a `discussion_id` or a `task_id` or a `comm
 Use this token to attach the file to a project, a discussion, a task or a comment.
 The file will remain in a temporary location until it is attached.
 
-If you have trouble getting your code to work for uploads, take a look at this [sample PHP script](sample_file_upload.php).
+If you have trouble getting your code to work for uploads, take a look at this [sample PHP script](samples/file_upload.php).
 
 ### Required fields
 
