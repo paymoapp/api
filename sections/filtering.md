@@ -81,6 +81,8 @@ Examples of `where` conditions (not urlencoded for clarity):
 * `name like Sample`
 * `name="Sample Project"`
 * `price_per_hour>50`
+* `created_on<=2014-01-01T12:00:00Z`
+* `updated_on>2014-02-01T14:00:00Z`
 
 
 
