@@ -35,9 +35,14 @@ At the moment, the following events can be hooked:
 - model.insert.Entry
 - model.update.Entry
 - model.delete.Entry
+- model.start.Entry
+- model.stop.Entry
 - model.insert.Milestone
 - model.update.Milestone
 - model.delete.Milestone
+- model.insert.Report
+- model.update.Report
+- model.delete.Report
 
 <a name="list"></a>
 ## Listing webhooks
