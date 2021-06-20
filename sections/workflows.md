@@ -117,7 +117,7 @@ Example of request body if you want to change the workflow name:
 
 To delete a workflow, make a DELETE request to:
 
-* `/api/clients/[WORKFLOW_ID]`
+* `/api/workflows/[WORKFLOW_ID]`
 
 If successful, the response will have a `200 OK` status code.
 
