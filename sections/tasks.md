@@ -353,5 +353,6 @@ Object type|Include key|Relationship
 [User](users.md) | user | parent
 [Comments Thread](comments.md) | thread | parent
 [Time Entry](entries.md) | entries | child
+[Subtask](subtasks.md) | subtasks | child
 [Invoice Item](invoices.md) | invoiceitem | parent
 [Workflow Status](workflow_status.md) | workflowstatus | parent
