@@ -70,6 +70,12 @@ You may want to consult a reference for [HTTP Status codes](http://en.wikipedia.
 
 If you exceed the rate limit, you'll get a [429 Too Many Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4) response and for all following requests until the limit expires. A header `Retry-After` will also be returned and will represent the number of seconds you should wait before making the next request.
 
+The following response headers will help you with the current API usage:
+
+- `X-Ratelimit-Decay-Period`: the length in seconds of the current time interval for which the limits are applied
+- `X-Ratelimit-Limit`: the total number of API requests allowed per decay period
+- `X-Ratelimit-Remaining`: the number of remaining API requests in the current decay period
+
 <a name="api-endpoints"></a>
 ## API endpoints
 
