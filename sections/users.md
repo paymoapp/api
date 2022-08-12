@@ -257,7 +257,7 @@ Attribute|Type|Description
 id | integer | _(read-only)_ Unique user identifier
 name | text | Full name
 email | email | Email address. There are no two active users in Paymo with the same email address. Email is used to receive notifications from Paymo as well as to log into Paymo.
-type | text | Account type. Available options: `Admin`, `Employee`.
+type | text | Account type. Available options: `Admin`, `Employee`, `Guest`.
 active | boolean | If `true` the user is active and can use Paymo, otherwise it is retired (archived).
 timezone | text | User timezone. [List of available options](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 phone | text | Phone number
