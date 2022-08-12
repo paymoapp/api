@@ -14,12 +14,13 @@ Paymo users are assigned to a company. The types of users are:
   
   * _Admins_, have rights to everything in a company.
   * _Employees_, have rights only to the projects they are assigned to.
-  * _Project Managers_, like and employee, except they have full rights to the projects they manage.
+  * _Project Managers_, same as _Employees_ users, but with manager roles for some projects.
+  * _Guests_, limited access users for specific projects, usually represents a client.
    
 To access Paymo, a user must be activated. The opposite of being activated is being retired (or archived) from Paymo.
 Retired users cannot log into Paymo. 
    
-The maximal number of active users in a company is set up in the Paymo subscription.
+The maximal number of active users in a company is set up in the Paymo subscription. Guest users do not count towards subscription user limit.
   
 <a name="list"></a>  
 ## Getting users
