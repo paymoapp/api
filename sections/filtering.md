@@ -1,4 +1,4 @@
-#Filtering 
+# Filtering 
 
 If you make a GET request to retrieve a list of objects but you want the response to contain only those items that match a certain criteria, you should use the `where` param in the query string.
 
@@ -71,7 +71,7 @@ curl -u email:password
 
 In the example above, the URL should look like this: `https://app.paymoapp.com/api/tasks?where=complete%3Dfalse%20and%20billable%3Dtrue`
 
-##Available operators
+## Available operators
 
 Operators used in `where` condition are: `=`, `>`, `>=`, `<`, `<=`, `!=`, `like`, `not like`, `in (value1,value2,...)`, `not in (value1, value2)`
 
