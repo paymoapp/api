@@ -20,6 +20,9 @@ At the moment, the following events can be hooked:
 - model.insert.Client
 - model.update.Client
 - model.delete.Client
+- model.insert.ClientContact
+- model.update.ClientContact
+- model.delete.ClientContact
 - model.insert.Project
 - model.update.Project
 - model.delete.Project
@@ -32,6 +35,9 @@ At the moment, the following events can be hooked:
 - model.insert.Invoice
 - model.update.Invoice
 - model.delete.Invoice
+- model.insert.InvoicePayment
+- model.update.InvoicePayment
+- model.delete.InvoicePayment
 - model.insert.Entry
 - model.update.Entry
 - model.delete.Entry
