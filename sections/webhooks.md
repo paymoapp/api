@@ -49,6 +49,15 @@ At the moment, the following events can be hooked:
 - model.insert.Report
 - model.update.Report
 - model.delete.Report
+- model.insert.Expense
+- model.update.Expense
+- model.delete.Expense
+- model.insert.Estimate
+- model.update.Estimate
+- model.delete.Estimate
+- model.insert.Comment
+- model.update.Comment
+- model.delete.Comment
 
 <a name="list"></a>
 ## Listing webhooks
@@ -308,3 +317,8 @@ Object type|Equivalent request
 [Invoice](invoices.md#get) | `/invoices/[INVOICE_ID]?include=invoiceitems,client.name`
 [Time Entry](entries.md#get) | `/entries/[ENTRY_ID]?include=task.name,user.name`
 [Milestone](milestones.md#get) | `/milestones/[MILESTONE_ID]?include=project.name`
+[Expense](expenses.md#get) | `/expenses/[EXPENSE_ID]?include=client.name,project.name`
+[Estimate](estimates.md#get) | `/estimates/[ESTIMATE_ID]?include=estimateitems,client.name`
+[Comment](comments.md#get) | `/comments/[COMMENT_ID]`
+
+
