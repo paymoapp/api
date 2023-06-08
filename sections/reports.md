@@ -433,8 +433,8 @@ Field | Required | Description
 `name`| optional | Report name. Will appear in report header as well as in listings.
 `type`| required | Report type. A value from the list: `static`, `live`, `temp`
 `date_interval` | optional (to `start_date`, `end_date`) | If `date_interval` is sent, `start_date` and `end_date` are optional. See options below. 
-`start_date` | optional (to `date_interval`) | If `date_interval` is not sent, `start_date` and `end_date` are required. Represents a date that starts the reporting date range.  
-`end_date` | optional (to `date_interval`) | If `date_interval` is not sent, `start_date` and `end_date` are required. Represents a date that ends the reporting date range.
+`start_date` | optional (to `date_interval`) | If `date_interval` is not sent, `start_date` and `end_date` are required. The value is an unsigned integer (Unix Timestamp) that represents the start of the reporting date range.  
+`end_date` | optional (to `date_interval`) | If `date_interval` is not sent, `start_date` and `end_date` are required. The value is an unsigned integer (Unix Timestamp) that represents the end of the reporting date range.  
 `projects` | optional | A list of project ids from which the time will be included into the report, or one of the presets: <br/> `all` (for all projects, including archived), <br/> `all_active` (for active projects only), <br/>`all_archived` (for archived projects only),<br/>`status_id=[STATUS]` (for a list of projects with the given status).<br/>If `clients` param was set, the projects selection will be limited to those clients.
 `clients` | optional | A list of client ids from which the time will be included into the report. Or a preset value of: <br/> `all` (for all clients, including archived), <br/> `all_active` (for active clients only).<br/> If `projects` has no value specified, this will define the projects to be included.
 `users` | optional | A list of user ids for whom the time will be included into the report, or one of the presets: <br/> `all` (for all users, including archived), <br/> `all_active` (for active users only), <br/>`all_archived` (for archived users only).
