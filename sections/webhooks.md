@@ -58,6 +58,12 @@ At the moment, the following events can be hooked:
 - model.insert.Comment
 - model.update.Comment
 - model.delete.Comment
+- model.insert.User
+- model.update.User
+- model.delete.User
+- model.insert.Booking
+- model.update.Booking
+- model.delete.Booking
 
 <a name="list"></a>
 ## Listing webhooks
